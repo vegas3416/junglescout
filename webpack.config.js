@@ -1,9 +1,14 @@
-/* eslint-disable node/no-unpublished-require */
-'use strict';
-
+const { NODE_ENV } = process.env;
 const webpack = require('webpack');
 const path = require('path'); // Resolves absolute path names
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // Generates HTML from template
+
+const excludeNodeModules = absPath => {
+  const isIndeedFrontEndModule =
+    absPath.match('frontend-') && absPath.match('@indeed');
+  const isNodeModule = absPath.match('node_modules');
+  return isNodeModule && !isIndeedFrontEndModule;
+};
 
 module.exports = {
   mode: 'development',
@@ -14,7 +19,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'), // Identify dist folder via absolute path
     publicPath: '',
-    filename: '[name].js' // File naming with hash for cache busting
+    filename: '[name]-[hash].js', // File naming with hash for cache busting
+    chunkFilename: '[name]-[hash]-chunk.js' // Chunked files
   },
   devtool: 'source-map',
   devServer: {
@@ -33,10 +39,16 @@ module.exports = {
             loader: 'style-loader' // Injects CSS as <style> tags
           },
           {
-            loader: 'css-loader' // Resolves S/CSS imports
+            loader: 'css-loader', // Resolves S/CSS imports
+            options: {
+              sourceMap: true
+            }
           },
           {
-            loader: 'sass-loader' // Processes SCSS into CSS
+            loader: 'sass-loader', // Processes SCSS into CSS
+            options: {
+              sourceMap: true
+            }
           }
         ]
       },
@@ -56,9 +68,20 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'], // import without .js, .tsx, .ts extensions
     alias: {
-      // Create any alias here
-      // Example:
-      // components: path.resolve(__dirname, 'src', 'components'),
+      // Alias paths so that e.g. "../../components/File" becomes "Components/File"
+      Components: path.resolve(__dirname, 'src/components'),
+      Styles: path.resolve(__dirname, 'src/styles'),
+      Src: path.resolve(__dirname, 'src'),
+      Images: path.resolve(__dirname, 'src/images'),
+      // Indeed ICL and style aliases
+      Indeed: path.resolve(
+        __dirname,
+        'node_modules/@indeed/frontend-components-react/components'
+      ),
+      Janus: path.resolve(
+        __dirname,
+        'node_modules/@indeed/frontend-style-janus/src'
+      )
     }
   },
   plugins: [
@@ -67,16 +90,13 @@ module.exports = {
      * and the location where it lives:
      * https://github.com/jantimon/html-webpack-plugin
      */
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: 'src/index.template.html',
-      filename: 'index.html',
-      title: 'Picasso Typescript Boilerplate',
-      favicon: 'src/favicon.ico',
-      excludeChunks: ['_images']
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify(NODE_ENV)
     }),
-    new webpack.ProvidePlugin({
-      React: 'react'
+    new HtmlWebpackPlugin({
+      template: 'src/index.template.html',
+      title: 'Picasso Typescript Boilerplate',
+      favicon: 'src/favicon.ico'
     })
   ]
 };

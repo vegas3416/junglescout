@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import IndeedLogo from '@indeed/frontend-components-react/components/IndeedLogo';
+//import IndeedLogo from '@indeed/frontend-components-react/components/IndeedLogo';
 import './style/dropdownNavHeader.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import MenuItem from '../MenuItem/menuItem';
 //import * as TYPES from 'Src/actions/types';
-import { Icon } from '@indeed/int-frontend-components';
+//import Icon from '@indeed/frontend-components-react/components/Icon';
 import classNames from 'classnames';
 
 //import NavData from 'Src/jsonData/menuItems.json';
@@ -13,7 +13,7 @@ import MVPData from './mvpItems.json';
 const DropdownNavHeader = props => {
   const dispatch = useDispatch();
   //const navLocation = useSelector(state => state.indeedCentral.navLocation);
-  const activeItem = null
+  const activeItem = null;
   //useSelector(
   // state => state.indeedCentral.navMenuActiveItem
   //);
@@ -107,7 +107,7 @@ const DropdownNavHeader = props => {
             aria-label='homePage-link'
           >
             {/* This is where I need to do the drop down checks here */}
-            <IndeedLogo size='medium' type='wordmark' inverted />
+            {/* <IndeedLogo size='medium' type='wordmark' inverted /> */}
 
             {appName && (
               <span className='dropdownNavHeader-logo-appname'>
@@ -152,12 +152,12 @@ const DropdownNavHeader = props => {
             ref={node}
           >
             <span className='profile-icon-item'>
-              <Icon
+              {/* <Icon
                 className='menu-item-profile-icon'
                 name='profile'
                 height='2rem'
                 width='1.5rem'
-              />
+              /> */}
             </span>
             <div className='profile-icon-dropdown'>
               <ul className='profile-icon-dropdown-content'>

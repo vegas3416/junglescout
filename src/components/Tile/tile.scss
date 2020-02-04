@@ -1,0 +1,32 @@
+// @import '~Janus/foundations/Color/main';
+// @import '~Janus/foundations/Typography/main';
+
+.tile {
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  transition: all 1s;
+  transition-delay: 1s;
+
+  &.small {
+    display: table;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    &-title {
+      color: blue;
+      font-weight: bold;
+    }
+
+    &-date {
+      color: blue;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.sidebar {
+  border-right: 1px solid grey;
+  width: 4rem;
+
+  position: absolute;
+
+  z-index: 1;
+  &.open {
+    left: 1rem;
+    transition: width 0.5s;
+    width: 14rem;
+
+    .tileSetup {
+      transition: width 0.5s;
+      transition-delay: 0.5s;
+    }
+  }
+
+  .collapse-button {
+    position: absolute;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    right: -1.325rem;
+    top: 1rem;
+    padding: 0.225rem;
+    background-color: #4b4b4b;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    span {
+      background-color: get-color(black, 800);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-label='chevron-down' fill='%23ffffff' class='icl-Icon icl-Icon--white icl-Icon--sm'%3E%3Cpath d='M5.56 6.44L9 9.88l3.44-3.43L13.5 7.5 9 12 4.5 7.5z'/%3E%3C/svg%3E");
+      background-position: center;
+      display: inline-block;
+      height: 1rem;
+      position: relative;
+      top: 1px;
+      width: 1rem;
+      transform: rotate(270deg);
+
+      &.enabled {
+        transform: rotate(90deg);
+        top: 0;
+      }
+    }
+  }
+}

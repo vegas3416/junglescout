@@ -14,7 +14,7 @@ const SideBar: React.FC<IProps> = ({ tabs }) => {
   };
 
   return (
-    <div className={`sidebar ${leftNav ? 'open' : ''}`}>
+    <div className={`sidebar ${leftNav ? 'open' : 'closed'}`}>
       {tabs.map((item, index) => {
         return <Tile key={index} data={item} open={leftNav} />;
       })}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './tile.scss';
 
 interface TileProps {
@@ -15,21 +15,19 @@ interface TileData {
 }
 
 const Tile: React.FC<TileProps> = ({ data, open }) => {
-  const [show, setShow] = useState(false);
-
   return (
     <div className={`tile ${open ? '' : 'small'}`}>
       <img className='dots' src={require('../../images/Shift Manager.png')} />
 
       {open && (
-        <div>
+        <div className="content">
           <header className='header'>
             <span className='header-title'>{data.title}</span>
             <span className='header-date'>{data.date}</span>
           </header>
 
-          <p>{data.subtitle}</p>
-          <p>{data.description}</p>
+          <p className="subtitle">{data.subtitle}</p>
+          <p className="description">{data.description}</p>
         </div>
       )}
     </div>

@@ -1,0 +1,246 @@
+//@import '~Janus/foundations/Color/main';
+
+.menuItem {
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    margin: 0 1rem -2px;
+
+    &-list {
+        background-color: get-color(black, 300);
+        //box-shadow: 0 5px 5px grey;
+        display: none;
+        margin-top: 2.7rem;
+        min-width: 250px;
+        position: absolute;
+        left: 0;
+        top: 2.625rem;
+        width: 100%;
+        z-index: 2;
+
+        &.isOpen {
+            .menuItem-list-items {
+                display: flex;
+                margin-left: 1rem;
+                font-size: 1rem;
+
+                .menuItem-dropdown-item {
+                    color: get-color(white);
+                    white-space: nowrap;
+
+                    &.hasDropdown {
+                        position: relative;
+                        display: flex;
+                        padding: 0;
+                        white-space: normal;
+
+                        // &:hover {
+                        //     background-color: transparent;
+
+                        // }
+
+                        &::after {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6'%3E%3Cpath fill='%23666' fill-rule='evenodd' d='M1.0575 0L4.5 3.435 7.9425 0 9 1.0575l-4.5 4.5-4.5-4.5z' style='mix-blend-mode:darken'/%3E%3C/svg%3E");
+                            background-repeat: no-repeat;
+                            content: '';
+                            display: inline-block;
+                            height: 0.8rem;
+                            position: relative;
+                            right: 0.5rem;
+                            top: 1rem;
+                            width: 0.8rem;
+                        }
+
+                        ul {
+                            display: none;
+
+                            .menuItem-dropdown-item-nestedItem {
+                                &:hover {
+                                    background-color: get-color(black, 700);
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+
+                        &.isOpen {
+                            position: relative;
+                            display: flex;
+                            padding: 0;
+                            white-space: normal;
+                            ul {
+                                color: get-color(black, 700);
+                                background-color: get-color(black, 300);
+                                box-shadow: 0.5px 0.5px 0 grey;
+                                display: flex;
+                                flex-direction: column;
+                                left: 1rem;
+                                position: absolute;
+                                top: 2.3rem;
+                                white-space: nowrap;
+
+                                .menuItem-dropdown-item-nestedItem {
+                                    margin-top: 0.5rem;
+                                    padding: 1rem;
+                                    &:hover {
+                                        background-color: get-color(black, 400);
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+
+                            &::after {
+                                right: 0.5rem;
+                                top: 0.5rem;
+                                transform: rotate(180deg);
+                            }
+                        }
+
+                        .menuItem-dropdown-item-text {
+                            color: get-color(black, 900);
+                            display: inline-block;
+                            padding: 0.5rem 0.75rem 0.5rem 2rem;
+                            position: relative;
+                            width: 100%;
+
+                            // &:hover {
+                            &::after {
+                                right: -0.5rem;
+                                top: 0;
+                                transform: rotate(180deg);
+                            }
+                            //}
+                        }
+                    }
+
+                    &:hover {
+                        //background-color: get-color(black, 700);
+                        cursor: pointer;
+                    }
+
+                    &.is-disabled {
+                        color: get-color(black, 500);
+                        pointer-events: none;
+                    }
+
+                    &.active {
+                        // color: get-color(blue, core);
+
+                        .menuItem-dropdown-item-text {
+                            font-weight: bold;
+                            letter-spacing: 0.1px;
+                        }
+
+                        &:hover {
+                            background-color: transparent;
+                            pointer-events: none;
+                        }
+                    }
+
+                    // &.isOpen {
+                    //     ul {
+                    //         display: inline-block;
+                    //         margin-left: 1rem;
+
+                    //         .menuItem-dropdown-item-nestedItem {
+                    //             padding: 0.5rem 2rem 0.5rem 1rem;
+                    //             white-space: nowrap;
+                    //         }
+                    //     }
+                    //     .menuItem-dropdown-item-text {
+                    //         color: get-color(black, 600);
+                    //         display: inline-block;
+                    //         padding: 0.5rem 0.75rem 0.5rem 1rem;
+                    //         width: 100%;
+                    //         // &::after {
+                    //         //     right: 0.3125rem;
+                    //         //     top: 0.625rem;
+                    //         //     transform: rotate(180deg);
+                    //         // }
+                    //     }
+                    // }
+                }
+            }
+        }
+
+        &.isOpen {
+            display: inline-block;
+        }
+    }
+
+    &-parent {
+        color: get-color(white);
+        border-bottom: 4px solid transparent;
+        font-weight: normal;
+        margin-top: 1rem;
+        padding-bottom: 1.325rem;
+
+        &::before {
+            content: unset;
+        }
+
+        &:hover {
+            cursor: pointer;
+            border-bottom: 4px solid rgba(get-color(orange, pastel), 0.5);
+        }
+
+        &.active {
+            border-bottom: 4px solid get-color(orange, pastel);
+            color: get-color(white);
+
+            &.isViewing {
+                border-bottom: 4px solid get-color(orange, pastel);
+            }
+
+            &:hover {
+                pointer-events: none;
+                border-bottom: 4px solid get-color(orange, pastel);
+            }
+        }
+        &.isViewing {
+            cursor: pointer;
+            border-bottom: 4px solid rgba(get-color(orange, pastel), 0.5);
+        }
+    }
+
+    &-text {
+        font-size: 1rem;
+    }
+
+    &.has-dropdown {
+        .menuItem-text {
+            padding-right: 1.5rem;
+
+            &::after {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-label='chevron-down' fill='%23ffffff' class='icl-Icon icl-Icon--white icl-Icon--sm'%3E%3Cpath d='M5.56 6.44L9 9.88l3.44-3.43L13.5 7.5 9 12 4.5 7.5z'/%3E%3C/svg%3E");
+                content: '';
+                height: 1rem;
+                position: absolute;
+                right: 0.25rem;
+                top: 1.25;
+                width: 1rem;
+            }
+        }
+
+        .menuItem-parent {
+            &.active {
+                &:hover {
+                    pointer-events: initial;
+                }
+            }
+        }
+
+        &.isOpen {
+            .menuItem-text {
+                &::after {
+                    right: 0.25rem;
+                    top: 1.25rem;
+                    transform: rotate(180deg);
+                }
+            }
+
+            .menuItem-parent {
+                color: get-color(white);
+            }
+        }
+    }
+}

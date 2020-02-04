@@ -7,24 +7,32 @@
   display: inline-block;
   margin: 0.5rem 0;
   padding: 1rem;
-  transition: all 1s;
-  transition-delay: 1s;
 
   &.small {
-    display: table;
   }
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
+  .content {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
 
-    &-title {
+      &-title {
+        color: blue;
+        font-weight: bold;
+      }
+
+      &-date {
+        color: blue;
+        font-weight: bold;
+      }
+    }
+
+    .subtitle {
       color: blue;
       font-weight: bold;
     }
-
-    &-date {
+    .description {
       color: blue;
       font-weight: bold;
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './sideBarIcon.scss';
 
 interface IconProp {
@@ -12,13 +12,13 @@ interface IconData {
 }
 
 const SideBarIcon: React.FC<IconProp> = ({ data, isOpen }) => {
-  console.log('isOpen: ', isOpen);
   return (
     <div className='sideBarIcon'>
       <img className='icon' src={require(`../../images/${data.logo}`)} />
-      {isOpen && (
-        <span className={`${isOpen ? 'title-open' : 'title-closed'}`}>{data.title}</span>
-      )}
+
+      <div className={`title`}>
+        <span className={`inner ${isOpen ? 'open' : ''}`}>{data.title}</span>
+      </div>
     </div>
   );
 };

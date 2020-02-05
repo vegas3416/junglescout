@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   margin-left: 0.5rem;
-  padding: 1rem 0 1rem 0.5rem;
+  padding: 1rem 0 1rem 1rem;
 
   &:hover {
     background-color: get-color(black, 400);
@@ -14,16 +14,18 @@
     border-bottom-right-radius: 0;
   }
 
-  .title-closed {
-    padding-left: 1rem;
-    opacity: 0;
-    width: 0;
-    transition: opacity 1s;
-  }
+  .title {
+    .inner {
+      display: block;
+      overflow: hidden;
+      padding-left: 1rem;
+      transition: width 0.5s ease-in-out;
+      width: 0;
 
-  .title-open {
-    padding-left: 1rem;
-    opacity: 1;
-    transition: opacity 2s;
+      &.open {
+        padding-left: 1rem;
+        width: 100%;
+      }
+    }
   }
 }

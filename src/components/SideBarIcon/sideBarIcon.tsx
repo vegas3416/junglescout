@@ -16,7 +16,9 @@ const SideBarIcon: React.FC<IconProp> = ({ data, isOpen }) => {
   return (
     <div className='sideBarIcon'>
       <img className='icon' src={require(`../../images/${data.logo}`)} />
-      {isOpen && <span className={`title ${isOpen ? 'open' : ''}`}>{data.title}</span>}
+      {isOpen && (
+        <span className={`${isOpen ? 'title-open' : 'title-closed'}`}>{data.title}</span>
+      )}
     </div>
   );
 };

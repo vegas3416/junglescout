@@ -1,12 +1,18 @@
-// @import '~Janus/foundations/Color/main';
-// @import '~Janus/foundations/Typography/main';
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
 
 .tile {
+  background-color: get-color(black, 500);
   border: 1px solid grey;
-  border-radius: 0.5rem;
-  display: inline-block;
+  border-radius: 2px;
+  cursor: pointer;
   margin: 0.5rem 0;
   padding: 1rem;
+  position: relative;
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   &.small {
   }

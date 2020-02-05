@@ -29,8 +29,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/, // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
-        loader: 'ts-loader'
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
+        
+        test: /(\.jsx?|\.tsx?)$/,
+        exclude: /node_modules(?!(\/@indeed\/mirrorball-flora\/|\/@indeed\/cortex-frontend|\/@indeed\/frontend-components-react\/|\/query-string\/|\/split-on-first\/|\/strict-uri-encode\/))|modernizr|foundation/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-proposal-optional-chaining']
+          }
+        }
       },
       {
         test: /\.s?css$/, // CSS and SCSS files

@@ -1,0 +1,18 @@
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
+
+.subMenu {
+  border: 1px solid get-color(black, 900);
+  border-radius: 0.25rem;
+  right: -3.5rem;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+
+  &-item {
+    &:hover {
+      background-color: get-color(white, core);
+      cursor: pointer;
+    }
+  }
+}

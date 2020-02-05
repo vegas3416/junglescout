@@ -1,0 +1,26 @@
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
+
+.sideBarIcon {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  padding: 1rem 0 1rem 0.5rem;
+
+  &:hover {
+    background-color: get-color(black, 400);
+    border-radius: 0.5rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .title {
+    padding-left: 1rem;
+    //opacity: 0;
+    //transition: 500ms;
+
+    &.open {
+      transform: width 1s;
+    }
+  }
+}

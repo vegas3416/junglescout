@@ -1,44 +1,22 @@
 [
   {
-    "title": "Test",
-    "subtitle": "Subtitle",
-    "description": "Description text is here",
-    "date": "Jan 3, 2020",
-    "more": ["test1", "test2", "Test3"]
+    "logo": "fileIcon.png",
+    "title": "Jobs"
   },
   {
-    "title": "Test",
-    "subtitle": "Subtitle",
-    "description": "Description text is here",
-    "date": "Jan 3, 2020",
-    "more": ["test1", "test2", "Test3"]
+    "logo": "peopleIcon.png",
+    "title": "Candidates"
   },
   {
-    "title": "Test",
-    "subtitle": "Subtitle",
-    "description": "Description text is here",
-    "date": "Jan 3, 2020",
-    "more": ["test1", "test2", "Test3"]
+    "logo": "searchIcon.png",
+    "title": "Resume"
   },
   {
-    "title": "Test",
-    "subtitle": "Subtitle",
-    "description": "Description text is here",
-    "date": "Jan 3, 2020",
-    "more": ["test1", "test2", "Test3"]
+    "logo": "starIcon.png",
+    "title": "Company"
   },
   {
-    "title": "Test",
-    "subtitle": "Subtitle",
-    "description": "Description text is here",
-    "date": "Jan 3, 2020",
-    "more": ["test1", "test2", "Test3"]
-  },
-  {
-    "title": "Test",
-    "subtitle": "Subtitle",
-    "description": "Description text is here",
-    "date": "Jan 3, 2020",
-    "more": ["test1", "test2", "Test3"]
+    "logo": "barIcon.png",
+    "title": "Analytics"
   }
 ]

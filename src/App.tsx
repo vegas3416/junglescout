@@ -5,8 +5,6 @@ import './app.scss';
 import SideBar from './components/SideBar/sideBar';
 import SideJson from './components/SideBar/sideBar.json';
 
-import IndeedLogo from '@indeed/frontend-components-react/components/IndeedLogo';
-
 const sideBarJson = SideJson;
 
 const App = () => {

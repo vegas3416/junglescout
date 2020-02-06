@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import './sideBarIcon.scss';
+import React, { useState } from 'react';
+import './createNew.scss';
+
 import SubMenu from '../SubMenu/subMenu';
 
 //Fake Data
 import MenuOne from '../SubMenu/menuOne.json';
 
-interface IconProp {
-  data: IconData;
+interface CreateProp {
+  data: CreateData;
   isOpen: Boolean;
 }
 
-interface IconData {
+interface CreateData {
   logo: String;
   title: String;
 }
 
-const SideBarIcon: React.FC<IconProp> = ({ data, isOpen }) => {
+const CreateNew: React.FC<CreateProp> = ({ data, isOpen }) => {
   const [visible, setVisible] = useState(false);
-
   return (
     <div
-      className='sideBarIcon'
+      className='createNew'
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
     >
       <img className='icon' src={require(`../../images/${data.logo}`)} />
 
-      <div className='sideBarIcon-title'>
+      <div className='createNew-title'>
         <span className={`inner ${isOpen ? 'open' : ''}`}>{data.title}</span>
       </div>
 
@@ -35,4 +35,4 @@ const SideBarIcon: React.FC<IconProp> = ({ data, isOpen }) => {
   );
 };
 
-export default SideBarIcon;
+export default CreateNew;

@@ -4,8 +4,16 @@
 .sideBarIcon {
   display: flex;
   align-items: center;
+  padding: 1rem 0.75rem;
   margin-left: 0.5rem;
-  padding: 1rem 0 1rem 1rem;
+  position: relative;
+
+  &.create {
+    background-color: get-color(blue, core);
+    border-radius: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
 
   &:hover {
     background-color: get-color(black, 400);
@@ -14,12 +22,13 @@
     border-bottom-right-radius: 0;
   }
 
-  .title {
+  &-title {
     .inner {
       display: block;
+
       overflow: hidden;
       padding-left: 1rem;
-      transition: width 0.5s ease-in-out;
+      transition: width 0.2s ease-in-out;
       width: 0;
 
       &.open {
@@ -27,5 +36,11 @@
         width: 100%;
       }
     }
+  }
+
+  .sideBarMenu {
+    top: 0;
+    right: 0;
+    position: absolute;
   }
 }

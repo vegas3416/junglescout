@@ -1,21 +1,31 @@
 [
   {
+    "type": "0",
+    "logo": "plusIcon.png",
+    "title": "Create new..."
+  },
+  {
+    "type": "1",
     "logo": "fileIcon.png",
     "title": "Jobs"
   },
   {
+    "type": "1",
     "logo": "peopleIcon.png",
     "title": "Candidates"
   },
   {
+    "type": "1",
     "logo": "searchIcon.png",
     "title": "Resume"
   },
   {
+    "type": "1",
     "logo": "starIcon.png",
     "title": "Company"
   },
   {
+    "type": "1",
     "logo": "barIcon.png",
     "title": "Analytics"
   }

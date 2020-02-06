@@ -6,12 +6,13 @@ interface SMProps {
 }
 
 const SubMenu: React.FC<SMProps> = ({ data }) => {
+  
   return (
     <ul className='subMenu'>
       {data.map((item, index) => {
         return (
           <li key={index} className='subMenu-item'>
-            {item}
+            <span className="label">{item}</span>
           </li>
         );
       })}

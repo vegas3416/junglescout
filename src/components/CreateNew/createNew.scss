@@ -1,3 +1,44 @@
 @import '~Janus/foundations/Color/main';
 @import '~Janus/foundations/Typography/main';
 
+.createNew {
+  align-items: center;
+  background-color: get-color(blue, core);
+  border-radius: 0.5rem;
+
+  display: flex;
+
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+
+  &-title {
+    color: get-color(white, core);
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+    padding: 0.5rem;
+
+    .inner {
+      display: block;
+      overflow: hidden;
+      padding-left: 1rem;
+      transition: width 0.2s ease-in-out;
+      width: 0;
+
+      &.open {
+        padding-left: 1rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .sideBarMenu {
+    background-color: red;
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+}

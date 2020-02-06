@@ -2,17 +2,27 @@
 @import '~Janus/foundations/Typography/main';
 
 .subMenu {
-  border: 1px solid get-color(black, 900);
-  border-radius: 0.25rem;
-  right: -3.5rem;
-  padding: 0.5rem;
+  background-color: get-color(black, 400);
+  border-radius: 0 0.5rem 0.5rem 0;
+
   position: absolute;
-  top: 0;
+  padding: 0.5rem;
 
   &-item {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+
     &:hover {
-      background-color: get-color(white, core);
+      background-color: get-color(black, 500);
       cursor: pointer;
+    }
+
+    .label {
+      font-family: Helvetica Neue;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 18px;
     }
   }
 }

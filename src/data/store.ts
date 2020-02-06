@@ -5,7 +5,7 @@ import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
 import session from 'redux-persist/es/storage/session';
 import promise from 'redux-promise-middleware';
 import thunk from 'redux-thunk';
-import { indeedCentral } from './reducers';
+import { homeHub } from './reducers';
 
 const persistConfig = {
   key: 'root',
@@ -13,9 +13,10 @@ const persistConfig = {
   stateReconciler: hardSet // note: only hardSet persists
 };
 const middleware = [thunk, promise];
-const combinedReducers = combineReducers({ indeedCentral });
+const combinedReducers = combineReducers({ homeHub });
 const persistedReducers = persistReducer(persistConfig, combinedReducers);
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers =
+  (window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose) || compose;
 const store = createStore(
   persistedReducers,
   composeEnhancers(applyMiddleware(...middleware))

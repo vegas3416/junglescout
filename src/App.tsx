@@ -14,16 +14,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import './app.scss';
 import SideBar from './components/SideBar/sideBar';
 import SideJson from './components/SideBar/sideBar.json';
+import Profile from './components/widgets/Profile/profile';
+import Company from './components/widgets/Company/company';
 
 const sideBarJson = SideJson;
 
 const App = props => {
-
   const [visible, setVisible] = useState(false);
 
-  const setVisibility = (e) => {
+  const setVisibility = e => {
     setVisible(e);
-  }
+  };
   return (
     <div className='container'>
       <div className='topNav'>
@@ -50,24 +51,26 @@ const App = props => {
         </div>
         <div className='topNav-right'>
           <ul className='topNav-right-list'>
-            <li>help</li>
-            <li> notifications</li>
-            <li> messaging</li>
-            <li>company name</li>
-            <li>
-              <div className='profile'>
-                <img src={require('./images/Avatar.png')} />
-                <div className='profile-labels'>
-                  <span className='name'>Karim Naguib</span>
-                  <span className='title'>Recruiter</span>
-                </div>
-              </div>
+            <li className='topNav-right-list-item'> notifications</li>
+            <li className='topNav-right-list-item'>
+              <Company type='featured' logo='Walgreens.png' />
+            </li>
+            <li className='topNav-right-list-item'>
+              <Profile
+                logo='Avatar.png'
+                name='Karim Naguib'
+                title='Recruiter'
+              />
             </li>
           </ul>
         </div>
       </div>
       <div className='details'>
-        <SideBar tabs={sideBarJson} visible={(e) => setVisibility(e)} side={visible}/>
+        <SideBar
+          tabs={sideBarJson}
+          visible={e => setVisibility(e)}
+          side={visible}
+        />
         <div className='details_view'>
           <Switch>
             {routes.map(ea => {

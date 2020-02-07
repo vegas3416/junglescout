@@ -56,39 +56,21 @@
 
       &-list {
         align-items: center;
-        display: inline-flex;
+        display: flex;
 
-        .profile {
+        &-item {
           align-items: center;
           display: flex;
 
-          &-labels {
-            display: flex;
-            flex-direction: column;
+          // &:first-child {
+          //   color: red;
+          // }
+          // &::before {
+          //   content: ' | ';
+          //   color: white;
+          //   padding: 0 10px;
 
-            padding-left: 0.5rem;
-            padding-right: 1rem;
-
-            .name {
-              color: get-color(white, core);
-              font-family: Helvetica Neue;
-              font-style: normal;
-              font-weight: bold;
-              font-size: 14px;
-              line-height: 10px;
-
-              padding-bottom: 0.5rem;
-            }
-
-            .title {
-              color: get-color(black, 600);
-              font-family: Helvetica Neue;
-              font-style: normal;
-              font-weight: normal;
-              font-size: 12px;
-              line-height: 10px;
-            }
-          }
+          // }
         }
       }
     }

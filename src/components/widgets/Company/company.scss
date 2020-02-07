@@ -1,0 +1,23 @@
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
+
+.company {
+  align-items: center;
+  display: flex;
+
+  &-logo {
+    padding-right: 0.5rem;
+  }
+
+  &-name {
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 10px;
+  }
+  
+  &-badge {
+    padding-right: 0.5rem;
+  }
+}

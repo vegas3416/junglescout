@@ -1,7 +1,7 @@
 @import '~Janus/foundations/Color/main';
 @import '~Janus/foundations/Typography/main';
 
-.sideBarIcon {
+.iconTitle {
   display: flex;
   align-items: center;
   padding: 1rem 0.75rem;
@@ -38,7 +38,7 @@
     }
   }
 
-  .sideBarMenu {
+  .iconTitleMenu {
     top: 0;
     right: 0;
     position: absolute;

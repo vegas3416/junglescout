@@ -1,0 +1,182 @@
+[
+  {
+    "logo": "suitcase.png",
+    "title": "Jobs",
+    "subtitle": "",
+    "widgetData": [
+      {
+        "number": "32",
+        "description": "Open jobs"
+      },
+      {
+        "number": "264k",
+        "scale": 1,
+        "scaleValue": "20%",
+        "description": "Clicks(last month)"
+      }
+    ],
+    "links": [
+      {
+        "link": "www.indeed.com",
+        "title": "Manage"
+      },
+      {
+        "link": "/",
+        "title": "Create new"
+      }
+    ]
+  },
+  {
+    "logo": "peopleIcon.png",
+    "title": "Candidates",
+    "subtitle": "",
+    "widgetData": [
+      {
+        "number": "12",
+        "description": "New"
+      },
+      {
+        "number": "22",
+        "description": "Awaiting review"
+      }
+    ],
+    "links": [
+      {
+        "link": "www.indeed.com",
+        "title": "Manage"
+      },
+      {
+        "link": "/",
+        "title": "Find"
+      }
+    ]
+  },
+  {
+    "logo": "peopleIcon.png",
+    "title": "Campaigns",
+    "subtitle": "",
+    "widgetData": [
+      {
+        "description": "Access to helpful resources to better manage your team’s experience on Indeed."
+      }
+    ],
+    "links": [
+      {
+        "link": "www.indeed.com",
+        "title": "FAQ"
+      },
+      {
+        "link": "/",
+        "title": "Contact your rep"
+      }
+    ]
+  },
+  {
+    "logo": "peopleIcon.png",
+    "title": "Analytics",
+    "subtitle": "",
+    "widgetData": [
+      {
+        "number": "32",
+        "description": "Open jobs"
+      },
+      {
+        "number": "264k",
+        "scale": 1,
+        "scaleValue": "20%",
+        "description": "Clicks(last month)"
+      }
+    ],
+    "links": [
+      {
+        "link": "www.indeed.com",
+        "title": "Indeed"
+      },
+      {
+        "link": "/",
+        "title": "Home"
+      }
+    ]
+  },
+  {
+    "logo": "peopleIcon.png",
+    "title": "Company",
+    "subtitle": "",
+    "widgetData": [
+      {
+        "number": "32",
+        "description": "Open jobs"
+      },
+      {
+        "number": "264k",
+        "scale": 1,
+        "scaleValue": "20%",
+        "description": "Clicks(last month)"
+      }
+    ],
+    "links": [
+      {
+        "link": "www.indeed.com",
+        "title": "Indeed"
+      },
+      {
+        "link": "/",
+        "title": "Home"
+      }
+    ]
+  },
+  {
+    "logo": "peopleIcon.png",
+    "title": "Jobs",
+    "subtitle": "",
+    "widgetData": [
+      {
+        "number": "32",
+        "description": "Open jobs"
+      },
+      {
+        "number": "264k",
+        "scale": 1,
+        "scaleValue": "20%",
+        "description": "Clicks(last month)"
+      }
+    ],
+    "links": [
+      {
+        "link": "www.indeed.com",
+        "title": "Indeed"
+      },
+      {
+        "link": "/",
+        "title": "Home"
+      }
+    ]
+  },
+  {
+    "logo": "peopleIcon.png",
+    "title": "Jobs",
+    "subtitle": "",
+    "widgetData": [
+      {
+        "number": "32",
+        "description": "Open jobs"
+      },
+      {
+        "number": "264k",
+        "scale": 1,
+        "scaleValue": "20%",
+        "description": "Clicks(last month)"
+      }
+    ],
+    "links": [
+      {
+        "link": "www.indeed.com",
+        "title": "Indeed"
+      },
+      {
+        "link": "/",
+        "title": "Home"
+      }
+    ]
+  }
+]

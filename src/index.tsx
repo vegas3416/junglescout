@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Suspense } from 'react';
 import * as ReactDOM from 'react-dom';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -10,13 +10,11 @@ import App from './App';
 
 ReactDOM.render(
   <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <Router>
-        <Switch>
-          <Route exact path='/' component={() => <App />} />
-        </Switch>
-      </Router>
-    </PersistGate>
+    <Router>
+      <Suspense fallback={null}>
+        <App />
+      </Suspense>
+    </Router>
   </Provider>,
   document.getElementById('app')
 );

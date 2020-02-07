@@ -1,26 +1,30 @@
 import React, { useState } from 'react';
+import { Switch, withRouter, RouteComponentProps } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './sideBar.scss';
-import SideBarIcon from '../SideBarIcon/sideBarIcon';
+import IconTitle from '../IconTitle/iconTitle';
 import CreateNew from '../CreateNew/createNew';
-import * as TYPES from '../../data/types';
+import * as TYPES from '../../actions/types.js';
 
-export interface IProps {
+export interface IProps extends RouteComponentProps<any> {
   tabs: Array<any>;
 }
 
-const SideBar: React.FC<IProps> = ({ tabs }) => {
+const SideBar: React.FC<IProps> = props => {
+  const { tabs } = props;
+
   const dispatch = useDispatch();
+  //const activeItem = useSelector<ReduxState>(state => state.homeHub.activeItem);
   const [isOpen, setIsOpen] = useState(false);
 
   const updateIsOpen = () => {
     setIsOpen(!isOpen);
   };
 
-  // const toggleActive = e => {
-  //   const menuItem = e;
-  //   dispatch({ type: TYPES.SET_ACTIVE_ITEM, payload: menuItem });
-  // };
+  const toggleActive = (e: string) => {
+    console.log('Active Item: ', e);
+    dispatch({ type: TYPES.SET_ACTIVE_ITEM, payload: e });
+  };
 
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
@@ -31,25 +35,25 @@ const SideBar: React.FC<IProps> = ({ tabs }) => {
               {data.type === '0' ? (
                 <CreateNew data={data} isOpen={isOpen} />
               ) : (
-                <SideBarIcon data={data} isOpen={isOpen} />
+                <IconTitle
+                  data={data}
+                  isOpen={isOpen}
+                  // activeItem={activeItem}
+                  handleActiveItem={(e: string) => toggleActive(e)}
+                />
               )}
             </li>
           );
         })}
       </ul>
 
-      {/* <div className='collapse-button' onClick={() => updateLeftNav()}>
-  <span className={`${leftNav ? 'enabled' : ''}`}></span>
-</div> */}
-      <div>
-        <img
-          className={`expand-collapse-button ${isOpen ? 'open' : ''}`}
-          onClick={() => updateIsOpen()}
-          src={require('../../images/doubleArrow.png')}
-        />
-      </div>
+      <img
+        className={`expand-collapse-button ${isOpen ? 'open' : ''}`}
+        onClick={() => updateIsOpen()}
+        src={require('../../images/doubleArrow.png')}
+      />
     </div>
   );
 };
 
-export default SideBar;
+export default withRouter(SideBar);

@@ -1,4 +1,3 @@
-/* eslint-disable node/no-unsupported-features */
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
@@ -15,8 +14,7 @@ const persistConfig = {
 const middleware = [thunk, promise];
 const combinedReducers = combineReducers({ homeHub });
 const persistedReducers = persistReducer(persistConfig, combinedReducers);
-const composeEnhancers =
-  (window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose) || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   persistedReducers,
   composeEnhancers(applyMiddleware(...middleware))

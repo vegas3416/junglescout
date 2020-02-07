@@ -37,7 +37,7 @@
     "@indeed/frontend-icl-type-generator": "^1.0.5",
     "@types/react-redux": "^7.1.7",
     "@types/react-router": "^5.0.2",
-    "@types/react-router-dom": "^4.3.4",
+    "@types/react-router-dom": "^4.3.5",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",
     "babel-loader": "^8.0.6",
@@ -48,9 +48,9 @@
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.9.0",
     "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1",
+    "react-router-dom": "^5.1.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^6.0.2",
@@ -80,7 +80,8 @@
     "redux": "^4.0.4",
     "redux-persist": "^6.0.0",
     "redux-promise-middleware": "^6.1.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "typesafe-actions": "^5.1.0"
   },
   "dtpublish": {
     "projectId": {

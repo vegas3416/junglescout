@@ -2,31 +2,59 @@
   {
     "type": "0",
     "logo": "plusIcon.png",
-    "title": "Create new..."
+    "title": "Create new...",
+    "submenu": [
+      { "logo": "job.png", "title": "Job" },
+      { "logo": "campaign.png", "title": "Campaign" },
+      { "logo": "template.png", "title": "Template" },
+      { "logo": "hiring.png", "title": "Hiring Event" },
+      { "logo": "branded.png", "title": "Branded Ad" }
+    ]
   },
   {
     "type": "1",
-    "logo": "fileIcon.png",
-    "title": "Jobs"
+    "logo": "suitcase.png",
+    "title": "Jobs",
+    "submenu": ["All Jobs", "Open", "Paused", "Closed"]
   },
   {
     "type": "1",
-    "logo": "peopleIcon.png",
-    "title": "Candidates"
+    "logo": "people.png",
+    "title": "Candidates",
+    "submenu": [
+      "View Candidates",
+      "Resume Search",
+      "Hiring Events",
+      "Seen by Indeed",
+      "Indeed Hire"
+    ]
   },
   {
     "type": "1",
-    "logo": "searchIcon.png",
-    "title": "Resume"
-  },
-  {
-    "type": "1",
-    "logo": "starIcon.png",
-    "title": "Company"
+    "logo": "bullhorn.png",
+    "title": "Campaigns",
+    "submenu": ["All Campaigns", "Sponsored Jobs", "Targeted Ads"]
   },
   {
     "type": "1",
     "logo": "barIcon.png",
-    "title": "Analytics"
+    "title": "Analytics",
+    "submenu": [
+      "*In progress*",
+      "*In progress*",
+      "*In progress*",
+      "*In progress*"
+    ]
+  },
+  {
+    "type": "1",
+    "logo": "building.png",
+    "title": "Company",
+    "submenu": [
+      "*In progress*",
+      "*In progress*",
+      "*In progress*",
+      "*In progress*"
+    ]
   }
 ]

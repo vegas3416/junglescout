@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './createNew.scss';
 
 import SubMenu from '../SubMenu/subMenu';
 
 //Fake Data
-import MenuOne from '../SubMenu/menuOne.json';
+import CreateData from '../SideBar/sideBar.json';
 
 interface CreateProp {
   data: CreateData;
   isOpen: Boolean;
+  Visible: Function;
 }
 
 interface CreateData {
@@ -16,21 +17,39 @@ interface CreateData {
   title: String;
 }
 
-const CreateNew: React.FC<CreateProp> = ({ data, isOpen }) => {
-  const [visible, setVisible] = useState(false);
+const CreateNew: React.FC<CreateProp> = ({ data, isOpen, Visible }) => {
+  const [isVisible, setVisible] = useState(false);
+  const onClick = () => {
+    setVisible(!isVisible);
+    Visible(isVisible);
+  };
+
+  const node = useRef();
+
+  useEffect(() => {
+    const dropdownClick = () => {
+      if (isVisible) setVisible(false);
+    };
+
+    document.addEventListener('click', dropdownClick);
+    return () => {
+      document.removeEventListener('click', dropdownClick);
+    };
+  }, [isVisible]);
+
   return (
-    <div
-      className='createNew'
-      onMouseEnter={() => setVisible(true)}
-      onMouseLeave={() => setVisible(false)}
-    >
+    <div className='createNew' onClick={() => onClick()}>
       <img className='icon' src={require(`../../images/${data.logo}`)} />
 
       <div className='createNew-title'>
         <span className={`inner ${isOpen ? 'open' : ''}`}>{data.title}</span>
       </div>
 
-      <div className='sideBarMenu'>{visible && <SubMenu data={MenuOne} />}</div>
+      <div className='sideBarMenu'>
+        {isVisible && (
+          <SubMenu data={CreateData[0].submenu} advancedMenu={true} />
+        )}
+      </div>
     </div>
   );
 };

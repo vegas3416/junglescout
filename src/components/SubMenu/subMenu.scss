@@ -5,8 +5,34 @@
   background-color: get-color(black, 400);
   border-radius: 0 0.5rem 0.5rem 0;
 
+  //@debug: 0px 4px 16px rgba(0, 0, 0, 0.12);
+  //border: 1px solid get-color(black, 500);
+
   position: absolute;
   padding: 0.5rem;
+
+  &.advanced {
+    background-color: get-color(white, core);
+    border: 1px solid get-color(black, 500);
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
+
+    margin-left: 0.25rem;
+
+    &::before {
+      background-color: inherit;
+      border-left: 1px solid get-color(black, 500);
+      border-bottom: 1px solid get-color(black, 500);
+      content: ' ';
+      height: 1rem;
+      margin-left: -1rem;
+      margin-top: 1rem;
+      position: absolute;
+      transform: rotate(45deg);
+      width: 1rem;
+      z-index: 1000;
+    }
+  }
 
   &-item {
     border-radius: 0.25rem;
@@ -17,12 +43,29 @@
       cursor: pointer;
     }
 
-    .label {
-      font-family: Helvetica Neue;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 18px;
+    &-link {
+      display: flex;
+      align-items: center;
+
+      .logo {
+        padding-right: 0.5rem;
+      }
+      .label {
+        font-family: Helvetica Neue;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        white-space: nowrap;
+
+        &.advanced {
+          font-family: Helvetica Neue;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
     }
   }
 }

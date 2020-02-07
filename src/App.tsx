@@ -18,6 +18,12 @@ import SideJson from './components/SideBar/sideBar.json';
 const sideBarJson = SideJson;
 
 const App = props => {
+
+  const [visible, setVisible] = useState(false);
+
+  const setVisibility = (e) => {
+    setVisible(e);
+  }
   return (
     <div className='container'>
       <div className='topNav'>
@@ -52,8 +58,8 @@ const App = props => {
               <div className='profile'>
                 <img src={require('./images/Avatar.png')} />
                 <div className='profile-labels'>
-                  <span className="name">Karim Naguib</span>
-                  <span className="title">Recruiter</span>
+                  <span className='name'>Karim Naguib</span>
+                  <span className='title'>Recruiter</span>
                 </div>
               </div>
             </li>
@@ -61,7 +67,7 @@ const App = props => {
         </div>
       </div>
       <div className='details'>
-        <SideBar tabs={sideBarJson} />
+        <SideBar tabs={sideBarJson} visible={(e) => setVisibility(e)} side={visible}/>
         <div className='details_view'>
           <Switch>
             {routes.map(ea => {

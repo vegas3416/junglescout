@@ -5,13 +5,17 @@ import SubMenu from '../SubMenu/subMenu';
 import { pageLocation } from '../../utilities/helperFunctions';
 
 //Fake Data
-import MenuOne from '../SubMenu/menuOne.json';
+import subMenu from '../SideBar/sideBar.json';
+
+//Bad
+
 
 interface IconProp extends RouteComponentProps<any> {
   data: IconData;
   isOpen?: Boolean;
   handleActiveItem?: Function;
-  //activeItem: String;
+  index: number;
+  side: Boolean;
 }
 
 interface IconData {
@@ -22,7 +26,7 @@ interface IconData {
 const IconTitle: React.FC<IconProp> = props => {
   const [visible, setVisible] = useState(false);
 
-  const { data, isOpen, handleActiveItem } = props;
+  const { data, isOpen, handleActiveItem, index, side } = props;
 
   const nextPage = () => {
     return props.history.push('/pagetwo');
@@ -45,7 +49,7 @@ const IconTitle: React.FC<IconProp> = props => {
       </div>
 
       <div className='iconTitleMenu'>
-        {visible && <SubMenu data={MenuOne} />}
+        {visible && side && <SubMenu data={subMenu[index].submenu} />}
       </div>
     </div>
   );

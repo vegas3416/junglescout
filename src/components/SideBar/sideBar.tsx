@@ -8,10 +8,12 @@ import * as TYPES from '../../actions/types.js';
 
 export interface IProps extends RouteComponentProps<any> {
   tabs: Array<any>;
+  visible: Function;
+  side: Boolean;
 }
 
 const SideBar: React.FC<IProps> = props => {
-  const { tabs } = props;
+  const { tabs, visible, side } = props;
 
   const dispatch = useDispatch();
   //const activeItem = useSelector<ReduxState>(state => state.homeHub.activeItem);
@@ -33,13 +35,16 @@ const SideBar: React.FC<IProps> = props => {
           return (
             <li key={index}>
               {data.type === '0' ? (
-                <CreateNew data={data} isOpen={isOpen} />
+                <CreateNew data={data} isOpen={isOpen} Visible={visible} />
               ) : (
                 <IconTitle
                   data={data}
                   isOpen={isOpen}
                   // activeItem={activeItem}
                   handleActiveItem={(e: string) => toggleActive(e)}
+                  index={index}
+
+                  side={side}
                 />
               )}
             </li>

@@ -52,6 +52,7 @@
     }
 
     &-right {
+      display: flex;
       margin-left: auto;
 
       &-list {
@@ -61,16 +62,16 @@
         &-item {
           align-items: center;
           display: flex;
+          position: relative;
+          height: 100%;
 
-          // &:first-child {
-          //   color: red;
-          // }
-          // &::before {
-          //   content: ' | ';
-          //   color: white;
-          //   padding: 0 10px;
-
-          // }
+          &:not(:first-child):before {
+            content: ' | ';
+            height: 100%;
+            width: 1px;
+            background-color: get-color(black, 600);
+            margin: 0 1.5rem;
+          }
         }
       }
     }

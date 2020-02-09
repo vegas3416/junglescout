@@ -4,6 +4,10 @@ import TileMenu from '../SubMenu/subMenu';
 
 import MenuOne from '../SubMenu/menuOne.json';
 import MiniWidget, { MiniData } from '../MiniWidget/miniWidget';
+import { useSelector } from 'react-redux';
+import { IAppState } from '../../data/store';
+import { $CombinedState } from 'redux';
+import { IState } from '../../data/reducers/homeHub';
 
 interface TileProps {
   data: TileData;
@@ -37,7 +41,7 @@ const Tile: React.FC<TileProps> = ({ data }) => {
         <ul className='footer-links'>
           {data.links.map((link, index) => {
             return (
-              <li key={index} className="footer-links-item">
+              <li key={index} className='footer-links-item'>
                 <a href={link.url}></a>
                 {link.title}
               </li>

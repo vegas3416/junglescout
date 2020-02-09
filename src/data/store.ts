@@ -17,9 +17,10 @@ const middleware = [thunk, promise];
 
 const combinedReducers = combineReducers({ homeHub: homeHub });
 
-const persistedReducers = persistReducer(persistConfig, combinedReducers);
+//This is the overall GLOBAL APP State name
+export type IGlobalState = ReturnType<typeof combinedReducers>;
 
-//const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const persistedReducers = persistReducer(persistConfig, combinedReducers);
 
 const composeEnhancers =
   (window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose) || compose;

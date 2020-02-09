@@ -2,19 +2,22 @@ import { App as Component } from './App';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { Dispatch } from 'react';
+import { SetActiveItem, IAction } from './data/actions/actions';
+import { IGlobalState } from './data/store';
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: IGlobalState) => {
   return {
-    activeItem: state.homeHub.activeItem
+    activeItem: state.homeHub.activeItem,
+    createIsOpen: state.homeHub.createIsOpen
   };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch<any>) => {
-  return {
-    onClick: () => alert(1)
-  };
-};
+/*THIS COULD BE USED LATER BUT I AM USING HOOKS TO DO ALL THE DISPATCHING VERSUS PASSING IT IN THE
+STATE OF 'APP' */
+// const mapDispatchToProps = (dispatch: Dispatch<IAction>) => {
+//   return {
+//     onClick: () => dispatch(SetActiveItem('tesasdf'))
+//   };
+// };
 
-export const App = compose(connect(mapStateToProps, mapDispatchToProps))(
-  Component
-);
+export const App = compose(connect(mapStateToProps))(Component);

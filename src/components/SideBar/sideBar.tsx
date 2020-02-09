@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './sideBar.scss';
 import IconTitle from '../IconTitle/iconTitle';
 import CreateNew from '../CreateNew/createNew';
-import * as TYPES from '../../actions/types.js';
+import * as TYPES from '../../data/types';
 
 export interface IProps extends RouteComponentProps<any> {
   tabs: Array<any>;
@@ -25,7 +25,7 @@ const SideBar: React.FC<IProps> = props => {
 
   const toggleActive = (e: string) => {
     console.log('Active Item: ', e);
-    dispatch({ type: TYPES.SET_ACTIVE_ITEM, payload: e });
+    dispatch({ type: TYPES.AppEvents.SET_ACTIVE_ITEM, payload: e });
   };
 
   return (

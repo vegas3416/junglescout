@@ -1,4 +1,4 @@
-import { AppEvents } from '../types';
+import { AppEvents } from '../events';
 
 //Generic setup for Actions
 const makeAction = <T extends AppEvents, P>(type: T) => (payload: P) => {

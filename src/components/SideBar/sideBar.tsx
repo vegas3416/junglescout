@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './sideBar.scss';
 import IconTitle from '../IconTitle/iconTitle';
 import CreateNew from '../CreateNew/createNew';
-import * as TYPES from '../../data/types';
+import * as TYPES from '../../data/events';
 
 export interface IProps extends RouteComponentProps<any> {
   tabs: Array<any>;
@@ -23,10 +23,10 @@ const SideBar: React.FC<IProps> = props => {
     setIsOpen(!isOpen);
   };
 
-  const toggleActive = (e: string) => {
-    console.log('Active Item: ', e);
-    dispatch({ type: TYPES.AppEvents.SET_ACTIVE_ITEM, payload: e });
-  };
+  // const toggleActive = (e: string) => {
+  //   console.log('Active Item: ', e);
+  //   dispatch({ type: TYPES.AppEvents.SET_ACTIVE_ITEM, payload: e });
+  // };
 
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
@@ -41,7 +41,7 @@ const SideBar: React.FC<IProps> = props => {
                   data={data}
                   isOpen={isOpen}
                   // activeItem={activeItem}
-                  handleActiveItem={(e: string) => toggleActive(e)}
+                  //handleActiveItem={(e: string) => toggleActive(e)}
                   index={index}
 
                   side={side}

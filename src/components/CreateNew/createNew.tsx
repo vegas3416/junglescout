@@ -19,7 +19,7 @@ interface CreateData {
 
 const CreateNew: React.FC<CreateProp> = ({ data, isOpen, Visible }) => {
   const [isVisible, setVisible] = useState(false);
-  const onClick = () => {
+  const onclick = () => {
     setVisible(!isVisible);
     Visible(isVisible);
   };
@@ -38,7 +38,7 @@ const CreateNew: React.FC<CreateProp> = ({ data, isOpen, Visible }) => {
   }, [isVisible]);
 
   return (
-    <div className='createNew' onClick={() => onClick()}>
+    <div className='createNew' onClick={() => onclick()}>
       <img className='icon' src={require(`../../images/${data.logo}`)} />
 
       <div className='createNew-title'>

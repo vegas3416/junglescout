@@ -6,14 +6,14 @@ import './addUsers.scss';
 // import Progressbar from 'Src/components/Progressbar/index.jsx';
 // import routes from 'Src/routes';
 //import * as TYPES from 'Src/actions/types';
-import { useDispatch } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 
 import CheckboxStandalone from '@indeed/frontend-components-react/components/Forms/CheckboxStandalone';
 
 const Page = props => {
   const location = useLocation();
   const { pathname } = location;
-  const dispatch = useDispatch();
+ // const dispatch = useDispatch();
 
   const [manually, setManually] = useState(false);
   const [agreed, setAgreed] = useState(false);
@@ -32,7 +32,7 @@ const Page = props => {
     setAgreed(!agreed);
   };
 
-  useEffect(() => {
+  //useEffect(() => {
     //const route = routes.find(r => r.path === pathname);
     //const { order } = route;
     //setPageStep(order);
@@ -40,7 +40,7 @@ const Page = props => {
     //   type: TYPES.SET_STEP,
     //   payload: order
     // });
-  }, [dispatch, pathname]);
+  //}, [dispatch, pathname]);
 
   return (
     <div className='pagetwo'>

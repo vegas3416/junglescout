@@ -1,10 +1,10 @@
 import update from 'immutability-helper';
 
-import { AppEvents } from '../types';
+import {AppEvents} from '../events';
 import { IAction } from '../actions/actions';
 
 export const initialState: IState = {
-  activeItem: '',
+  activeItem: 'junk',
   createIsOpen: false
 };
 

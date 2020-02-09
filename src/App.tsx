@@ -1,15 +1,8 @@
 import React, { useState, useEffect, Suspense } from 'react';
-import {
-  Router,
-  Route,
-  Switch,
-  withRouter,
-  BrowserRouter,
-  Link
-} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { useLocation } from 'react-router';
 import routes from './routes';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux';
 
 import './app.scss';
 import SideBar from './components/SideBar/sideBar';
@@ -18,16 +11,29 @@ import Profile from './components/widgets/Profile/profile';
 import Company from './components/widgets/Company/company';
 import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets';
 
+//Global State
+
 const sideBarJson = SideJson;
 
-const App = props => {
+interface AppProps {
+  activeItem: string;
+  onClick(): void;
+}
+
+export const App: React.FC<AppProps> = ({ activeItem, onClick }) => {
+  const dispatch = useDispatch();
+
+  console.log('Test: ', activeItem);
+
   const [visible, setVisible] = useState(false);
 
   const setVisibility = e => {
     setVisible(e);
   };
+
   return (
     <div className='container'>
+      <button onClick={onClick}>Click Me</button>
       <div className='topNav'>
         <div className='logo'>
           <a
@@ -53,7 +59,6 @@ const App = props => {
         <div className='topNav-right'>
           <ul className='topNav-right-list'>
             <li className='topNav-right-list-item'>
-              
               <TopNavWidgets />
             </li>
             <li className='topNav-right-list-item'>

@@ -5,16 +5,19 @@ import { Provider } from 'react-redux';
 import store, { persistor } from './data/store';
 import { PersistGate } from 'redux-persist/es/integration/react';
 
+import { App } from './container';
+
 import './styles/main.scss';
-import App from './App';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <Suspense fallback={null}>
-        <App />
-      </Suspense>
-    </Router>
+    <PersistGate loading={null} persistor={persistor}>
+      <Router>
+        <Suspense fallback={null}>
+          <App />
+        </Suspense>
+      </Router>
+    </PersistGate>
   </Provider>,
   document.getElementById('app')
 );

@@ -1,7 +1,7 @@
 import update from 'immutability-helper';
 
 import { AppEvents } from '../types';
-import { IAction, SetActiveItem } from '../actions/actions';
+import { IAction } from '../actions/actions';
 
 export const initialState: IState = {
   activeItem: '',
@@ -17,7 +17,6 @@ export const homeHub = (
   state: IState = initialState,
   action: IAction
 ): IState => {
-
   switch (action.type) {
     case AppEvents.SET_ACTIVE_ITEM:
       return update(state, {
@@ -30,5 +29,4 @@ export const homeHub = (
     default:
       return state;
   }
-  
 };

@@ -1,6 +1,5 @@
 import { AppEvents } from '../types';
 
-
 //Generic setup for Actions
 const makeAction = <T extends AppEvents, P>(type: T) => (payload: P) => {
   return {
@@ -19,13 +18,7 @@ export const SetActiveItem = makeAction<AppEvents.SET_ACTIVE_ITEM, string>(
   AppEvents.SET_ACTIVE_ITEM
 );
 
-
 //End of Actions
-
-
-
-
-
 
 //Helper setup to aid in the reducers file
 
@@ -43,5 +36,4 @@ const actions = {
   SetActiveItem
 };
 
-
-export type IAction = IActionUnion<typeof actions>
+export type IAction = IActionUnion<typeof actions>;

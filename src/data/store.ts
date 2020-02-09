@@ -17,8 +17,7 @@ const middleware = [thunk, promise];
 
 const combinedReducers = combineReducers({ homeHub: homeHub });
 
-//This is the overall GLOBAL APP State name
-export type IGlobalState = ReturnType<typeof combinedReducers>;
+export type IAppState = ReturnType<typeof combinedReducers>;
 
 const persistedReducers = persistReducer(persistConfig, combinedReducers);
 

@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './tile.scss';
-import TileMenu from '../SubMenu/subMenu';
 
-import MenuOne from '../SubMenu/menuOne.json';
 import MiniWidget, { MiniData } from '../MiniWidget/miniWidget';
-import { useSelector } from 'react-redux';
-import { IAppState } from '../../data/store';
-import { $CombinedState } from 'redux';
-import { IState } from '../../data/reducers/homeHub';
 
 interface TileProps {
   data: TileData;

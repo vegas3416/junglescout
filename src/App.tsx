@@ -10,7 +10,6 @@ import SideJson from './components/SideBar/sideBar.json';
 import Profile from './components/widgets/Profile/profile';
 import Company from './components/widgets/Company/company';
 import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets';
-import { AppEvents } from './data/types';
 
 //Global State
 
@@ -32,13 +31,12 @@ export const App: React.FC<AppProps> = ({ activeItem, createIsOpen }) => {
     setVisible(e);
   };
 
-  const onClick = () => {
-    dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: 'Yes it is' });
-  };
+  // const onClick = () => {
+  //   dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: 'Yes it is' });
+  // };
 
   return (
     <div className='container'>
-      <button onClick={() => onClick()}>Click Me</button>
       <div className='topNav'>
         <div className='logo'>
           <a

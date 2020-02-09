@@ -2,10 +2,10 @@ import { App as Component } from './App';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { Dispatch } from 'react';
-import { SetActiveItem, IAction } from './data/actions/actions';
-import { IGlobalState } from './data/store';
+//import { SetActiveItem, IAction } from './data/actions/actions';
+import { IAppState } from './data/store';
 
-const mapStateToProps = (state: IGlobalState) => {
+const mapStateToProps = (state: IAppState) => {
   return {
     activeItem: state.homeHub.activeItem,
     createIsOpen: state.homeHub.createIsOpen

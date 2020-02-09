@@ -2,10 +2,11 @@
 @import '~Janus/foundations/Typography/main';
 
 .iconTitle {
-  display: flex;
   align-items: center;
-  padding: 1rem 0.75rem;
+  cursor: pointer;
+  display: flex;
   margin-left: 0.5rem;
+  padding: 1rem 0.75rem;
   position: relative;
 
   &.create {
@@ -31,7 +32,7 @@
       transition: width 0.2s ease-in-out;
       width: 0;
 
-      &.open {
+      &.sideBarOpen {
         padding-left: 1rem;
         width: 100%;
       }

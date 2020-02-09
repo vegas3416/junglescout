@@ -9,13 +9,12 @@ import subMenu from '../SideBar/sideBar.json';
 
 //Bad
 
-
 interface IconProp extends RouteComponentProps<any> {
   data: IconData;
-  isOpen?: Boolean;
+  sideBarOpen?: Boolean;
+  createNewBarOpen?: Boolean;
   handleActiveItem?: Function;
   index: number;
-  side: Boolean;
 }
 
 interface IconData {
@@ -26,7 +25,7 @@ interface IconData {
 const IconTitle: React.FC<IconProp> = props => {
   const [visible, setVisible] = useState(false);
 
-  const { data, isOpen, handleActiveItem, index, side } = props;
+  const { data, sideBarOpen, handleActiveItem, index, createNewBarOpen } = props;
 
   const nextPage = () => {
     return props.history.push('/pagetwo');
@@ -45,11 +44,11 @@ const IconTitle: React.FC<IconProp> = props => {
       <img className='icon' src={require(`../../images/${data.logo}`)} />
 
       <div className='iconTitle-title'>
-        <span className={`inner ${isOpen ? 'open' : ''}`}>{data.title}</span>
+        <span className={`inner ${sideBarOpen ? 'sideBarOpen' : ''}`}>{data.title}</span>
       </div>
 
       <div className='iconTitleMenu'>
-        {visible && side && <SubMenu data={subMenu[index].submenu} />}
+        {visible && !createNewBarOpen && <SubMenu data={subMenu[index].submenu} />}
       </div>
     </div>
   );

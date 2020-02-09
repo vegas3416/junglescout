@@ -5,6 +5,7 @@
   align-items: center;
   background-color: get-color(blue, core);
   border-radius: 0.5rem;
+  cursor: pointer;
 
   display: flex;
 
@@ -28,7 +29,7 @@
       transition: width 0.2s ease-in-out;
       width: 0;
 
-      &.open {
+      &.sideBarOpen {
         padding-left: 1rem;
         width: 100%;
       }

@@ -5,22 +5,24 @@ import './sideBar.scss';
 import IconTitle from '../IconTitle/iconTitle';
 import CreateNew from '../CreateNew/createNew';
 import * as TYPES from '../../data/events';
+import { IAppState } from '../../data/store';
 
 export interface IProps extends RouteComponentProps<any> {
   tabs: Array<any>;
-  visible: Function;
-  side: Boolean;
 }
 
 const SideBar: React.FC<IProps> = props => {
-  const { tabs, visible, side } = props;
+  const { tabs } = props;
 
   const dispatch = useDispatch();
-  //const activeItem = useSelector<ReduxState>(state => state.homeHub.activeItem);
-  const [isOpen, setIsOpen] = useState(false);
+
+  const createIsOpen = (state: IAppState) => state.homeHub.createIsOpen;
+  const createNewBarOpen = useSelector(createIsOpen);
+
+  const [sideBarOpen, setSideBarOpen] = useState(false);
 
   const updateIsOpen = () => {
-    setIsOpen(!isOpen);
+    setSideBarOpen(!sideBarOpen);
   };
 
   // const toggleActive = (e: string) => {
@@ -29,22 +31,23 @@ const SideBar: React.FC<IProps> = props => {
   // };
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
+    <div className={`sidebar ${sideBarOpen ? 'open' : 'closed'}`}>
       <ul className='sidebar-list'>
         {tabs.map((data, index) => {
           return (
             <li key={index}>
               {data.type === '0' ? (
-                <CreateNew data={data} isOpen={isOpen} Visible={visible} />
+                <CreateNew data={data} sideBarOpen={sideBarOpen} />
               ) : (
                 <IconTitle
                   data={data}
-                  isOpen={isOpen}
+                  sideBarOpen={sideBarOpen}
+                  createNewBarOpen={createNewBarOpen}
                   // activeItem={activeItem}
                   //handleActiveItem={(e: string) => toggleActive(e)}
-                  index={index}
 
-                  side={side}
+                  //This index is used b/c of the json file uses '0' as the CreateNew Icon
+                  index={index}
                 />
               )}
             </li>
@@ -53,7 +56,7 @@ const SideBar: React.FC<IProps> = props => {
       </ul>
 
       <img
-        className={`expand-collapse-button ${isOpen ? 'open' : ''}`}
+        className={`expand-collapse-button ${sideBarOpen ? 'sideBarOpen' : ''}`}
         onClick={() => updateIsOpen()}
         src={require('../../images/doubleArrow.png')}
       />

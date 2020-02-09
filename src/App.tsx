@@ -38,7 +38,6 @@ export const App: React.FC<AppProps> = ({ activeItem, createIsOpen }) => {
 
   return (
     <div className='container'>
-
       <div className='topNav'>
         <div className='logo'>
           <a
@@ -80,11 +79,7 @@ export const App: React.FC<AppProps> = ({ activeItem, createIsOpen }) => {
         </div>
       </div>
       <div className='details'>
-        <SideBar
-          tabs={sideBarJson}
-          visible={e => setVisibility(e)}
-          side={visible}
-        />
+        <SideBar tabs={sideBarJson} />
         <div className='details_view'>
           <Switch>
             {routes.map(ea => {

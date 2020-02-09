@@ -32,7 +32,11 @@ const MiniWidget: React.FC<miniProp> = props => {
           )}
         </div>
       )}
-      <div className={`value_label ${data.scale ? '' : 'no-scale'}`}>
+      <div
+        className={`value_label ${
+          data.scale || !data.number ? '' : 'no-scale'
+        }`}
+      >
         <span className={`${data.number ? '' : 'description-only'}`}>
           {data.description}
         </span>

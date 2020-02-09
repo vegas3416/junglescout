@@ -151,32 +151,5 @@
         "title": "Home"
       }
     ]
-  },
-  {
-    "logo": "peopleIcon.png",
-    "title": "Jobs",
-    "subtitle": "",
-    "widgetData": [
-      {
-        "number": "32",
-        "description": "Open jobs"
-      },
-      {
-        "number": "264k",
-        "scale": 1,
-        "scaleValue": "20%",
-        "description": "Clicks(last month)"
-      }
-    ],
-    "links": [
-      {
-        "link": "www.indeed.com",
-        "title": "Indeed"
-      },
-      {
-        "link": "/",
-        "title": "Home"
-      }
-    ]
   }
 ]

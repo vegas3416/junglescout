@@ -2,7 +2,9 @@
 @import '~Janus/foundations/Typography/main';
 
 .miniWidget {
-  padding-right: 1.5rem;
+  &:first-child {
+    padding-right: 1.5rem;
+  }
   .value_data {
     align-items: center;
     display: flex;
@@ -41,7 +43,7 @@
     }
 
     .description-only {
-        white-space: normal;
+     white-space: pre-wrap;
     }
   }
 }

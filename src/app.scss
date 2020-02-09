@@ -82,19 +82,15 @@
     display: flex;
     //height: auto;
     width: 100%;
-    overflow: visible;
+    overflow-y: visible;
     min-height: 400px;
     position: absolute;
     top: 4rem;
     z-index: 100;
 
     &_view {
-      bottom: 0;
-      height: auto;
       overflow-y: auto;
-      padding: 2.75rem 3.75rem;
       width: 100%;
-      top: 0;
     }
   }
 }

@@ -9,8 +9,7 @@ import SideBar from './components/SideBar/sideBar';
 import SideJson from './components/SideBar/sideBar.json';
 import Profile from './components/widgets/Profile/profile';
 import Company from './components/widgets/Company/company';
-import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets';
-import { AppEvents } from './data/events';
+import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets'
 
 const sideBarJson = SideJson;
 

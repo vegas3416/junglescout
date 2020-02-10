@@ -9,6 +9,7 @@ interface SMProps {
 const SubMenu: React.FC<SMProps> = ({ data, advancedMenu }) => {
   return (
     <ul className={`subMenu ${advancedMenu ? 'advanced' : ''}`}>
+      
       {data.map((item, index) => {
         return (
           <li key={index} className='subMenu-item'>

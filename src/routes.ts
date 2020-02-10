@@ -1,7 +1,13 @@
 import { lazy } from 'react';
 
-const HomeHub = lazy(() => import('./pages/homeHub/index'));
-const Page = lazy(() => import('./pages/page2/index'));
+const HomeHub = lazy(() => import('./pages/homeHub/homeHub'));
+const JobsPage = lazy(() => import('./pages/jobsPage/jobsPage'));
+const CandidatesPage = lazy(() => import('./pages/candidatesPage/candidatesPage'));
+const CampaignsPage = lazy(() => import('./pages/campaignsPage/campaignsPage'));
+const AnalyticsPage = lazy(() => import('./pages/analyticsPage/analyticsPage'));
+const CompanyPage = lazy(() => import('./pages/companyPage/companyPage'));
+const ResourcesPage = lazy(() => import('./pages/resourcesPage/resourcesPage'));
+
 
 const routes = [
   {
@@ -12,11 +18,46 @@ const routes = [
     order: 0
   },
   {
-    path: '/pagetwo',
-    label: 'pagetwo',
-    component: Page,
+    path: '/jobs',
+    label: 'jobs',
+    component: JobsPage,
     exact: true,
     order: 1
+  },
+  {
+    path: '/candidates',
+    label: 'candidates',
+    component: CandidatesPage,
+    exact: true,
+    order: 2
+  },
+  {
+    path: '/campaigns',
+    label: 'campaigns',
+    component: CampaignsPage,
+    exact: true,
+    order: 3
+  },
+  {
+    path: '/analytics',
+    label: 'analytics',
+    component: AnalyticsPage,
+    exact: true,
+    order: 3
+  },
+  {
+    path: '/company',
+    label: 'company',
+    component: CompanyPage,
+    exact: true,
+    order: 4
+  },
+  {
+    path: '/resources',
+    label: 'resources',
+    component: ResourcesPage,
+    exact: true,
+    order: 5
   }
 ];
 

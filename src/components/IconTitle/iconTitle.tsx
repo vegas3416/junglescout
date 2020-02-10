@@ -23,6 +23,7 @@ interface IconProp extends RouteComponentProps<any> {
 interface IconData {
   logo: string;
   title: string;
+  page: string;
 }
 
 const IconTitle: React.FC<IconProp> = props => {
@@ -34,8 +35,8 @@ const IconTitle: React.FC<IconProp> = props => {
 
   const { data, sideBarOpen, index, createNewBarOpen } = props;
 
-  const nextPage = () => {
-    return props.history.push('/pagetwo');
+  const iconHomePage = () => {
+    return props.history.push(`/${data.page}`);
   };
 
   const handleActiveItem = (icon: string) => {
@@ -52,7 +53,7 @@ const IconTitle: React.FC<IconProp> = props => {
       onMouseLeave={() => setVisible(false)}
       onClick={() => {
         handleActiveItem(data.title);
-        //nextPage();
+        iconHomePage();
       }}
     >
       <img className='icon' src={require(`../../images/${data.logo}`)} />

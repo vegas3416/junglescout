@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import './sideBar.scss';
 import IconTitle from '../IconTitle/iconTitle';
 import CreateNew from '../CreateNew/createNew';
-import * as TYPES from '../../data/events';
 import { IAppState } from '../../data/store';
 
 export interface IProps extends RouteComponentProps<any> {

@@ -13,12 +13,14 @@
   },
   {
     "type": "1",
+    "page": "jobs",
     "logo": "suitcase.png",
     "title": "Jobs",
     "submenu": ["All Jobs", "Open", "Paused", "Closed"]
   },
   {
     "type": "1",
+    "page": "candidates",
     "logo": "people.png",
     "title": "Candidates",
     "submenu": [
@@ -31,12 +33,14 @@
   },
   {
     "type": "1",
+    "page": "campaigns",
     "logo": "bullhorn.png",
     "title": "Campaigns",
     "submenu": ["All Campaigns", "Sponsored Jobs", "Targeted Ads"]
   },
   {
     "type": "1",
+    "page": "analytics",
     "logo": "barIcon.png",
     "title": "Analytics",
     "submenu": [
@@ -48,8 +52,21 @@
   },
   {
     "type": "1",
+    "page": "company",
     "logo": "building.png",
     "title": "Company",
+    "submenu": [
+      "*In progress*",
+      "*In progress*",
+      "*In progress*",
+      "*In progress*"
+    ]
+  },
+  {
+    "type": "1",
+    "page": "resources",
+    "logo": "building.png",
+    "title": "Resources",
     "submenu": [
       "*In progress*",
       "*In progress*",

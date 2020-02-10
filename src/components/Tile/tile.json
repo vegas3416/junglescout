@@ -66,11 +66,11 @@
     "links": [
       {
         "link": "www.indeed.com",
-        "title": "FAQ"
+        "title": "Manage"
       },
       {
         "link": "/",
-        "title": "Contact your rep"
+        "title": "Contact new"
       }
     ]
   },
@@ -94,11 +94,11 @@
     "links": [
       {
         "link": "www.indeed.com",
-        "title": "Indeed"
+        "title": "Reports"
       },
       {
         "link": "/",
-        "title": "Home"
+        "title": "Insights"
       }
     ]
   },
@@ -122,11 +122,11 @@
     "links": [
       {
         "link": "www.indeed.com",
-        "title": "Indeed"
+        "title": "Locations"
       },
       {
         "link": "/",
-        "title": "Home"
+        "title": "Settings"
       }
     ]
   },
@@ -150,11 +150,11 @@
     "links": [
       {
         "link": "www.indeed.com",
-        "title": "Indeed"
+        "title": "FAQ"
       },
       {
         "link": "/",
-        "title": "Home"
+        "title": "Contact your rep"
       }
     ]
   }

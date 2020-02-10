@@ -46,10 +46,12 @@
 
   .callOuts {
     align-items: baseline;
+    border-bottom: 1px solid get-color(black, 500);
     display: flex;
     padding: 1rem 0;
 
-    border-bottom: 1px solid get-color(black, 500);
+    position: relative;
+    
   }
 
   .footer {
@@ -63,6 +65,7 @@
         font-weight: bold;
         font-size: 12px;
         line-height: 18px;
+        padding-bottom: 0.25rem;
       }
     }
   }

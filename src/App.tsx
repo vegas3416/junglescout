@@ -12,29 +12,19 @@ import Company from './components/widgets/Company/company';
 import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets';
 import { AppEvents } from './data/events';
 
-//Global State
-
 const sideBarJson = SideJson;
 
-interface AppProps {
-  activeItem: string;
-  createIsOpen: boolean;
-}
+// interface AppProps {
+//   activeItem: string;
+//   createIsOpen: boolean;
+// }
 
-export const App: React.FC<AppProps> = ({ activeItem, createIsOpen }) => {
-  const dispatch = useDispatch();
+export const App = () => {
+  //const dispatch = useDispatch();
 
-  console.log('Testdd: ', activeItem, createIsOpen);
-
-  const [visible, setVisible] = useState(false);
-
-  const setVisibility = e => {
-    setVisible(e);
-  };
-
-  const onClick = () => {
-    dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: 'Yes it is' });
-  };
+  // const onClick = () => {
+  //   dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: 'Yes it is' });
+  // };
 
   return (
     <div className='container'>

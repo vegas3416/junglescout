@@ -4,6 +4,7 @@
 .homeHub {
   display: grid;
   grid-template-columns: 320px 320px 320px;
+  grid-gap: 2.5rem 2.5rem;
   justify-content: center;
   padding: 1.25rem;
 
@@ -23,6 +24,8 @@
     margin: 2.5rem 3rem;
   }
 
+
+  //Still need to fix this for the smaller stuff
   @media only screen and (max-width: 1000px) {
     grid-template-columns: 1fr 1fr 1fr;
     margin: 2.5rem 2.5rem;

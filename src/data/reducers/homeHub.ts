@@ -4,7 +4,7 @@ import {AppEvents} from '../events';
 import { IAction } from '../actions/actions';
 
 export const initialState: IState = {
-  activeItem: 'junk',
+  activeItem: '',
   createIsOpen: false
 };
 

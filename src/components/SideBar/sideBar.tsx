@@ -14,8 +14,6 @@ export interface IProps extends RouteComponentProps<any> {
 const SideBar: React.FC<IProps> = props => {
   const { tabs } = props;
 
-  const dispatch = useDispatch();
-
   const createIsOpen = (state: IAppState) => state.homeHub.createIsOpen;
   const createNewBarOpen = useSelector(createIsOpen);
 
@@ -24,11 +22,6 @@ const SideBar: React.FC<IProps> = props => {
   const updateIsOpen = () => {
     setSideBarOpen(!sideBarOpen);
   };
-
-  // const toggleActive = (e: string) => {
-  //   console.log('Active Item: ', e);
-  //   dispatch({ type: TYPES.AppEvents.SET_ACTIVE_ITEM, payload: e });
-  // };
 
   return (
     <div className={`sidebar ${sideBarOpen ? 'open' : 'closed'}`}>

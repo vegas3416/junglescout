@@ -6,8 +6,21 @@
   cursor: pointer;
   display: flex;
   margin-left: 0.5rem;
-  padding: 1rem 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
   position: relative;
+
+  &.active {
+    background-color: get-color(black, 400);
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.75rem;
+
+    &:hover {
+      margin-right: unset;
+    }
+  }
 
   &.create {
     background-color: get-color(blue, core);

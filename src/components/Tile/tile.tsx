@@ -1,23 +1,31 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import './tile.scss';
 
 import MiniWidget, { MiniData } from '../MiniWidget/miniWidget';
 
-interface TileProps {
+interface TileProps extends RouteComponentProps<any>{
   data: TileData;
 }
 
 interface TileData {
-  logo: String;
-  title: String;
-  subtitle: String;
+  logo: string;
+  page: string;
+  title: string;
+  subtitle: string;
   widgetData: Array<MiniData>;
   links: Array<any>;
 }
 
-const Tile: React.FC<TileProps> = ({ data }) => {
+const Tile: React.FC<TileProps> = props => {
+  const { data } = props;
+
+  const tileHomePage = () => {
+    return props.history.push(`/${data.page}`);
+  };
+
   return (
-    <div className='tile'>
+    <div className='tile' onClick={() => tileHomePage()}>
       <header className='header'>
         {data.logo && (
           <img className='logo' src={require(`../../images/${data.logo}`)} />
@@ -47,4 +55,7 @@ const Tile: React.FC<TileProps> = ({ data }) => {
   );
 };
 
-export default Tile;
+export default withRouter(Tile);
+
+
+//e.stopPropagation();

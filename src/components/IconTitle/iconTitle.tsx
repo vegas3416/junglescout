@@ -40,12 +40,9 @@ const IconTitle: React.FC<IconProp> = props => {
   };
 
   const handleActiveItem = (icon: string) => {
-    console.log('Active Item: ', icon);
     dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: icon });
   };
 
-
-  console.log("State Active: ", activeItem);
   return (
     <div
       className={`iconTitle ${activeItem === data.title ? 'active' : ''}`}

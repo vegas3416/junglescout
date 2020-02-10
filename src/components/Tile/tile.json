@@ -1,6 +1,7 @@
 [
   {
     "logo": "suitcase.png",
+    "page": "jobs",
     "title": "Jobs",
     "subtitle": "",
     "widgetData": [
@@ -28,6 +29,7 @@
   },
   {
     "logo": "peopleIcon.png",
+    "page": "candidates",
     "title": "Candidates",
     "subtitle": "",
     "widgetData": [
@@ -53,6 +55,7 @@
   },
   {
     "logo": "peopleIcon.png",
+    "page": "campaigns",
     "title": "Campaigns",
     "subtitle": "",
     "widgetData": [
@@ -73,6 +76,7 @@
   },
   {
     "logo": "peopleIcon.png",
+    "page": "analytics",
     "title": "Analytics",
     "subtitle": "",
     "widgetData": [
@@ -100,6 +104,7 @@
   },
   {
     "logo": "peopleIcon.png",
+    "page": "company",
     "title": "Company",
     "subtitle": "",
     "widgetData": [
@@ -127,6 +132,7 @@
   },
   {
     "logo": "peopleIcon.png",
+    "page": "resources",
     "title": "Resources",
     "subtitle": "",
     "widgetData": [

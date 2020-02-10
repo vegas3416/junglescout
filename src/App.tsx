@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { useLocation } from 'react-router';
 import routes from './routes';
 import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux';
@@ -9,7 +9,7 @@ import SideBar from './components/SideBar/sideBar';
 import SideJson from './components/SideBar/sideBar.json';
 import Profile from './components/widgets/Profile/profile';
 import Company from './components/widgets/Company/company';
-import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets'
+import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets';
 
 const sideBarJson = SideJson;
 
@@ -18,7 +18,7 @@ const sideBarJson = SideJson;
 //   createIsOpen: boolean;
 // }
 
-export const App = () => {
+export const App = props => {
   //const dispatch = useDispatch();
 
   // const onClick = () => {

@@ -4,11 +4,22 @@
 .tile {
   background-color: get-color(white, core);
   border-radius: 1.5rem;
-  cursor: pointer;
+
   width: 100%;
   height: 280px;
-  padding: 2.5rem;
+
   position: relative;
+
+  //Added this myself
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.12);
+
+  &.disabled {
+    box-shadow: 0 0 14px -4px get-color(red, a11y);
+    &:hover {
+      border: unset;
+      box-shadow: 0 0 14px get-color(red, a11y);
+    }
+  }
 
   &:hover {
     border: 1px solid get-color(blue, core);
@@ -23,49 +34,56 @@
     //min-width: 274px;
   }
 
-  .header {
-    align-items: center;
-    border-bottom: 1px solid get-color(black, 500);
-    display: flex;
-
-    padding-bottom: 1.5rem;
-
-    .logo {
+  &-main-content {
+    padding: 2.5rem;
+    &.disabled {
+      cursor: none;
+      opacity: 0.5;
+      pointer-events: none;
     }
+    .header {
+      align-items: center;
+      border-bottom: 1px solid get-color(black, 500);
+      display: flex;
 
-    &-title {
-      font-family: Helvetica Neue;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 22px;
+      padding-bottom: 1.5rem;
 
-      padding-left: 0.5rem;
-    }
-  }
+      .logo {
+      }
 
-  .callOuts {
-    align-items: baseline;
-    border-bottom: 1px solid get-color(black, 500);
-    display: flex;
-    padding: 1rem 0;
-
-    position: relative;
-    
-  }
-
-  .footer {
-    padding: 1rem 0;
-
-    .footer-links {
-      &-item {
-        color: get-color(blue, core);
+      &-title {
         font-family: Helvetica Neue;
         font-style: normal;
         font-weight: bold;
-        font-size: 12px;
-        line-height: 18px;
-        padding-bottom: 0.25rem;
+        font-size: 16px;
+        line-height: 22px;
+
+        padding-left: 0.5rem;
+      }
+    }
+
+    .callOuts {
+      align-items: baseline;
+      border-bottom: 1px solid get-color(black, 500);
+      display: flex;
+      padding: 1rem 0;
+
+      position: relative;
+    }
+
+    .footer {
+      padding: 1rem 0;
+
+      .footer-links {
+        &-item {
+          color: get-color(blue, core);
+          font-family: Helvetica Neue;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 18px;
+          padding-bottom: 0.25rem;
+        }
       }
     }
   }

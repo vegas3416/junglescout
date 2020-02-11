@@ -108,7 +108,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.template.html',
-      title: 'Picasso Typescript Boilerplate',
+      title: 'Life made easier...',
       favicon: 'src/favicon.ico'
     })
   ]

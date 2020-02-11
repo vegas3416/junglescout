@@ -12,31 +12,29 @@
   position: absolute;
   top: 7rem;
 
-  transition: width 500ms;
+  //transition: width 500ms;
   width: 1.5rem;
 
   &.open {
-    transition: width 500ms;
+    //transition: width 500ms;
     width: 100%;
   }
 
   .notification {
     display: flex;
-    justify-content: flex-end;
+    //justify-content: flex-end;
     position: relative;
     width: 100%;
 
     .inner {
       overflow: hidden;
-      transition: opacity 100ms;
-      opacity: 0;
-      width: 0;
 
       &.open {
+        background-color: get-color(red, whisper);
         display: inline-block;
         padding: 0.625rem 1rem;
-        opacity: 1;
-        transition: width 100ms opacity 100ms;
+
+        //transition: width 1000ms;
         width: 100%;
       }
     }

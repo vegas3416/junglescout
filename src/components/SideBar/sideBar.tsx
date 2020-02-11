@@ -6,13 +6,15 @@ import IconTitle from '../IconTitle/iconTitle';
 import CreateNew from '../CreateNew/createNew';
 import { IAppState } from '../../data/store';
 
-export interface IProps extends RouteComponentProps<any> {
+interface IProps extends RouteComponentProps<any> {
   tabs: Array<any>;
 }
 
-const SideBar: React.FC<IProps> = props => {
-  const { tabs } = props;
+interface ArrayProps {
+  
+}
 
+const SideBar: React.FC<IProps> = ({ tabs }) => {
   const createIsOpen = (state: IAppState) => state.homeHub.createIsOpen;
   const createNewBarOpen = useSelector(createIsOpen);
 

@@ -16,6 +16,7 @@
     "page": "jobs",
     "logo": "suitcase.png",
     "title": "Jobs",
+    "notification": true,
     "submenu": ["All Jobs", "Open", "Paused", "Closed"]
   },
   {
@@ -23,6 +24,7 @@
     "page": "candidates",
     "logo": "people.png",
     "title": "Candidates",
+    "notification": false,
     "submenu": [
       "View Candidates",
       "Resume Search",
@@ -36,6 +38,7 @@
     "page": "campaigns",
     "logo": "bullhorn.png",
     "title": "Campaigns",
+    "notification": false,
     "submenu": ["All Campaigns", "Sponsored Jobs", "Targeted Ads"]
   },
   {
@@ -43,6 +46,7 @@
     "page": "analytics",
     "logo": "barIcon.png",
     "title": "Analytics",
+    "notification": false,
     "submenu": [
       "*In progress*",
       "*In progress*",
@@ -55,6 +59,7 @@
     "page": "company",
     "logo": "building.png",
     "title": "Company",
+    "notification": false,
     "submenu": [
       "*In progress*",
       "*In progress*",
@@ -67,6 +72,7 @@
     "page": "resources",
     "logo": "building.png",
     "title": "Resources",
+    "notification": false,
     "submenu": [
       "*In progress*",
       "*In progress*",

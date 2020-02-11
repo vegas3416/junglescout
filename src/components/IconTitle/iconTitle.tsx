@@ -10,33 +10,38 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ActionType } from 'redux-promise-middleware';
 import { AppEvents } from '../../data/events';
 import { IAppState } from '../../data/store';
-
-//Bad
+import { History } from 'history';
 
 interface IconProp extends RouteComponentProps<any> {
   data: IconData;
   sideBarOpen?: boolean;
   createNewBarOpen?: boolean;
   index: number;
+  history: History;
 }
 
 interface IconData {
   logo: string;
   title: string;
   page: string;
+  notification: boolean;
 }
 
-const IconTitle: React.FC<IconProp> = props => {
+const IconTitle: React.FC<IconProp> = ({
+  data,
+  sideBarOpen,
+  createNewBarOpen,
+  index,
+  history
+}) => {
   const dispatch = useDispatch();
   const stateActiveItem = (state: IAppState) => state.homeHub.activeItem;
   const activeItem = useSelector(stateActiveItem);
 
   const [visible, setVisible] = useState(false);
 
-  const { data, sideBarOpen, index, createNewBarOpen } = props;
-
   const iconHomePage = () => {
-    return props.history.push(`/${data.page}`);
+    return history.push(`/${data.page}`);
   };
 
   const handleActiveItem = (icon: string) => {
@@ -53,6 +58,7 @@ const IconTitle: React.FC<IconProp> = props => {
         iconHomePage();
       }}
     >
+      {data.notification && <span className='iconTitle-notification'></span>}
       <img className='icon' src={require(`../../images/${data.logo}`)} />
 
       <div className='iconTitle-title'>

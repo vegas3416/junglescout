@@ -14,12 +14,6 @@ const TileNotification = props => {
   return (
     <div className={`tileNotification ${isOpen ? 'open' : ''}`}>
       <div className='notification'>
-        {/* <div className='notification-title'>
-          <span className={`inner ${isOpen ? 'open' : ''}`}>
-            You have 2 campaigns that have expired. Learn more
-          </span>
-        </div> */}
-
         <span className={`inner ${isOpen ? 'open' : ''}`}>
           You have 2 campaigns that have expired. Learn more
         </span>
@@ -31,7 +25,17 @@ const TileNotification = props => {
             showNotification();
           }}
         >
-          <img src={require('../../../images/notificationIcon.png')} />
+          {isOpen ? (
+            <img
+              className='closeIcon'
+              src={require('../../../images/closeIcon.png')}
+            />
+          ) : (
+            <img
+              className='openIcon'
+              src={require('../../../images/notificationSmallIcon.png')}
+            />
+          )}
         </div>
       </div>
     </div>

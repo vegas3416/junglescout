@@ -22,18 +22,21 @@
     }
   }
 
-  &.create {
-    background-color: get-color(blue, core);
-    border-radius: 0.5rem;
-    justify-content: center;
-    align-items: center;
-  }
-
   &:hover {
     background-color: get-color(black, 400);
     border-radius: 0.5rem;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  &-notification {
+    background-color: get-color(red, core);
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    height: 1rem;
+    left: -0.5rem;
+    position: absolute;
+    width: 0.25rem;
   }
 
   &-title {

@@ -13,18 +13,7 @@ import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets';
 
 const sideBarJson = SideJson;
 
-// interface AppProps {
-//   activeItem: string;
-//   createIsOpen: boolean;
-// }
-
-export const App = props => {
-  //const dispatch = useDispatch();
-
-  // const onClick = () => {
-  //   dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: 'Yes it is' });
-  // };
-
+export const App = () => {
   return (
     <div className='container'>
       <div className='topNav'>

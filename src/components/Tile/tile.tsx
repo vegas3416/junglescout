@@ -31,11 +31,10 @@ const Tile: React.FC<TileProps> = props => {
     setDisable(e);
   };
 
-  console.log('Disabled: ', disable);
   return (
-    <div className={`tile ${disable ? 'disabled' : ''}`}>
+    <div className='tile'>
       <div
-        className={`tile-main-content ${disable ? 'disabled' : ''}`}
+        className='tile-main-content'
         onClick={() => tileHomePage()}
       >
         <header className='header'>

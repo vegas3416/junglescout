@@ -14,6 +14,7 @@ interface TileData {
   page: string;
   title: string;
   subtitle: string;
+  notification: boolean;
   widgetData: Array<MiniData>;
   links: Array<any>;
 }
@@ -33,10 +34,7 @@ const Tile: React.FC<TileProps> = props => {
 
   return (
     <div className='tile'>
-      <div
-        className='tile-main-content'
-        onClick={() => tileHomePage()}
-      >
+      <div className='tile-main-content' onClick={() => tileHomePage()}>
         <header className='header'>
           {data.logo && (
             <img className='logo' src={require(`../../images/${data.logo}`)} />
@@ -63,8 +61,9 @@ const Tile: React.FC<TileProps> = props => {
           </ul>
         </footer>
       </div>
-
-      <TileNotification onClick={(e: any) => tileStatus(e)} />
+      {data.notification && (
+        <TileNotification onClick={(e: any) => tileStatus(e)} />
+      )}
     </div>
   );
 };

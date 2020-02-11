@@ -4,6 +4,7 @@
     "page": "jobs",
     "title": "Jobs",
     "subtitle": "",
+    "notification": true,
     "widgetData": [
       {
         "number": "32",
@@ -32,6 +33,7 @@
     "page": "candidates",
     "title": "Candidates",
     "subtitle": "",
+    "notification": false,
     "widgetData": [
       {
         "number": "12",
@@ -58,6 +60,7 @@
     "page": "campaigns",
     "title": "Campaigns",
     "subtitle": "",
+    "notification": false,
     "widgetData": [
       {
         "description": "Access to helpful resources to better manage your team’s experience on Indeed."
@@ -79,6 +82,7 @@
     "page": "analytics",
     "title": "Analytics",
     "subtitle": "",
+    "notification": false,
     "widgetData": [
       {
         "number": "32",
@@ -107,6 +111,7 @@
     "page": "company",
     "title": "Company",
     "subtitle": "",
+    "notification": false,
     "widgetData": [
       {
         "number": "32",
@@ -135,6 +140,7 @@
     "page": "resources",
     "title": "Resources",
     "subtitle": "",
+    "notification": false,
     "widgetData": [
       {
         "number": "32",

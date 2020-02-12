@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Link } from 'react-router-dom';
 import { useLocation } from 'react-router';
 import routes from './routes';
 import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux';
@@ -15,21 +15,22 @@ import HomeHub from './pages/homeHub/homeHub';
 
 const sideBarJson = SideJson;
 
-export const App = (props) => {
+export const App = props => {
   const history = History;
   return (
     <div className='container'>
       <div className='topNav'>
         <div className='logo'>
-          <a
+          {/* <a
             className='logo-link'
             
             onClick={() => {}}
             role='homePage-link'
             aria-label='homePage-link'
-          >
+          > */}
+          <Link to="/">
             <img src={require('./images/indeedI.png')} />
-          </a>
+          </Link>
         </div>
         <div className='search'>
           <input

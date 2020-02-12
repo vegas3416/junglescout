@@ -2,57 +2,50 @@
 @import '~Janus/foundations/Typography/main';
 
 .analyticsCallOuts {
-  //align-items: center;
-  border: 1px solid get-color(black, 500);
+  align-items: center;
+  border: 1px solid get-color(red, core);
+  border-left: 0.5rem solid get-color(red, core);
+  border-radius: 0.25rem;
   display: flex;
 
-  padding: 1rem 1rem 1rem 0.5rem;
-  width: 100%;
+  margin: 1rem 1rem 0 1rem;
+  padding: 1rem;
 
   &-recommendations {
-    position: relative;
-    width: 100%;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 0.75rem;
-      height: 100%;
-      background-color: red;
-      border-radius: 100px;
-    }
-
-    &-header {
-      color: get-color(red, a11y);
-      font-family: Inter;
+    padding-right: 10rem;
+    .basicText {
+      color: get-color(black, core);
+      font-family: Helvetica Neue;
       font-style: normal;
-      font-weight: bold;
-      font-size: 1rem;
-      line-height: 14px;
-      padding: 0.5rem 0 0.5rem 1.75rem;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
     }
-
-    .recommendations-list {
-      padding: 0 0 0.5rem 1.75rem;
-
-      &-item {
-        font-family: Inter;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 1rem;
-        line-height: 18px;
-        padding-bottom: 0.5rem;
-
-        &-link {
-          color: get-color(blue, core);
-          text-decoration: underline;
-        }
-      }
+    .redText {
+      color: get-color(red, a11y);
+      font-weight: bold;
+    }
+    .boldedText {
+      font-weight: bold;
     }
 
     &-button {
+      align-items: center;
+      display: flex;
       align-self: flex-end;
       margin-bottom: 0.5rem;
+
+      .no-thanks-click {
+        color: get-color(blue, core);
+        cursor: pointer;
+        font-family: Helvetica Neue;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        padding-right: 1rem;
+        white-space: nowrap;
+      }
     }
   }
 }

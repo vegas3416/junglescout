@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './callOuts.scss';
 import Button from '@indeed/frontend-components-react/components/Button';
@@ -8,39 +8,39 @@ import { AppEvents } from '../../../data/events';
 const AnalyticsCallOuts = props => {
   const dispatch = useDispatch();
 
+  //Bad but for prototype
+  const value = '3 low perfoming jobs';
+
+  const { shouldShowCallOut } = props;
+
   const pageGoTo = e => {
     props.history.push('/campaigns');
     dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: e });
   };
   return (
     <div className='analyticsCallOuts'>
-      <div className='analyticsCallOuts-recommendations'>
-        <header className='analyticsCallOuts-recommendations-header'>
-          The following 3 jobs are under performing. (0 candidates in the last
-          two weeks.)
-        </header>
-        <ul className='recommendations-list'>
-          <li className='recommendations-list-item'>
-            <Link className='recommendations-list-item-link' to=''>
-              REF210 Cust. Service Rep. — Austin, TX
-            </Link>
-          </li>
-          <li className='recommendations-list-item'>
-            <Link className='recommendations-list-item-link' to=''>
-              REF184 Customer Service Representative — Austin, TX
-            </Link>
-          </li>
-          <li className='recommendations-list-item'>
-            <Link className='recommendations-list-item-link' to=''>
-              REF193 Customer Rep. — Austin, TX
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <header className='analyticsCallOuts-recommendations'>
+        <span className='basicText'>
+          We’ve identified <span className='redText'>${value}</span>. These jobs
+          have had <span className='boldedText'>0</span> new candidates in the
+          last two weeks. We have created a new campaign recommendation to help
+          you better source for these roles.
+        </span>
+      </header>
+
       <div
         className='analyticsCallOuts-recommendations-button'
         onClick={() => pageGoTo('Campaigns')}
       >
+        <span
+          className='no-thanks-click'
+          onClick={e => {
+            e.stopPropagation();
+            shouldShowCallOut(false);
+          }}
+        >
+          No thanks
+        </span>
         <Button>View campaign recommendations</Button>
       </div>
     </div>

@@ -4,6 +4,8 @@ import './tile.scss';
 
 import MiniWidget, { MiniData } from '../MiniWidget/miniWidget';
 import TileNotification from './TileNotification/tileNotification';
+import { useDispatch } from 'react-redux';
+import { AppEvents } from '../../data/events';
 
 interface TileProps extends RouteComponentProps<any> {
   data: TileData;
@@ -20,10 +22,12 @@ interface TileData {
 }
 
 const Tile: React.FC<TileProps> = props => {
+  const dispatch = useDispatch();
   const { data } = props;
 
   const tileHomePage = () => {
-    return props.history.push(`/${data.page}`);
+    props.history.push(`/${data.page}`);
+    dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: `${data.title}` });
   };
 
   const [disable, setDisable] = useState(false);

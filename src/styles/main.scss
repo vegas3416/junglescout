@@ -18,14 +18,14 @@ a {
     color: #7382ab;
   }
 
-  &::after {
-    position: absolute;
-    bottom: -1px;
-    background-color: #e7ebf2;
-    height: 6px;
-    content: '';
-    left: 4px;
-    right: -6px;
-    z-index: -1;
-  }
+  // &::after {
+  //   position: absolute;
+  //   bottom: -1px;
+  //   background-color: #e7ebf2;
+  //   height: 6px;
+  //   content: '';
+  //   left: 4px;
+  //   right: -6px;
+  //   z-index: -1;
+  // }
 }

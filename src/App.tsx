@@ -1,9 +1,6 @@
-import React, { useState, useEffect, Suspense } from 'react';
-import { Route, Switch, withRouter, Link } from 'react-router-dom';
-import { useLocation } from 'react-router';
+import React from 'react';
+import { Route, Switch, Link } from 'react-router-dom';
 import routes from './routes';
-import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux';
-import { History } from 'history';
 
 import './app.scss';
 import SideBar from './components/SideBar/sideBar';
@@ -11,24 +8,15 @@ import SideJson from './components/SideBar/sideBar.json';
 import Profile from './components/widgets/Profile/profile';
 import Company from './components/widgets/Company/company';
 import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets';
-import HomeHub from './pages/homeHub/homeHub';
 
 const sideBarJson = SideJson;
 
-export const App = props => {
-  const history = History;
+export const App = () => {
   return (
     <div className='container'>
       <div className='topNav'>
         <div className='logo'>
-          {/* <a
-            className='logo-link'
-            
-            onClick={() => {}}
-            role='homePage-link'
-            aria-label='homePage-link'
-          > */}
-          <Link to="/">
+          <Link to='/' aria-label='homePage-icon' role='homePage-icon'>
             <img src={require('./images/indeedI.png')} />
           </Link>
         </div>

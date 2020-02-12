@@ -1,0 +1,80 @@
+{
+    "profile": "Profile",
+    "profilemenu": [
+        {
+            "name": "knaguib@indeed.com",
+            "icon": "",
+            "title": "user",
+            "link": null,
+            "href": null
+        },
+        {
+            "name": "Billing",
+            "icon": "",
+            "title": "title",
+            "link": null,
+            "href": null
+        },
+        {
+            "name": "Invoices",
+            "icon": "invoice",
+            "title": "icon",
+            "link": null,
+            "href": null
+        },
+        {
+            "name": "Payment method",
+            "icon": "payment",
+            "title": "icon",
+            "link": null,
+            "href": null
+        },
+        {
+            "name": "Team",
+            "icon": "",
+            "title": "title",
+            "link": null,
+            "href": null
+        },
+        {
+            "name": "Manage access",
+            "icon": "access",
+            "title": "icon",
+            "link": null,
+            "href": null
+        },
+        {
+            "name": "Account",
+            "icon": "",
+            "title": "title"
+        },
+        {
+            "name": "My settings",
+            "icon": "mysettings",
+            "title": "icon",
+            "link": null,
+            "href": null
+        },
+        {
+            "name": "Company settings",
+            "icon": "companysettings",
+            "title": "icon",
+            "link": null,
+            "href": null
+        },
+        {
+            "name": "Visit Indeed for job seekers",
+            "icon": "",
+            "title": null,
+            "link": "link",
+            "href": "http://www.indeed.com"
+        },
+        {
+            "name": "Sign out",
+            "icon": "",
+            "title": null,
+            "link": "link",
+            "href": null
+        }
+    ]
+}

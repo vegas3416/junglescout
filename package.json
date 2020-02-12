@@ -66,6 +66,7 @@
   },
   "dependencies": {
     "@indeed/frontend-style-janus": "^12.2.0",
+    "@indeed/int-frontend-components": "^1.11.2",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/webpack-env": "^1.15.1",
@@ -75,6 +76,8 @@
     "lodash": "^4.17.15",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.16",
+    "react-chartjs-2": "^2.8.0",
+    "react-dates": "^21.5.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",

@@ -34,7 +34,6 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        
         test: /(\.jsx?|\.tsx?)$/,
         exclude: /node_modules(?!(\/@indeed\/mirrorball-flora\/|\/@indeed\/cortex-frontend|\/@indeed\/frontend-components-react\/|\/query-string\/|\/split-on-first\/|\/strict-uri-encode\/))|modernizr|foundation/,
         use: {

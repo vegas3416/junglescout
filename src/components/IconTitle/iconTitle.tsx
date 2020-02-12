@@ -50,7 +50,9 @@ const IconTitle: React.FC<IconProp> = ({
 
   return (
     <div
-      className={`iconTitle ${activeItem === data.title ? 'active' : ''}`}
+      className={`iconTitle ${activeItem === data.title ? 'active' : ''} ${
+        data.title === 'Home' ? 'home' : ''
+      }`}
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
       onClick={() => {
@@ -68,7 +70,7 @@ const IconTitle: React.FC<IconProp> = ({
       </div>
 
       <div className='iconTitleMenu'>
-        {visible && !createNewBarOpen && (
+        {visible && !createNewBarOpen && subMenu[index].submenu && (
           <SubMenu data={subMenu[index].submenu} />
         )}
       </div>

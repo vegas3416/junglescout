@@ -4,7 +4,7 @@
     "page": "jobs",
     "title": "Jobs",
     "subtitle": "",
-    "notification": true,
+    "notification": false,
     "widgetData": [
       {
         "number": "32",
@@ -82,7 +82,7 @@
     "page": "analytics",
     "title": "Analytics",
     "subtitle": "",
-    "notification": false,
+    "notification": true,
     "widgetData": [
       {
         "number": "32",

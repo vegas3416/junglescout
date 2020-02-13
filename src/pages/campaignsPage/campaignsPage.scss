@@ -18,14 +18,87 @@
     .campaignsPage-filler222 {
       width: 100%;
     }
+
+    .campaignsCallOut {
+      align-items: center;
+      background-color: get-color(blue, whisper);
+      display: flex;
+      position: absolute;
+      z-index: 100;
+
+      top: 0;
+      right: 0;
+      height: 100%;
+      padding: 0.25rem 1rem 0.25rem 2rem;
+
+      .button1 {
+        color: get-color(blue, a11y);
+        cursor: pointer;
+        background-color: white;
+        font-family: Helvetica Neue;
+        font-style: normal;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        padding: 0.5rem 2rem;
+        border-radius: 1.5rem;
+        border: 2px solid get-color(blue, core);
+
+        height: 36px;
+
+        margin-right: 1rem;
+        text-align: center;
+      }
+      .button2 {
+        cursor: pointer;
+        color: white;
+        font-family: Helvetica Neue;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 0.5rem 2rem;
+        background-color: get-color(blue, core);
+        border-radius: 1.5rem;
+        text-align: center;
+        height: 36px;
+      }
+    }
   }
   &-filler3 {
     width: 100%;
   }
 
+  &-created {
+      width: 100%;
+  }
+
   .icl-Modal-wrapper {
-      .icl-Modal {
-          border-radius: 0.5rem;
+    .icl-Modal {
+      border-radius: 0.5rem;
+
+      .modal-buttons {
+        .bottom-buttons {
+          align-items: center;
+          padding-top: 1rem;
+          display: flex;
+          justify-content: flex-end;
+
+          .cancel-button {
+            cursor: pointer;
+            color: get-color(blue, core);
+            font-family: Helvetica Neue;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 18px;
+            padding-right: 1.25rem;
+          }
+
+          .icl-Button {
+            padding: 0.25rem 3rem;
+          }
+        }
       }
+    }
   }
 }

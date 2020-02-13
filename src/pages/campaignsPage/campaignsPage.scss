@@ -2,5 +2,37 @@
 @import '~Janus/foundations/Typography/main';
 
 .campaignsPage {
-    
+  padding: 3rem;
+  position: relative;
+
+  &-filler {
+    padding-bottom: 2rem;
+    width: 100%;
+  }
+  &-filler2 {
+    width: 100%;
+  }
+  &-filler22 {
+    position: relative;
+    width: 100%;
+    .campaignsPage-filler222 {
+      width: 100%;
+    }
+  }
+  &-filler3 {
+    width: 100%;
+  }
+
+  .modal {
+    position: absolute;
+
+    &-content {
+      background-color: get-color(white, core);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+
+      width: auto;
+      height: auto;
+    }
+  }
 }

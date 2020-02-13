@@ -10,9 +10,7 @@ interface IProps extends RouteComponentProps<any> {
   tabs: Array<any>;
 }
 
-interface ArrayProps {
-  
-}
+interface ArrayProps {}
 
 const SideBar: React.FC<IProps> = ({ tabs }) => {
   const createIsOpen = (state: IAppState) => state.homeHub.createIsOpen;

@@ -38,6 +38,9 @@ const IconTitle: React.FC<IconProp> = ({
   const stateActiveItem = (state: IAppState) => state.homeHub.activeItem;
   const activeItem = useSelector(stateActiveItem);
 
+  const gNotifications = (state: IAppState) => state.homeHub.notifications;
+  const notifications = useSelector(gNotifications);
+
   const [visible, setVisible] = useState(false);
 
   const iconHomePage = () => {
@@ -60,7 +63,11 @@ const IconTitle: React.FC<IconProp> = ({
         iconHomePage();
       }}
     >
-      {data.notification && <span className='iconTitle-notification'></span>}
+      {notifications.map((item, index) => {
+        if (data.title === item.type) {
+          return <span key={index} className='iconTitle-notification'></span>;
+        }
+      })}
       <img className='icon' src={require(`../../images/${data.logo}`)} />
 
       <div className='iconTitle-title'>

@@ -4,6 +4,7 @@ import './callOuts.scss';
 import Button from '@indeed/frontend-components-react/components/Button';
 import { withRouter, Link } from 'react-router-dom';
 import { AppEvents } from '../../../data/events';
+import { Types } from '../../../utilities/constants';
 
 const AnalyticsCallOuts = props => {
   const dispatch = useDispatch();
@@ -16,12 +17,13 @@ const AnalyticsCallOuts = props => {
   const pageGoTo = e => {
     props.history.push('/campaigns');
     dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: e });
+    dispatch({ type: AppEvents.CHECK_NOTIFICATIONS, payload: Types.ANALYTICS });
   };
   return (
     <div className='analyticsCallOuts'>
       <header className='analyticsCallOuts-recommendations'>
         <span className='basicText'>
-          We’ve identified <span className='redText'>${value}</span>. These jobs
+          We’ve identified <span className='redText'>{value}</span>. These jobs
           have had <span className='boldedText'>0</span> new candidates in the
           last two weeks. We have created a new campaign recommendation to help
           you better source for these roles.

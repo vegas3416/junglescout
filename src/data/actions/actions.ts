@@ -18,6 +18,8 @@ export const SetActiveItem = makeAction<AppEvents.SET_ACTIVE_ITEM, string>(
   AppEvents.SET_ACTIVE_ITEM
 );
 
+export const SetCheckForNotification = makeAction<AppEvents.CHECK_NOTIFICATIONS, string>(AppEvents.CHECK_NOTIFICATIONS);
+
 //End of Actions
 
 //Helper setup to aid in the reducers file
@@ -33,7 +35,8 @@ type IActionUnion<A extends IStringMap<IAnyFunction>> = ReturnType<A[keyof A]>;
 //Any actions you create need to add it to here so reducers know what is up
 const actions = {
   SetCreateNewIsOpen,
-  SetActiveItem
+  SetActiveItem,
+  SetCheckForNotification
 };
 
 export type IAction = IActionUnion<typeof actions>;

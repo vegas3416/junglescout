@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import './tile.scss';
 
@@ -6,6 +8,7 @@ import MiniWidget, { MiniData } from '../MiniWidget/miniWidget';
 import TileNotification from './TileNotification/tileNotification';
 import { useDispatch } from 'react-redux';
 import { AppEvents } from '../../data/events';
+import { IAppState } from '../../data/store';
 
 interface TileProps extends RouteComponentProps<any> {
   data: TileData;
@@ -16,7 +19,6 @@ interface TileData {
   page: string;
   title: string;
   subtitle: string;
-  notification: boolean;
   widgetData: Array<MiniData>;
   links: Array<any>;
 }
@@ -24,6 +26,9 @@ interface TileData {
 const Tile: React.FC<TileProps> = props => {
   const dispatch = useDispatch();
   const { data } = props;
+
+  const gNotifications = (state: IAppState) => state.homeHub.notifications;
+  const notifications = useSelector(gNotifications);
 
   const tileHomePage = () => {
     props.history.push(`/${data.page}`);
@@ -65,9 +70,12 @@ const Tile: React.FC<TileProps> = props => {
           </ul>
         </footer>
       </div>
-      {data.notification && (
-        <TileNotification onClick={(e: any) => tileStatus(e)} />
-      )}
+      {notifications.map((item, index) => {
+        console.log(item.type, data.title);
+        if (data.title === item.type) {
+          return <TileNotification key={index} onClick={(e: any) => tileStatus(e)} />;
+        }
+      })}
     </div>
   );
 };

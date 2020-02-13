@@ -23,8 +23,7 @@ interface IconProp extends RouteComponentProps<any> {
 interface IconData {
   logo: string;
   title: string;
-  page: string;
-  notification: boolean;
+  page?: string;
 }
 
 const IconTitle: React.FC<IconProp> = ({
@@ -48,7 +47,9 @@ const IconTitle: React.FC<IconProp> = ({
   };
 
   const handleActiveItem = (icon: string) => {
-    dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: icon });
+    data.logo
+      ? dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: icon })
+      : dispatch({ type: AppEvents.SET_USER, payload: data.title });
   };
 
   return (
@@ -68,7 +69,9 @@ const IconTitle: React.FC<IconProp> = ({
           return <span key={index} className='iconTitle-notification'></span>;
         }
       })}
-      <img className='icon' src={require(`../../images/${data.logo}`)} />
+      {data.logo && (
+        <img className='icon' src={require(`../../images/${data.logo}`)} />
+      )}
 
       <div className='iconTitle-title'>
         <span className={`inner ${sideBarOpen ? 'sideBarOpen' : ''}`}>
@@ -76,11 +79,13 @@ const IconTitle: React.FC<IconProp> = ({
         </span>
       </div>
 
-      <div className='iconTitleMenu'>
-        {visible && !createNewBarOpen && subMenu[index].submenu && (
-          <SubMenu data={subMenu[index].submenu} />
-        )}
-      </div>
+      {data.logo && (
+        <div className='iconTitleMenu'>
+          {visible && !createNewBarOpen && subMenu[index].submenu && (
+            <SubMenu data={subMenu[index].submenu} />
+          )}
+        </div>
+      )}
     </div>
   );
 };

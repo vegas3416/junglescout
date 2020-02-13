@@ -9,7 +9,7 @@ import Profile from './components/widgets/Profile/profile';
 import Company from './components/widgets/Company/company';
 import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets';
 
-const sideBarJson = SideJson;
+const sideJson = SideJson;
 
 export const App = () => {
   return (
@@ -49,7 +49,7 @@ export const App = () => {
         </div>
       </div>
       <div className='details'>
-        <SideBar tabs={sideBarJson} />
+        <SideBar tabs={sideJson} />
         <div className='details_view'>
           <Switch>
             {routes.map(ea => {

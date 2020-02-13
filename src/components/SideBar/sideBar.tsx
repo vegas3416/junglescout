@@ -7,10 +7,16 @@ import CreateNew from '../CreateNew/createNew';
 import { IAppState } from '../../data/store';
 
 interface IProps extends RouteComponentProps<any> {
-  tabs: Array<any>;
+  tabs: Array<ArrayProps>;
 }
 
-interface ArrayProps {}
+interface ArrayProps {
+  type: Array<string>;
+  page?: string;
+  logo: string;
+  title: string;
+  submenu?: Array<any>;
+}
 
 const SideBar: React.FC<IProps> = ({ tabs }) => {
   const createIsOpen = (state: IAppState) => state.homeHub.createIsOpen;
@@ -22,25 +28,32 @@ const SideBar: React.FC<IProps> = ({ tabs }) => {
     setSideBarOpen(!sideBarOpen);
   };
 
+  //Need this for user but probably use something like PIE instead
+  const gUser = (state: IAppState) => state.homeHub.user;
+  const user = useSelector(gUser);
+
   return (
     <div className={`sidebar ${sideBarOpen ? 'open' : 'closed'}`}>
       <ul className='sidebar-list'>
         {tabs.map((data, index) => {
+          console.log(data);
           return (
             <li key={index}>
-              {data.type === '0' ? (
+              {index === 0 ? (
                 <CreateNew data={data} sideBarOpen={sideBarOpen} />
               ) : (
-                <IconTitle
-                  data={data}
-                  sideBarOpen={sideBarOpen}
-                  createNewBarOpen={createNewBarOpen}
-                  // activeItem={activeItem}
-                  //handleActiveItem={(e: string) => toggleActive(e)}
+                data.type.includes(user) && (
+                  <IconTitle
+                    data={data}
+                    sideBarOpen={sideBarOpen}
+                    createNewBarOpen={createNewBarOpen}
+                    // activeItem={activeItem}
+                    //handleActiveItem={(e: string) => toggleActive(e)}
 
-                  //This index is used b/c of the json file uses '0' as the CreateNew Icon
-                  index={index}
-                />
+                    //This index is used b/c of the json file uses '0' as the CreateNew Icon
+                    index={index}
+                  />
+                )
               )}
             </li>
           );

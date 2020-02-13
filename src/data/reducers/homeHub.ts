@@ -1,21 +1,21 @@
 import update from 'immutability-helper';
 
 import { AppEvents } from '../events';
-import { IAction, SetActiveItem } from '../actions/actions';
-import { $CombinedState } from 'redux';
-import { IAppState } from '../store';
-import { ActionType } from 'redux-promise-middleware';
+import { IAction } from '../actions/actions';
+
 
 export const initialState: IState = {
   activeItem: '',
   createIsOpen: false,
-  notifications: [{ type: 'Analytics' }]
+  notifications: [{ type: 'Analytics' }],
+  user: 'Manager'
 };
 
 export interface IState {
   activeItem: string;
   createIsOpen: boolean;
   notifications: Array<Notifications>;
+  user: string;
 }
 
 interface Notifications {
@@ -38,6 +38,10 @@ export const homeHub = (
     case AppEvents.CHECK_NOTIFICATIONS:
       return update(state, {
         notifications: { $set: state.notifications.filter(item => item.type != action.payload) }
+      });
+    case AppEvents.SET_USER:
+      return update(state, {
+        user: { $set: action.payload }
       });
     default:
       return state;

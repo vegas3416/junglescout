@@ -12,9 +12,11 @@ import { IAppState } from '../../data/store';
 
 interface TileProps extends RouteComponentProps<any> {
   data: TileData;
+  user: string;
 }
 
 interface TileData {
+  type: Array<string>;
   logo: string;
   page: string;
   title: string;
@@ -25,7 +27,7 @@ interface TileData {
 
 const Tile: React.FC<TileProps> = props => {
   const dispatch = useDispatch();
-  const { data } = props;
+  const { data, user } = props;
 
   const gNotifications = (state: IAppState) => state.homeHub.notifications;
   const notifications = useSelector(gNotifications);
@@ -70,10 +72,12 @@ const Tile: React.FC<TileProps> = props => {
           </ul>
         </footer>
       </div>
+      {data.type.includes(user) && <div></div>}
       {notifications.map((item, index) => {
-        console.log(item.type, data.title);
         if (data.title === item.type) {
-          return <TileNotification key={index} onClick={(e: any) => tileStatus(e)} />;
+          return (
+            <TileNotification key={index} onClick={(e: any) => tileStatus(e)} />
+          );
         }
       })}
     </div>

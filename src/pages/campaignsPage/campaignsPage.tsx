@@ -75,7 +75,10 @@ const CampaignsPage = () => {
               children='Create campaign'
               buttonType='primary'
               id='previewComponent'
-              onClick={() => setCampaign(!campaignDone)}
+              onClick={() => {
+                setShowModal(!showModal);
+                setCampaign(!campaignDone);
+              }}
               size='sm'
             />
           </div>

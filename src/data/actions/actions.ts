@@ -9,16 +9,13 @@ const makeAction = <T extends AppEvents, P>(type: T) => (payload: P) => {
 };
 
 //All my actions
-export const SetCreateNewIsOpen = makeAction<
-  AppEvents.SET_CREATE_NEW_IS_OPEN,
-  boolean
->(AppEvents.SET_CREATE_NEW_IS_OPEN);
+export const SetCreateNewIsOpen = makeAction<AppEvents.SET_CREATE_NEW_IS_OPEN, boolean>(AppEvents.SET_CREATE_NEW_IS_OPEN);
 
-export const SetActiveItem = makeAction<AppEvents.SET_ACTIVE_ITEM, string>(
-  AppEvents.SET_ACTIVE_ITEM
-);
+export const SetActiveItem = makeAction<AppEvents.SET_ACTIVE_ITEM, string>(AppEvents.SET_ACTIVE_ITEM);
 
 export const SetCheckForNotification = makeAction<AppEvents.CHECK_NOTIFICATIONS, string>(AppEvents.CHECK_NOTIFICATIONS);
+
+export const SetUserFlow = makeAction<AppEvents.SET_USER, string>(AppEvents.SET_USER);
 
 //End of Actions
 
@@ -36,7 +33,8 @@ type IActionUnion<A extends IStringMap<IAnyFunction>> = ReturnType<A[keyof A]>;
 const actions = {
   SetCreateNewIsOpen,
   SetActiveItem,
-  SetCheckForNotification
+  SetCheckForNotification,
+  SetUserFlow
 };
 
 export type IAction = IActionUnion<typeof actions>;

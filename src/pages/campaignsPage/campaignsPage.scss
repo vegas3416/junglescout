@@ -23,16 +23,9 @@
     width: 100%;
   }
 
-  .modal {
-    position: absolute;
-
-    &-content {
-      background-color: get-color(white, core);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-
-      width: auto;
-      height: auto;
-    }
+  .icl-Modal-wrapper {
+      .icl-Modal {
+          border-radius: 0.5rem;
+      }
   }
 }

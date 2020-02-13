@@ -1,6 +1,5 @@
 import React from 'react';
 import './campaignsCallOut.scss';
-import Button from '@indeed/frontend-components-react/components/Button';
 
 const CampaignsCallOut = () => {
   return (

@@ -1,8 +1,14 @@
 import React from 'react';
 import './campaignsPage.scss';
 import CampaignsCallOut from './campaignsCallOut/campaignsCallOut';
+import Modal from '@indeed/frontend-components-react/components/Modal';
+import Button from '@indeed/frontend-components-react/components/Button';
 
 const CampaignsPage = () => {
+  const onChange = () => {
+    console.log('Changed');
+  };
+
   return (
     <div className='campaignsPage'>
       <img
@@ -26,11 +32,29 @@ const CampaignsPage = () => {
         src={require('../../images/campaignsBottom.png')}
       />
 
-      <div className='modal'>
-        <div className='modal-content'>
+      <Modal
+        closeAriaLabel='close'
+        id='modal'
+        isOpen={true}
+        onExit={function onExit() {}}
+        title=''
+      >
+        <div>
           <img src={require('../../images/reviewPage.png')} />
+
+          <Button
+            //@ts-ignore
+            buttonType='primary'
+            id='previewComponent'
+            onClick={function onClick() {
+              alert('Primary Button click');
+            }}
+            size='lg'
+          >
+            Primary large
+          </Button>
         </div>
-      </div>
+      </Modal>
     </div>
   );
 };

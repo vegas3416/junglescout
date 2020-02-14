@@ -10,7 +10,7 @@ interface IProps extends RouteComponentProps<any> {
   tabs: Array<ArrayProps>;
 }
 
-interface ArrayProps {
+export interface ArrayProps {
   type: Array<string>;
   page?: string;
   logo: string;
@@ -36,7 +36,6 @@ const SideBar: React.FC<IProps> = ({ tabs }) => {
     <div className={`sidebar ${sideBarOpen ? 'open' : 'closed'}`}>
       <ul className='sidebar-list'>
         {tabs.map((data, index) => {
-          console.log(data);
           return (
             <li key={index}>
               {index === 0 ? (

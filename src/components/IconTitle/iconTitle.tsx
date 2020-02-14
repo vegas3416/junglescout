@@ -11,9 +11,10 @@ import { ActionType } from 'redux-promise-middleware';
 import { AppEvents } from '../../data/events';
 import { IAppState } from '../../data/store';
 import { History } from 'history';
+import { ArrayProps } from '../SideBar/sideBar';
 
 interface IconProp extends RouteComponentProps<any> {
-  data: IconData;
+  data: ArrayProps;
   sideBarOpen?: boolean;
   createNewBarOpen?: boolean;
   index: number;
@@ -47,14 +48,24 @@ const IconTitle: React.FC<IconProp> = ({
   };
 
   const handleActiveItem = (icon: string) => {
+    let subItem = '';
+    data.submenu.some(item => {
+      if (item['page'] === data.page) {
+        subItem = item.title;
+      }
+    });
+
     data.logo
-      ? dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: icon })
+      ? dispatch({
+          type: AppEvents.SET_ACTIVE_ITEM,
+          payload: { main: icon, sub: subItem }
+        })
       : dispatch({ type: AppEvents.SET_USER, payload: data.title });
   };
 
   return (
     <div
-      className={`iconTitle ${activeItem === data.title ? 'active' : ''} ${
+      className={`iconTitle ${activeItem.main === data.title ? 'active' : ''} ${
         data.title === 'Home' ? 'home' : ''
       }`}
       onMouseEnter={() => setVisible(true)}
@@ -82,7 +93,11 @@ const IconTitle: React.FC<IconProp> = ({
       {data.logo && (
         <div className='iconTitleMenu'>
           {visible && !createNewBarOpen && subMenu[index].submenu && (
-            <SubMenu data={subMenu[index].submenu} />
+            <SubMenu
+              data={subMenu[index].submenu}
+              parentTitle={data.title}
+              activeItem={activeItem}
+            />
           )}
         </div>
       )}

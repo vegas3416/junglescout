@@ -43,6 +43,10 @@
       cursor: pointer;
     }
 
+    &.active {
+      background-color: get-color(black, 500);
+    }
+
     &-link {
       display: flex;
       align-items: center;

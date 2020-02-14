@@ -1,0 +1,9 @@
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
+
+.extendedTile {
+  display: flex;
+  justify-self: flex-start;
+  position: relative;
+  margin-left: -1rem;
+}

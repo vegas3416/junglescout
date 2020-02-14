@@ -9,10 +9,10 @@ import TileNotification from './TileNotification/tileNotification';
 import { useDispatch } from 'react-redux';
 import { AppEvents } from '../../data/events';
 import { IAppState } from '../../data/store';
+import ExtendedTile from './ExtendedTile/entendedTile';
 
 interface TileProps extends RouteComponentProps<any> {
   data: TileData;
-  user: string;
 }
 
 interface TileData {
@@ -27,7 +27,7 @@ interface TileData {
 
 const Tile: React.FC<TileProps> = props => {
   const dispatch = useDispatch();
-  const { data, user } = props;
+  const { data } = props;
 
   const gNotifications = (state: IAppState) => state.homeHub.notifications;
   const notifications = useSelector(gNotifications);
@@ -72,7 +72,7 @@ const Tile: React.FC<TileProps> = props => {
           </ul>
         </footer>
       </div>
-      {data.type.includes(user) && <div></div>}
+
       {notifications.map((item, index) => {
         if (data.title === item.type) {
           return (

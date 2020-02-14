@@ -5,14 +5,14 @@ import { IAction } from '../actions/actions';
 
 
 export const initialState: IState = {
-  activeItem: '',
+  activeItem: { main: '', sub: '' },
   createIsOpen: false,
   notifications: [{ type: 'Analytics' }],
   user: 'Manager'
 };
 
 export interface IState {
-  activeItem: string;
+  activeItem: NavLocation;
   createIsOpen: boolean;
   notifications: Array<Notifications>;
   user: string;
@@ -20,6 +20,11 @@ export interface IState {
 
 interface Notifications {
   type: string;
+}
+
+export interface NavLocation {
+  main: string;
+  sub: string;
 }
 
 export const homeHub = (

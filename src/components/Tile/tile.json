@@ -30,7 +30,7 @@
   },
   {
     "type": ["Manager", "Recruiter", "Admin"],
-    "logo": "peopleIcon.png",
+    "logo": "people.png",
     "page": "candidates",
     "title": "Candidates",
     "subtitle": "",
@@ -57,13 +57,14 @@
   },
   {
     "type": ["Manager", "Admin"],
-    "logo": "peopleIcon.png",
+    "logo": "bullhorn.png",
     "page": "campaigns",
     "title": "Campaigns",
     "subtitle": "",
     "widgetData": [
       {
-        "description": "Access to helpful resources to better manage your team’s experience on Indeed."
+        "number": "$4,309.68",
+        "description": "Monthly budget"
       }
     ],
     "links": [
@@ -79,20 +80,22 @@
   },
   {
     "type": ["Manager", "Admin"],
-    "logo": "peopleIcon.png",
+    "logo": "barIcon.png",
     "page": "analytics",
     "title": "Analytics",
     "subtitle": "",
     "widgetData": [
       {
-        "number": "32",
-        "description": "Open jobs"
+        "number": "432",
+        "description": "Clicks"
       },
       {
-        "number": "264k",
-        "scale": 1,
-        "scaleValue": "20%",
-        "description": "Clicks(last month)"
+        "number": "118",
+        "description": "Applies"
+      },
+      {
+        "number": "$9.97",
+        "description": "Per click"
       }
     ],
     "links": [
@@ -108,7 +111,7 @@
   },
   {
     "type": ["Manager", "Admin"],
-    "logo": "peopleIcon.png",
+    "logo": "building.png",
     "page": "company",
     "title": "Company",
     "subtitle": "",
@@ -137,7 +140,7 @@
   },
   {
     "type": ["Manager", "Recruiter", "Admin"],
-    "logo": "peopleIcon.png",
+    "logo": "people.png",
     "page": "resources",
     "title": "Resources",
     "subtitle": "",

@@ -25,7 +25,7 @@ const routes = [
     order: 1
   },
   {
-    path: '/candidates',
+    path: '/viewCandidates',
     label: 'candidates',
     component: CandidatesPage,
     exact: true,

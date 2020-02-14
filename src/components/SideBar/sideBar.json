@@ -4,11 +4,11 @@
     "logo": "plusIcon.png",
     "title": "Create new...",
     "submenu": [
-      { "logo": "job.png", "title": "Job" },
-      { "logo": "campaign.png", "title": "Campaign" },
-      { "logo": "template.png", "title": "Template" },
-      { "logo": "hiring.png", "title": "Hiring Event" },
-      { "logo": "branded.png", "title": "Branded Ad" }
+      { "logo": "job.png", "title": "Job", "page": "jobs" },
+      { "logo": "campaign.png", "title": "Campaign", "page": "campaings" },
+      { "logo": "template.png", "title": "Template", "page": "/" },
+      { "logo": "hiring.png", "title": "Hiring Event", "page": "/" },
+      { "logo": "branded.png", "title": "Branded Ad", "page": "/" }
     ]
   },
   {
@@ -22,19 +22,24 @@
     "page": "jobs",
     "logo": "suitcase.png",
     "title": "Jobs",
-    "submenu": ["All Jobs", "Open", "Paused", "Closed"]
+    "submenu": [
+      { "title": "All Jobs", "page": "jobs" },
+      { "title": "Open", "page": "/" },
+      { "title": "Paused", "page": "/" },
+      { "title": "Closed", "page": "/" }
+    ]
   },
   {
     "type": ["Manager", "Recruiter", "Admin"],
-    "page": "candidates",
+    "page": "viewCandidates",
     "logo": "people.png",
     "title": "Candidates",
     "submenu": [
-      "View Candidates",
-      "Resume Search",
-      "Hiring Events",
-      "Seen by Indeed",
-      "Indeed Hire"
+      { "title": "View Candidates", "page": "viewCandidates" },
+      { "title": "Resume Search", "page": "resume" },
+      { "title": "Hiring Events", "page": "hiringEvents" },
+      { "title": "Seen by Indeed", "page": "seen" },
+      { "title": "Indeed Hire", "page": "hire" }
     ]
   },
   {

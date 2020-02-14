@@ -1,4 +1,5 @@
 import { AppEvents } from '../events';
+import { NavLocation } from '../reducers/homeHub';
 
 //Generic setup for Actions
 const makeAction = <T extends AppEvents, P>(type: T) => (payload: P) => {
@@ -11,7 +12,7 @@ const makeAction = <T extends AppEvents, P>(type: T) => (payload: P) => {
 //All my actions
 export const SetCreateNewIsOpen = makeAction<AppEvents.SET_CREATE_NEW_IS_OPEN, boolean>(AppEvents.SET_CREATE_NEW_IS_OPEN);
 
-export const SetActiveItem = makeAction<AppEvents.SET_ACTIVE_ITEM, string>(AppEvents.SET_ACTIVE_ITEM);
+export const SetActiveItem = makeAction<AppEvents.SET_ACTIVE_ITEM, NavLocation>(AppEvents.SET_ACTIVE_ITEM);
 
 export const SetCheckForNotification = makeAction<AppEvents.CHECK_NOTIFICATIONS, string>(AppEvents.CHECK_NOTIFICATIONS);
 

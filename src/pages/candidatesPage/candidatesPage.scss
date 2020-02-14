@@ -2,5 +2,37 @@
 @import '~Janus/foundations/Typography/main';
 
 .candidatesPage {
-    
+  padding: 3rem;
+
+  .header {
+    padding-bottom: 1.5rem;
+    &-label {
+      font-family: Helvetica Neue;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 23px;
+      line-height: 28px;
+      &-style {
+        color: get-color(blue, core);
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+    width: 100%;
+
+    .left-section {
+    }
+    .right-section {
+      padding-left: 1.5rem;
+
+      &-top {
+        padding-bottom: 1.5rem;
+      }
+      &-bottom {
+        width: 100%;
+      }
+    }
+  }
 }

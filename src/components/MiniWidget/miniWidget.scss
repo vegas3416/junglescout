@@ -2,9 +2,12 @@
 @import '~Janus/foundations/Typography/main';
 
 .miniWidget {
-  &:first-child {
+  &:not(:last-child) {
     padding-right: 1.5rem;
   }
+  // &:first-child {
+  //   padding-right: 1.5rem;
+  // }
   .value_data {
     align-items: center;
     display: flex;

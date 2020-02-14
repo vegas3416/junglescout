@@ -1,0 +1,56 @@
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
+
+.candidatesCallOuts {
+  align-items: center;
+  border: 1px solid get-color(red, core);
+  border-left: 0.5rem solid get-color(red, core);
+  border-radius: 0.25rem;
+  display: flex;
+
+  padding: 1rem;
+
+  &-recommendations {
+    padding-right: 4rem;
+    .basicText {
+      color: get-color(black, core);
+      font-family: Helvetica Neue;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    .descriptiveText {
+      color: get-color(black, core);
+      font-family: Helvetica Neue;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 22px;
+
+      padding-top: 1rem;
+
+      &-header {
+        font-weight: bold;
+      }
+    }
+
+    &-button {
+      align-items: center;
+      display: flex;
+      align-self: flex-end;
+      margin-bottom: 0.5rem;
+
+      .no-thanks-click {
+        color: get-color(blue, core);
+        cursor: pointer;
+        font-family: Helvetica Neue;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        padding-right: 1rem;
+        white-space: nowrap;
+      }
+    }
+  }
+}

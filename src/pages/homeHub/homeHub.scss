@@ -24,10 +24,13 @@
     margin: 2.5rem 3rem;
   }
 
-
   //Still need to fix this for the smaller stuff
   @media only screen and (max-width: 1000px) {
     grid-template-columns: 1fr 1fr 1fr;
     margin: 2.5rem 2.5rem;
+  }
+
+  &-tile {
+    width: 100%;
   }
 }

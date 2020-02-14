@@ -1,19 +1,54 @@
 import React from 'react';
 import './subMenu.scss';
+import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { AppEvents } from '../../data/events';
+import { NavLocation } from '../../data/reducers/homeHub';
 
 interface SMProps {
   data: Array<any>;
+  parentTitle: string;
   advancedMenu?: Boolean;
+  activeItem: NavLocation;
 }
 
-const SubMenu: React.FC<SMProps> = ({ data, advancedMenu }) => {
+const SubMenu: React.FC<SMProps> = ({
+  data,
+  parentTitle,
+  advancedMenu,
+  activeItem
+}) => {
+  const dispatch = useDispatch();
+
+  const handleActiveItem = (item: string) => {
+    if (!advancedMenu) {
+      dispatch({
+        type: AppEvents.SET_ACTIVE_ITEM,
+        payload: { main: parentTitle, sub: item }
+      });
+    }
+  };
+
   return (
     <ul className={`subMenu ${advancedMenu ? 'advanced' : ''}`}>
-      
       {data.map((item, index) => {
         return (
-          <li key={index} className='subMenu-item'>
-            <a className='subMenu-item-link' href='/'>
+          <li
+            key={index}
+            className={`subMenu-item ${
+              item.title === activeItem.sub ? 'active' : ''
+            }`}
+            onClick={e => {
+              e.stopPropagation();
+              handleActiveItem(item.title);
+              props.history.push('/');
+            }}
+          >
+            {/* <Link
+              className='subMenu-item-link'
+              to='/viewCandidates'
+              aria-label={!advancedMenu ? item : ''}
+            >
               {advancedMenu && (
                 <img
                   className='logo'
@@ -23,7 +58,18 @@ const SubMenu: React.FC<SMProps> = ({ data, advancedMenu }) => {
               <span className={`label ${advancedMenu ? 'advanced' : ''}`}>
                 {advancedMenu ? item.title : item}
               </span>
-            </a>
+            </Link> */}
+            <div className='subMenu-item-link'>
+              {advancedMenu && (
+                <img
+                  className='logo'
+                  src={require(`../../images/${item.logo}`)}
+                />
+              )}
+              <span className={`label ${advancedMenu ? 'advanced' : ''}  `}>
+                {item.title}
+              </span>
+            </div>
           </li>
         );
       })}

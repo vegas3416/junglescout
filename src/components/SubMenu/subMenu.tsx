@@ -5,19 +5,15 @@ import { useDispatch } from 'react-redux';
 import { AppEvents } from '../../data/events';
 import { NavLocation } from '../../data/reducers/homeHub';
 
-interface SMProps {
+interface SMProps extends RouteComponentProps<any> {
   data: Array<any>;
   parentTitle: string;
   advancedMenu?: Boolean;
   activeItem: NavLocation;
 }
 
-const SubMenu: React.FC<SMProps> = ({
-  data,
-  parentTitle,
-  advancedMenu,
-  activeItem
-}) => {
+const SubMenu: React.FC<SMProps> = props => {
+  const { data, parentTitle, advancedMenu, activeItem } = props;
   const dispatch = useDispatch();
 
   const handleActiveItem = (item: string) => {
@@ -41,7 +37,7 @@ const SubMenu: React.FC<SMProps> = ({
             onClick={e => {
               e.stopPropagation();
               handleActiveItem(item.title);
-              props.history.push('/');
+              props.history.push(item.page);
             }}
           >
             {/* <Link
@@ -77,4 +73,4 @@ const SubMenu: React.FC<SMProps> = ({
   );
 };
 
-export default SubMenu;
+export default withRouter(SubMenu);

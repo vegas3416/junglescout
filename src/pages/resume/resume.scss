@@ -1,0 +1,48 @@
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
+
+.resumePage {
+  padding: 3rem;
+
+  &-bottom {
+    padding-top: 1rem;
+    position: relative;
+    width: 100%;
+
+    .contact-button {
+      position: absolute;
+      top: 3.5rem;
+      right: 2rem;
+    }
+  }
+
+  .icl-Modal-wrapper {
+    .icl-Modal {
+      border-radius: 0.5rem;
+
+      .modal-buttons {
+        .bottom-buttons {
+          align-items: center;
+          padding-top: 1rem;
+          display: flex;
+          justify-content: flex-end;
+
+          .cancel-button {
+            cursor: pointer;
+            color: get-color(blue, core);
+            font-family: Helvetica Neue;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 18px;
+            padding-right: 1.25rem;
+          }
+
+          .icl-Button {
+            padding: 0.25rem 3rem;
+          }
+        }
+      }
+    }
+  }
+}

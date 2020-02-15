@@ -18,6 +18,9 @@ export const SetCheckForNotification = makeAction<AppEvents.CHECK_NOTIFICATIONS,
 
 export const SetUserFlow = makeAction<AppEvents.SET_USER, string>(AppEvents.SET_USER);
 
+//This is a bad action but used for the prototype to show a message was sent from the Resume Page
+export const SetCandidateMessageSent = makeAction<AppEvents.SET_RESUME_MESSAGE_SENT, boolean>(AppEvents.SET_RESUME_MESSAGE_SENT);
+
 //End of Actions
 
 //Helper setup to aid in the reducers file
@@ -35,7 +38,8 @@ const actions = {
   SetCreateNewIsOpen,
   SetActiveItem,
   SetCheckForNotification,
-  SetUserFlow
+  SetUserFlow,
+  SetCandidateMessageSent
 };
 
 export type IAction = IActionUnion<typeof actions>;

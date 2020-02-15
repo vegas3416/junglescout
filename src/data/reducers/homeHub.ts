@@ -8,7 +8,8 @@ export const initialState: IState = {
   activeItem: { main: '', sub: '' },
   createIsOpen: false,
   notifications: [{ type: 'Analytics' }],
-  user: 'Manager'
+  user: 'Manager',
+  resumeMessageSent: false
 };
 
 export interface IState {
@@ -16,6 +17,10 @@ export interface IState {
   createIsOpen: boolean;
   notifications: Array<Notifications>;
   user: string;
+
+
+  //This is just set for testing prototype
+  resumeMessageSent: boolean;
 }
 
 interface Notifications {
@@ -47,6 +52,10 @@ export const homeHub = (
     case AppEvents.SET_USER:
       return update(state, {
         user: { $set: action.payload }
+      });
+    case AppEvents.SET_RESUME_MESSAGE_SENT:
+      return update(state, {
+        resumeMessageSent: { $set: action.payload }
       });
     default:
       return state;

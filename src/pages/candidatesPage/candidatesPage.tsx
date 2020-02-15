@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import './candidatesPage.scss';
 import CandidatesCallOuts from './candidatesCallOuts/callOuts';
+import { IAppState } from '../../data/store';
+import { useSelector } from 'react-redux';
 
 const CandidatesPage = () => {
   const [buttonShow, setButtonShow] = useState(true);
   const shouldShowCallOut = e => {
     setButtonShow(e);
   };
+
+  const gResumeMessageSent = (state: IAppState) =>
+    state.homeHub.resumeMessageSent;
+  const resumeMessageSent = useSelector(gResumeMessageSent);
 
   return (
     <div className='candidatesPage'>
@@ -23,17 +29,26 @@ const CandidatesPage = () => {
           <img src={require('../../images/candidatesPageLeftSection.png')} />
         </section>
         <section className='right-section'>
-          <div className='right-section-top'>
-            {buttonShow && (
-              <CandidatesCallOuts
-                shouldShowCallOut={(e: boolean) => shouldShowCallOut(e)}
-              />
-            )}
-          </div>
-          <img
-            className='right-section-bottom'
-            src={require('../../images/candidatesPageRightSection-bottom.png')}
-          />
+          {!resumeMessageSent && (
+            <div className='right-section-top'>
+              {buttonShow && (
+                <CandidatesCallOuts
+                  shouldShowCallOut={(e: boolean) => shouldShowCallOut(e)}
+                />
+              )}
+            </div>
+          )}
+          {resumeMessageSent ? (
+            <img
+              className='right-section-bottom'
+              src={require('../../images/candidateMessageSent.png')}
+            />
+          ) : (
+            <img
+              className='right-section-bottom'
+              src={require('../../images/candidatesPageRightSection-bottom.png')}
+            />
+          )}
         </section>
       </div>
     </div>

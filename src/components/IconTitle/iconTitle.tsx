@@ -49,11 +49,13 @@ const IconTitle: React.FC<IconProp> = ({
 
   const handleActiveItem = (icon: string) => {
     let subItem = '';
-    data.submenu.some(item => {
-      if (item['page'] === data.page) {
-        subItem = item.title;
-      }
-    });
+    if (data.submenu) {
+      data.submenu.some(item => {
+        if (item['page'] === data.page) {
+          subItem = item.title;
+        }
+      });
+    }
 
     data.logo
       ? dispatch({

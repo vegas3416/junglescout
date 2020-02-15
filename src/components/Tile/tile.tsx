@@ -34,7 +34,10 @@ const Tile: React.FC<TileProps> = props => {
 
   const tileHomePage = () => {
     props.history.push(`/${data.page}`);
-    dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: `${data.title}` });
+    dispatch({
+      type: AppEvents.SET_ACTIVE_ITEM,
+      payload: { main: data.title, sub: '' }
+    });
   };
 
   const [disable, setDisable] = useState(false);

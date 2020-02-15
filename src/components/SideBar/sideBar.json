@@ -47,7 +47,11 @@
     "page": "campaigns",
     "logo": "bullhorn.png",
     "title": "Campaigns",
-    "submenu": ["All Campaigns", "Sponsored Jobs", "Targeted Ads"]
+    "submenu": [
+      { "title": "All Campaigns", "page": "campaigns" },
+      { "title": "Sponsored Jobs", "page": "sponsoredJobs" },
+      { "title": "Targeted Ads", "page": "targetedAds" }
+    ]
   },
   {
     "type": ["Manager", "Admin"],
@@ -55,10 +59,9 @@
     "logo": "barIcon.png",
     "title": "Analytics",
     "submenu": [
-      "*In progress*",
-      "*In progress*",
-      "*In progress*",
-      "*In progress*"
+      { "title": "*In progress*", "page": "/" },
+      { "title": "*In progress*", "page": "/" },
+      { "title": "*In progress*", "page": "/" }
     ]
   },
   {
@@ -67,10 +70,9 @@
     "logo": "building.png",
     "title": "Company",
     "submenu": [
-      "*In progress*",
-      "*In progress*",
-      "*In progress*",
-      "*In progress*"
+      { "title": "*In progress*", "page": "/" },
+      { "title": "*In progress*", "page": "/" },
+      { "title": "*In progress*", "page": "/" }
     ]
   },
   {
@@ -79,10 +81,9 @@
     "logo": "resources.png",
     "title": "Resources",
     "submenu": [
-      "*In progress*",
-      "*In progress*",
-      "*In progress*",
-      "*In progress*"
+      { "title": "*In progress*", "page": "/" },
+      { "title": "*In progress*", "page": "/" },
+      { "title": "*In progress*", "page": "/" }
     ]
   },
   {

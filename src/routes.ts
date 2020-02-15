@@ -7,6 +7,7 @@ const CampaignsPage = lazy(() => import('./pages/campaignsPage/campaignsPage'));
 const AnalyticsPage = lazy(() => import('./pages/analyticsPage/analyticsPage'));
 const CompanyPage = lazy(() => import('./pages/companyPage/companyPage'));
 const ResourcesPage = lazy(() => import('./pages/resourcesPage/resourcesPage'));
+const ResumePage = lazy(() => import('./pages/resume/resume'));
 
 
 const routes = [
@@ -14,50 +15,50 @@ const routes = [
     path: '/',
     label: 'home',
     component: HomeHub,
-    exact: true,
-    order: 0
+    exact: true
   },
   {
     path: '/jobs',
     label: 'jobs',
     component: JobsPage,
-    exact: true,
-    order: 1
+    exact: true
   },
   {
     path: '/viewCandidates',
     label: 'candidates',
     component: CandidatesPage,
-    exact: true,
-    order: 2
+    exact: true
+    
   },
   {
     path: '/campaigns',
     label: 'campaigns',
     component: CampaignsPage,
-    exact: true,
-    order: 3
+    exact: true
   },
   {
     path: '/analytics',
     label: 'analytics',
     component: AnalyticsPage,
-    exact: true,
-    order: 3
+    exact: true
   },
   {
     path: '/company',
     label: 'company',
     component: CompanyPage,
-    exact: true,
-    order: 4
+    exact: true
   },
   {
     path: '/resources',
     label: 'resources',
     component: ResourcesPage,
-    exact: true,
-    order: 5
+    exact: true
+  },
+  {
+    path: '/resume',
+    label: 'resume',
+    component: ResumePage,
+    exact: true
   }
 ];
 

@@ -7,17 +7,16 @@ import { AppEvents } from '../../../data/events';
 import { Types } from '../../../utilities/constants';
 
 const CandidatesCallOuts = props => {
-  const dispatch = useDispatch();
-
-  //Bad but for prototype
-  const value = '3 low perfoming jobs';
+  const dispatch = useDispatch()
 
   const { shouldShowCallOut } = props;
 
   const pageGoTo = e => {
-    props.history.push('/campaigns');
-    dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: e });
-    dispatch({ type: AppEvents.CHECK_NOTIFICATIONS, payload: Types.ANALYTICS });
+    props.history.push('/resume');
+    dispatch({
+      type: AppEvents.SET_ACTIVE_ITEM,
+      payload: { main: 'Candidates', sub: 'Resume Search' }
+    });
   };
   return (
     <div className='candidatesCallOuts'>

@@ -1,0 +1,55 @@
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
+
+.innerTile {
+  background-color: get-color(black, 400);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+
+  &-content {
+    .header {
+      padding-bottom: 0.5rem;
+      &-label {
+        font-family: Helvetica Neue;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    .state {
+      padding-bottom: 2rem;
+      &-label {
+        font-family: Helvetica Neue;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+
+    .information-content {
+      padding-bottom: 3rem;
+      &-item {
+        .label {
+          color: get-color(blue, a11y);
+          font-family: Helvetica Neue;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 18px;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .dateInput {
+      font-family: Helvetica Neue;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+}

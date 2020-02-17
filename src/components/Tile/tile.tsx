@@ -9,7 +9,6 @@ import TileNotification from './TileNotification/tileNotification';
 import { useDispatch } from 'react-redux';
 import { AppEvents } from '../../data/events';
 import { IAppState } from '../../data/store';
-import ExtendedTile from './ExtendedTile/entendedTile';
 
 interface TileProps extends RouteComponentProps<any> {
   data: TileData;

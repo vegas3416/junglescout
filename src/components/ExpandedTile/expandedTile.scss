@@ -1,0 +1,118 @@
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
+
+.expandedTile {
+  background-color: get-color(white, core);
+  border-radius: 1.5rem;
+
+  display: flex;
+  //width: 100%;
+  height: 280px;
+  min-width: 240px;
+
+  position: relative;
+
+  //Added this myself
+  margin-bottom: 2.5rem;
+
+  &:hover {
+    border: 1px solid get-color(blue, core);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  @media only screen and (min-width: 1500px) {
+  }
+
+  @media only screen and (max-width: 1499px) {
+    //min-width: 274px;
+  }
+
+  &-main {
+    box-shadow: 16px 0 14px -2px rgba(0, 0, 0, 0.12);
+
+    &-content {
+      min-width: 255px;
+      padding: 2.5rem;
+      width: 100%;
+      &.disabled {
+        cursor: none;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      .header {
+        align-items: center;
+        border-bottom: 1px solid get-color(black, 500);
+        display: flex;
+
+        padding-bottom: 1.5rem;
+
+        .logo {
+        }
+
+        &-title {
+          font-family: Helvetica Neue;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 22px;
+
+          padding-left: 0.5rem;
+        }
+      }
+
+      .callOuts {
+        align-items: baseline;
+        border-bottom: 1px solid get-color(black, 500);
+        display: flex;
+        padding: 1rem 0;
+
+        position: relative;
+      }
+
+      .footer {
+        padding: 1rem 0;
+
+        .footer-paths {
+          &-item {
+            color: get-color(blue, core);
+            cursor: pointer;
+            font-family: Helvetica Neue;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 18px;
+            margin-bottom: 0.25rem;
+          }
+        }
+      }
+    }
+  }
+
+  &-expanded {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .icon-left {
+      padding: 0 1rem 0 2rem;
+    }
+    .icon-right {
+      padding: 0 2rem 0 1rem;
+    }
+
+    &-list {
+      display: flex;
+      width: 100%;
+
+      &-item {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        width: 100%;
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -57,11 +57,18 @@ const IconTitle: React.FC<IconProp> = ({
       });
     }
 
+    console.log("notifications : ", notifications.length);
     data.logo
       ? dispatch({
           type: AppEvents.SET_ACTIVE_ITEM,
           payload: { main: icon, sub: subItem }
         })
+      : notifications.length === 0 && data.title === 'Manager'
+      ? (dispatch({
+          type: AppEvents.RESET_NOTIFICATION,
+          payload: [{ type: 'Analytics' }]
+        }),
+        dispatch({ type: AppEvents.SET_USER, payload: data.title }))
       : dispatch({ type: AppEvents.SET_USER, payload: data.title });
   };
 

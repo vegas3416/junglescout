@@ -51,7 +51,11 @@ export const homeHub = (
       });
     case AppEvents.CHECK_NOTIFICATIONS:
       return update(state, {
-        notifications: { $set: state.notifications.filter(item => item.type != action.payload) }
+        notifications: { $set: state.notifications.filter(item => item.type !== action.payload) }
+      });
+    case AppEvents.RESET_NOTIFICATION:
+      return update(state, {
+        notifications: { $push: action.payload }
       });
     case AppEvents.SET_USER:
       return update(state, {

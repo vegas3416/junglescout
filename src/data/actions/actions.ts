@@ -1,5 +1,6 @@
 import { AppEvents } from '../events';
 import { NavLocation } from '../reducers/homeHub';
+import App from '../../App';
 
 //Generic setup for Actions
 const makeAction = <T extends AppEvents, P>(type: T) => (payload: P) => {
@@ -21,6 +22,7 @@ export const SetUserFlow = makeAction<AppEvents.SET_USER, string>(AppEvents.SET_
 //Actions below this line are not good and just used for the purpose of the prototype
 export const SetCandidateMessageSent = makeAction<AppEvents.SET_RESUME_MESSAGE_SENT, boolean>(AppEvents.SET_RESUME_MESSAGE_SENT);
 export const SetCreateTemplate = makeAction<AppEvents.SET_CREATE_TEMPLATE, boolean>(AppEvents.SET_CREATE_TEMPLATE);
+export const ResetNotification = makeAction<AppEvents.RESET_NOTIFICATION, object>(AppEvents.RESET_NOTIFICATION);
 
 //End of Actions
 
@@ -41,7 +43,8 @@ const actions = {
   SetCheckForNotification,
   SetUserFlow,
   SetCandidateMessageSent,
-  SetCreateTemplate
+  SetCreateTemplate,
+  ResetNotification
 };
 
 export type IAction = IActionUnion<typeof actions>;

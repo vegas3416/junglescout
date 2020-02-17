@@ -1,9 +1,8 @@
 @import '~Janus/foundations/Color/main';
 @import '~Janus/foundations/Typography/main';
 
-.jobs {
+.createJobTemplate {
   padding: 3rem;
-  width: 100%;
 
   .header {
     padding-bottom: 1.5rem;
@@ -16,6 +15,13 @@
       &-style {
         color: get-color(blue, core);
       }
+    }
+  }
+
+  &-content {
+    &-image {
+      cursor: pointer;
+      width: 100%;
     }
   }
 }

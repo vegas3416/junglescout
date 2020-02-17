@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './campaignsPage.scss';
-import CampaignsCallOut from './campaignsCallOut/campaignsCallOut';
 import Modal from '@indeed/frontend-components-react/components/Modal';
 import Button from '@indeed/frontend-components-react/components/Button';
 

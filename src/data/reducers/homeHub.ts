@@ -2,6 +2,7 @@ import update from 'immutability-helper';
 
 import { AppEvents } from '../events';
 import { IAction } from '../actions/actions';
+import App from '../../App';
 
 
 export const initialState: IState = {
@@ -9,7 +10,9 @@ export const initialState: IState = {
   createIsOpen: false,
   notifications: [{ type: 'Analytics' }],
   user: 'Manager',
-  resumeMessageSent: false
+  resumeMessageSent: false,
+  createTemplate: false,
+
 };
 
 export interface IState {
@@ -21,6 +24,7 @@ export interface IState {
 
   //This is just set for testing prototype
   resumeMessageSent: boolean;
+  createTemplate: boolean;
 }
 
 interface Notifications {
@@ -56,6 +60,10 @@ export const homeHub = (
     case AppEvents.SET_RESUME_MESSAGE_SENT:
       return update(state, {
         resumeMessageSent: { $set: action.payload }
+      });
+    case AppEvents.SET_CREATE_TEMPLATE:
+      return update(state, {
+        createTemplate: { $set: action.payload }
       });
     default:
       return state;

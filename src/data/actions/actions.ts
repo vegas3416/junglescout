@@ -18,8 +18,9 @@ export const SetCheckForNotification = makeAction<AppEvents.CHECK_NOTIFICATIONS,
 
 export const SetUserFlow = makeAction<AppEvents.SET_USER, string>(AppEvents.SET_USER);
 
-//This is a bad action but used for the prototype to show a message was sent from the Resume Page
+//Actions below this line are not good and just used for the purpose of the prototype
 export const SetCandidateMessageSent = makeAction<AppEvents.SET_RESUME_MESSAGE_SENT, boolean>(AppEvents.SET_RESUME_MESSAGE_SENT);
+export const SetCreateTemplate = makeAction<AppEvents.SET_CREATE_TEMPLATE, boolean>(AppEvents.SET_CREATE_TEMPLATE);
 
 //End of Actions
 
@@ -39,7 +40,8 @@ const actions = {
   SetActiveItem,
   SetCheckForNotification,
   SetUserFlow,
-  SetCandidateMessageSent
+  SetCandidateMessageSent,
+  SetCreateTemplate
 };
 
 export type IAction = IActionUnion<typeof actions>;

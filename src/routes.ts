@@ -8,7 +8,8 @@ const AnalyticsPage = lazy(() => import('./pages/analyticsPage/analyticsPage'));
 const CompanyPage = lazy(() => import('./pages/companyPage/companyPage'));
 const ResourcesPage = lazy(() => import('./pages/resourcesPage/resourcesPage'));
 const ResumePage = lazy(() => import('./pages/resume/resume'));
-
+const JobsTemplates = lazy(() => import ('./pages/jobsTemplates/jobsTemplates'));
+const CreateJobTemplate = lazy(() => import('./pages/createJobTemplate/createJobTemplate'));
 
 const routes = [
   {
@@ -21,6 +22,17 @@ const routes = [
     path: '/jobs',
     label: 'jobs',
     component: JobsPage,
+    exact: true
+  },
+  {
+    path: '/jobs/jobsTemplates',
+    label: 'jobs',
+    component: JobsTemplates,
+    exact: true
+  },{
+    path: '/jobs/jobsTemplates/createJobTemplate',
+    label: 'jobs',
+    component: CreateJobTemplate,
     exact: true
   },
   {

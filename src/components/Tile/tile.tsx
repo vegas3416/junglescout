@@ -22,7 +22,7 @@ interface TileData {
   title: string;
   subtitle: string;
   widgetData: Array<MiniData>;
-  links: Array<any>;
+  paths: Array<any>;
 }
 
 const Tile: React.FC<TileProps> = props => {
@@ -63,12 +63,22 @@ const Tile: React.FC<TileProps> = props => {
         </div>
 
         <footer className='footer'>
-          <ul className='footer-links'>
-            {data.links.map((link, index) => {
+          <ul className='footer-paths'>
+            {data.paths.map((path, index) => {
               return (
-                <li key={index} className='footer-links-item'>
-                  <a href={link.url}></a>
-                  {link.title}
+                <li
+                  key={index}
+                  className='footer-paths-item'
+                  onClick={e => {
+                    e.stopPropagation();
+                    props.history.push(path.path);
+                    dispatch({
+                      type: AppEvents.SET_ACTIVE_ITEM,
+                      payload: { main: data.title, sub: '' }
+                    });
+                  }}
+                >
+                  {path.title}
                 </li>
               );
             })}

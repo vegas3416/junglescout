@@ -15,8 +15,6 @@
   //Added this myself
   box-shadow: 0px 0 10px rgba(0, 0, 0, 0.12);
 
-  
-
   &:hover {
     border: 1px solid get-color(blue, core);
     box-sizing: border-box;
@@ -71,15 +69,16 @@
     .footer {
       padding: 1rem 0;
 
-      .footer-links {
+      .footer-paths {
         &-item {
           color: get-color(blue, core);
+          cursor: pointer;
           font-family: Helvetica Neue;
           font-style: normal;
           font-weight: bold;
           font-size: 12px;
           line-height: 18px;
-          padding-bottom: 0.25rem;
+          margin-bottom: 0.25rem;
         }
       }
     }

@@ -112,10 +112,10 @@ const ExpandedTile: React.FC<TileProps> = props => {
           </div>
           <ul className='expandedTile-expanded-list'>
             <li className='expandedTile-expanded-list-item'>
-              <InnerTile title="Customer Services Representative" state="Open" content1="2 candidates" content2="46 matching resumes" date="Created 22 hours ago"/>
+              <InnerTile title="Customer Services Representative" state="Open" content1="2 candidates" content2="46 matching resumes" date="Created 22 hours ago" hot={true}/>
             </li>
             <li className='expandedTile-expanded-list-item'>
-            <InnerTile title="Manager" state="Open" content1="18 candidates" content2="16 matching resumes" date="Created 8 days ago"/>
+            <InnerTile title="Manager" state="Open" content1="18 candidates" content2="16 matching resumes" date="Created 8 days ago" hot={true}/>
             </li>
             <li className='expandedTile-expanded-list-item'>
             <InnerTile title="Delivery Specialist" state="Open" content1="0 candidates" content2="2 matching resumes" date="Created 16 days ago"/>

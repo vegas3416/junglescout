@@ -8,8 +8,11 @@
   height: 100%;
   position: relative;
 
+  width: 100%;
+
   &-content {
-      position: relative;
+    display: inline-flex;
+    position: relative;
     .header {
       padding-bottom: 0.5rem;
       &-label {
@@ -18,17 +21,40 @@
         font-weight: bold;
         font-size: 14px;
         line-height: 18px;
+        text-decoration: underline;
+
+        padding-right: 1rem;
+      }
+
+      .hot {
+        background-image: url('../../../images/whatshot.png');
+        background-repeat: no-repeat;
+        background-position: right center;
       }
     }
 
     .state {
       padding-bottom: 2rem;
+
       &-label {
         font-family: Helvetica Neue;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
         line-height: 14px;
+        padding-left: 1rem;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: get-color(green, core);
+          border-radius: 100px;
+          top: 0;
+          left: 0;
+        }
       }
     }
 
@@ -46,9 +72,7 @@
         }
       }
     }
-
   }
-
 
   .dateInput {
     font-family: Helvetica Neue;
@@ -58,6 +82,5 @@
     line-height: 14px;
     padding-top: 2rem;
     padding-bottom: 0.5rem;
-
   }
 }

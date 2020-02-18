@@ -1,0 +1,56 @@
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
+
+.userContent {
+  padding: 1rem;
+  background-color: get-color(black, 200);
+  border-radius: 0.5rem;
+
+  .user {
+    font-family: Helvetica Neue;
+    font-style: normal;
+
+    font-size: 12px;
+    line-height: 18px;
+
+    &-title {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
+  .quickLook {
+    display: flex;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 0.5rem;
+
+    &-item {
+      &:not(:first-child) {
+        padding-left: 0.5rem;
+      }
+
+      .matches {
+        padding-left: 1rem;
+        position: relative;
+        &::before {
+          content: '';
+          background: url('../../../../images/checkCircle.png');
+          background-repeat: no-repeat;
+          //background-position: left;
+          position: absolute;
+          width: 12px;
+          height: 14px;
+          left: 0;
+        }
+      }
+    }
+
+    .date {
+      padding-left: 1rem;
+    }
+  }
+}

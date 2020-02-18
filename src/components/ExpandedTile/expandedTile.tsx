@@ -14,6 +14,7 @@ import Icon from '@indeed/frontend-components-react/components/Icon';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import InnerRows from './innerRows/innerRows';
 
 interface TileProps extends RouteComponentProps<any> {
   data: TileData;
@@ -105,25 +106,61 @@ const ExpandedTile: React.FC<TileProps> = props => {
         </div>
       </div>
 
-      {data.title === 'Jobs' && (
+      {(data.title === 'Jobs' || data.title === 'Candidates') && (
         <div className='expandedTile-expanded'>
           <div className='icon-left'>
             <Icon size='md' title='<INSERT TITLE HERE>' type='chevron-left' />
           </div>
-          <ul className='expandedTile-expanded-list'>
-            <li className='expandedTile-expanded-list-item'>
-              <InnerTile title="Customer Services Representative" state="Open" content1="2 candidates" content2="46 matching resumes" date="Created 22 hours ago" hot={true}/>
-            </li>
-            <li className='expandedTile-expanded-list-item'>
-            <InnerTile title="Manager" state="Open" content1="18 candidates" content2="16 matching resumes" date="Created 8 days ago" hot={true}/>
-            </li>
-            <li className='expandedTile-expanded-list-item'>
-            <InnerTile title="Delivery Specialist" state="Open" content1="0 candidates" content2="2 matching resumes" date="Created 16 days ago"/>
-            </li>
-            <li className='expandedTile-expanded-list-item'>
-            <InnerTile title="Manager" state="Open" content1="14 candidates" content2="46 matching resumes" date="Created 4 days ago"/>
-            </li>
-          </ul>
+          {data.title === 'Jobs' && (
+            <ul className='expandedTile-expanded-list'>
+              <li
+                className='expandedTile-expanded-list-item'
+                onClick={e => {
+                  e.stopPropagation();
+                  props.history.push('/viewCandidates');
+                }}
+              >
+                <InnerTile
+                  title='Customer Service Representative'
+                  state='Open'
+                  content1='2 candidates'
+                  content2='46 matching resumes'
+                  date='Created 22 hours ago'
+                  hot={true}
+                />
+              </li>
+              <li className='expandedTile-expanded-list-item'>
+                <InnerTile
+                  title='Manager'
+                  state='Open'
+                  content1='18 candidates'
+                  content2='16 matching resumes'
+                  date='Created 8 days ago'
+                  hot={true}
+                />
+              </li>
+              <li className='expandedTile-expanded-list-item'>
+                <InnerTile
+                  title='Delivery Specialist'
+                  state='Open'
+                  content1='0 candidates'
+                  content2='2 matching resumes'
+                  date='Created 16 days ago'
+                />
+              </li>
+              <li className='expandedTile-expanded-list-item'>
+                <InnerTile
+                  title='Manager'
+                  state='Open'
+                  content1='14 candidates'
+                  content2='46 matching resumes'
+                  date='Created 4 days ago'
+                />
+              </li>
+            </ul>
+          )}
+
+          {data.title === 'Candidates' && <InnerRows />}
 
           <div className='icon-right'>
             <Icon size='md' title='<INSERT TITLE HERE>' type='chevron-right' />

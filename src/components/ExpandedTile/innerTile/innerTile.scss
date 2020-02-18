@@ -2,6 +2,7 @@
 @import '~Janus/foundations/Typography/main';
 
 .innerTile {
+  cursor: pointer;
   background-color: get-color(black, 400);
   border-radius: 0.5rem;
   padding: 1.5rem;
@@ -11,10 +12,15 @@
   width: 100%;
 
   &-content {
-    display: inline-flex;
+    //display: inline-flex;
     position: relative;
     .header {
-      padding-bottom: 0.5rem;
+      //padding-bottom: 0.5rem;
+
+      display: flex;
+      /* padding-top: 1rem; */
+      height: 40px;
+      align-items: flex-end;
       &-label {
         font-family: Helvetica Neue;
         font-style: normal;
@@ -24,12 +30,18 @@
         text-decoration: underline;
 
         padding-right: 1rem;
+        position: relative;
       }
 
       .hot {
-        background-image: url('../../../images/whatshot.png');
-        background-repeat: no-repeat;
-        background-position: right center;
+        &::after {
+          content: '';
+          background: url('../../../images/whatshot.png') no-repeat;
+          background-position: right center;
+          height: 20px;
+          width: 20px;
+          position: absolute;
+        }
       }
     }
 

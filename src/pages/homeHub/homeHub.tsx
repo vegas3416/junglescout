@@ -24,7 +24,10 @@ const HomeHub = () => {
         {
           return (
             tile.type.includes(user) && (
-              <div key={index} className={`${user === 'Recruiter' ? 'recruiter' : 'basic'}`}>
+              <div
+                key={index}
+                className={`${user === 'Recruiter' ? 'recruiter' : 'basic'}`}
+              >
                 {user === 'Recruiter' ? (
                   <ExpandedTile data={tile} />
                 ) : (

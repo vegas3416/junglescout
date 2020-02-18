@@ -11,6 +11,9 @@ import { AppEvents } from '../../data/events';
 import { IAppState } from '../../data/store';
 import InnerTile from './innerTile/innerTile';
 import Icon from '@indeed/frontend-components-react/components/Icon';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 interface TileProps extends RouteComponentProps<any> {
   data: TileData;
@@ -47,7 +50,15 @@ const ExpandedTile: React.FC<TileProps> = props => {
     setDisable(e);
   };
 
-  console.log(data);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
+  const listItem = [1, 2, 3, 4, 5];
 
   return (
     <div className='expandedTile'>
@@ -99,19 +110,18 @@ const ExpandedTile: React.FC<TileProps> = props => {
           <div className='icon-left'>
             <Icon size='md' title='<INSERT TITLE HERE>' type='chevron-left' />
           </div>
-
           <ul className='expandedTile-expanded-list'>
             <li className='expandedTile-expanded-list-item'>
-              <InnerTile />
+              <InnerTile title="Customer Services Representative" state="Open" content1="2 candidates" content2="46 matching resumes" date="Created 22 hours ago"/>
             </li>
             <li className='expandedTile-expanded-list-item'>
-              <InnerTile />
+            <InnerTile title="Manager" state="Open" content1="18 candidates" content2="16 matching resumes" date="Created 8 days ago"/>
             </li>
             <li className='expandedTile-expanded-list-item'>
-              <InnerTile />
+            <InnerTile title="Delivery Specialist" state="Open" content1="0 candidates" content2="2 matching resumes" date="Created 16 days ago"/>
             </li>
             <li className='expandedTile-expanded-list-item'>
-              <InnerTile />
+            <InnerTile title="Manager" state="Open" content1="14 candidates" content2="46 matching resumes" date="Created 4 days ago"/>
             </li>
           </ul>
 

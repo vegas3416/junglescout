@@ -1,6 +1,7 @@
 @import '~Janus/foundations/Color/main';
 @import '~Janus/foundations/Typography/main';
 
+
 .expandedTile {
   background-color: get-color(white, core);
   border-radius: 1.5rem;
@@ -92,6 +93,7 @@
   &-expanded {
     display: flex;
     align-items: center;
+    padding: 1rem;
     //width: 100%;
 
     .icon-left {

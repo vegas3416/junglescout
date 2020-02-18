@@ -5,8 +5,11 @@
   background-color: get-color(black, 400);
   border-radius: 0.5rem;
   padding: 1.5rem;
+  height: 100%;
+  position: relative;
 
   &-content {
+      position: relative;
     .header {
       padding-bottom: 0.5rem;
       &-label {
@@ -30,7 +33,7 @@
     }
 
     .information-content {
-      padding-bottom: 3rem;
+      //padding-bottom: 3rem;
       &-item {
         .label {
           color: get-color(blue, a11y);
@@ -44,12 +47,17 @@
       }
     }
 
-    .dateInput {
-      font-family: Helvetica Neue;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 14px;
-    }
+  }
+
+
+  .dateInput {
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+
   }
 }

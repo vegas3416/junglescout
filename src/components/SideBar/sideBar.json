@@ -78,7 +78,7 @@
   {
     "type": ["Manager", "Recruiter", "Admin"],
     "page": "resources",
-    "logo": "resources.png",
+    "logo": "fileIcon-resources.png",
     "title": "Resources",
     "submenu": [
       { "title": "*In progress*", "page": "/" },

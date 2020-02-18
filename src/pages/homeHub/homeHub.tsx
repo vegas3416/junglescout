@@ -8,6 +8,7 @@ import Tile from '../../components/Tile/tile';
 
 //FakeData
 import Tiles from '../../components/Tile/tile.json';
+import Recruiter from '../../components/Tile/recruiter.json';
 import { useSelector } from 'react-redux';
 import { IAppState } from '../../data/store';
 import ExpandedTile from '../../components/ExpandedTile/expandedTile';
@@ -23,7 +24,7 @@ const HomeHub = () => {
         {
           return (
             tile.type.includes(user) && (
-              <div key={index} className={`homeHub-tile ${user === 'Recruiter' ? 'recruiter' : 'basic'}`}>
+              <div key={index} className={`${user === 'Recruiter' ? 'recruiter' : 'basic'}`}>
                 {user === 'Recruiter' ? (
                   <ExpandedTile data={tile} />
                 ) : (

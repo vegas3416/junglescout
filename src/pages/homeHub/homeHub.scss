@@ -2,80 +2,67 @@
 @import '~Janus/foundations/Typography/main';
 
 .homeHub {
-  //display: grid;
   display: flex;
   flex-wrap: wrap;
-  //grid-template-columns: 320px 320px 320px;
-  //grid-gap: 2.5rem 2.5rem;
-  //justify-content: center;
-  //padding: 1.25rem;
 
   @media only screen and (min-width: 1500px) {
     //justify-content: center;
-    margin: 2.5rem 3.75rem;
-    width: auto;
+    margin: 2.5rem auto;
+    width: 1240px;
   }
 
   @media only screen and (max-width: 1499px) {
-    //grid-template-columns: 1fr 1fr 1fr 1fr;
-    //@debug: center;
-    margin: 2.5rem 3.75rem;
-    width: auto;
+    margin: 2.5rem 5rem;
+    
   }
 
-  @media only screen and (max-width: 1400px) {
-    //grid-template-columns: 1fr 1fr 1fr;
+  @media only screen and (max-width: 1130px) {
+    
 
-    margin: 2.5rem 3rem;
+    margin: 2.5rem 4.5rem 2.5rem 5rem;
   }
 
-  //Still need to fix this for the smaller stuff
-  @media only screen and (max-width: 1000px) {
-    //grid-template-columns: 1fr 1fr 1fr;
-    //justify-content: center;
-    margin: 2.5rem 2.5rem;
-  }
+  // //Still need to fix this for the smaller stuff
+  // @media only screen and (max-width: 1000px) {
+  //   //grid-template-columns: 1fr 1fr 1fr;
+  //   //justify-content: center;
+  //   margin: 2.5rem 2.5rem;
+  // }
 
-  &-tile {
-    //width: 100%;
-    // &:not(:last-child) {
-    //   padding-right: 1.25rem;
-    // }
-    height: 280px;
-    padding: 0 1.25rem;
-    margin: 1.25rem 0;
-    //padding-bottom: 2.5rem;
+  //flex: 0 1 25%;
 
-    .basic {
-
-      //This media query makes sense if the tile is the basic kind but if it has the bigger detail it does not
-      @media only screen and (min-width: 1500px) {
-        width: 280px;
-        height: 280px;
-      }
-
-      @media only screen and (max-width: 1499px) {
-        width: 25%;
-      }
-
-      @media only screen and (max-width: 1199px) {
-        width: 33%;
-      }
-
-      @media only screen and (max-width: 999px) {
-        width: 33%;
-      }
-
-      @media only screen and (max-width: 950px) {
-        width: 50%;
-      }
+  .basic {
+    margin: 0 1.5rem 1.5rem 0;
+    //This media query makes sense if the tile is the basic kind but if it has the bigger detail it does not
+    @media only screen and (min-width: 1500px) {
+      //width: 280px;
+     
     }
 
-    .recruiter {
-      @media only screen and (min-width: 1500px) {
-        width: 33%;
-        height: 280px;
+    @media only screen and (max-width: 1499px) {
+      flex: 0 1 30%;
+      //width: 100%;
+      //margin: 0 1.5rem 1.5rem 0
+    }
+
+      @media only screen and (max-width: 1199px) {
+        flex: 0 1 30%;
       }
+
+      @media only screen and (max-width: 1130px) {
+        flex: 0 1 47%;
+      }
+
+    //   @media only screen and (max-width: 950px) {
+    //     width: 50%;
+    //   }
+    // }
+  }
+
+  .recruiter {
+    @media only screen and (min-width: 1500px) {
+      height: 280px;
+      margin: 0 1.5rem 1.5rem 0;
     }
   }
 }

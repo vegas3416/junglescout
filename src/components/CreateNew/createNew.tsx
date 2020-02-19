@@ -63,3 +63,9 @@ const CreateNew: React.FC<CreateProp> = ({ data, sideBarOpen }) => {
 };
 
 export default CreateNew;
+
+
+// data: Array<any>;
+// parentTitle: string;
+// advancedMenu?: Boolean;
+// activeItem: NavLocation;

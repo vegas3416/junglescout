@@ -46,8 +46,8 @@ const Tile: React.FC<TileProps> = props => {
   };
 
   return (
-    <div className='tile'>
-      <div className='tile-main-content' onClick={() => tileHomePage()}>
+    <div className='tile' onClick={() => tileHomePage()}>
+      <div className='tile-main-content'>
         <header className='header'>
           {data.logo && (
             <img className='logo' src={require(`../../images/${data.logo}`)} />

@@ -7,9 +7,9 @@ import { NavLocation } from '../../data/reducers/homeHub';
 
 interface SMProps extends RouteComponentProps<any> {
   data: Array<any>;
-  parentTitle: string;
+  parentTitle?: string;
   advancedMenu?: Boolean;
-  activeItem: NavLocation;
+  activeItem?: NavLocation;
 }
 
 const SubMenu: React.FC<SMProps> = props => {

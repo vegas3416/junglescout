@@ -35,7 +35,7 @@
   {
     "type": ["Manager", "Recruiter", "Admin"],
     "logo": "people.svg",
-    "page": "candidates",
+    "page": "viewCandidates",
     "title": "Candidates",
     "subtitle": "",
     "widgetData": [

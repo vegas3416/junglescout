@@ -27,7 +27,7 @@ export const App = () => {
             placeholder='Find jobs, candidates, events...'
           />
           <button className='search-button' type='submit'>
-            <img src={require('./images/24px.png')} />
+            <img src={require('./images/24px.svg')} />
           </button>
         </div>
         <div className='topNav-right'>

@@ -8,10 +8,11 @@ interface ProfileProps {
   logo?: String;
   name: String;
   title?: String;
+  mobileView?: boolean;
 }
 
 const Profile: React.FC<ProfileProps> = props => {
-  const { logo, name, title } = props;
+  const { logo, name, title, mobileView } = props;
 
   const [menuState, setMenuState] = useState(false);
 
@@ -24,12 +25,13 @@ const Profile: React.FC<ProfileProps> = props => {
         setMenuState(!menuState);
       }}
     >
-      {logo && <img src={require(`../../../images/${logo}`)} />}
-      <div className='profile-labels'>
-        <span className='name'>{name}</span>
-        <span className='title'>{title}</span>
-      </div>
-
+      {logo && <img className={`${mobileView ? 'mobileAvatar' : ''}`} src={require(`../../../images/${logo}`)} />}
+      {!mobileView && (
+        <div className='profile-labels'>
+          <span className='name'>{name}</span>
+          <span className='title'>{title}</span>
+        </div>
+      )}
       {menuState ? (
         <ul className='profile-dropdown-content'>
           {profileData.profilemenu.map((menuItem, index) => {
@@ -55,7 +57,7 @@ const Profile: React.FC<ProfileProps> = props => {
                   key={index}
                   className={`content ${menuItem.title} ${menuItem.icon}`}
                 >
-                  <a className="menu-item-link">
+                  <a className='menu-item-link'>
                     <div>{menuItem.name}</div>
                   </a>
                 </li>
@@ -69,4 +71,3 @@ const Profile: React.FC<ProfileProps> = props => {
 };
 
 export default Profile;
-

@@ -13,8 +13,16 @@
     height: 4rem;
     position: relative;
 
+    .hamburger-menu {
+      margin-left: 1rem;
+    }
+
     .logo {
       padding: 0 1rem;
+
+      &.mobile {
+        margin-left: auto;
+      }
     }
 
     .search {
@@ -56,23 +64,23 @@
       display: flex;
       margin-left: auto;
 
-      &-list {
+      &-item {
         align-items: center;
         display: flex;
+        position: relative;
 
-        &-item {
-          align-items: center;
-          display: flex;
+        &:not(:last-child):after {
+          content: '';
+          width: 2px;
+          background-color: #909090;
+          margin: 0 1.5rem;
+          border-right: 1px solid black;
           position: relative;
-          height: 100%;
+          padding: 1rem 0;
+        }
 
-          &:not(:first-child):before {
-            content: ' | ';
-            height: 100%;
-            width: 1px;
-            background-color: get-color(black, 600);
-            margin: 0 1.5rem;
-          }
+        &.remove {
+          display: none;
         }
       }
     }

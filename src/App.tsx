@@ -47,31 +47,54 @@ export const App = () => {
   return (
     <div className='container'>
       <div className='topNav'>
-        <div className='logo'>
+        {mobileView && (
+          <svg
+            className='hamburger-menu'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              d='M4 18H20C20.55 18 21 17.55 21 17C21 16.45 20.55 16 20 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H20C20.55 8 21 7.55 21 7C21 6.45 20.55 6 20 6H4C3.45 6 3 6.45 3 7Z'
+              fill='white'
+            />
+          </svg>
+        )}
+        <div className={`logo ${mobileView ? 'mobile' : ''}`}>
           <Link to='/' aria-label='homePage-icon' role='homePage-icon'>
             <img src={require('./images/indeedI.svg')} />
           </Link>
         </div>
-        <div className='search'>
-          <input
-            className='search-input'
-            type='text'
-            placeholder='Find jobs, candidates, events...'
-          />
-          <button className='search-button' type='submit'>
-            <img src={require('./images/24px.svg')} />
-          </button>
-        </div>
+        {!mobileView && (
+          <div className='search'>
+            <input
+              className='search-input'
+              type='text'
+              placeholder='Find jobs, candidates, events...'
+            />
+            <button className='search-button' type='submit'>
+              <img src={require('./images/24px.svg')} />
+            </button>
+          </div>
+        )}
+
         <div className='topNav-right'>
-          <div className='topNav-right-list-item'>
+          <div className={`topNav-right-item ${mobileView ? 'remove' : ''}`}>
             <TopNavWidgets />
           </div>
 
-          <div className='topNav-right-list-item'>
+          <div className={`topNav-right-item ${mobileView ? 'remove' : ''}`}>
             <Company type='featured' logo='Walgreens.svg' />
           </div>
-          <div className='topNav-right-list-item'>
-            <Profile logo='Avatar.svg' name='Karim Naguib' title='Recruiter' />
+          <div className='topNav-right-item'>
+            <Profile
+              logo='Avatar.svg'
+              name='Karim Naguib'
+              title='Recruiter'
+              mobileView={mobileView}
+            />
           </div>
         </div>
       </div>

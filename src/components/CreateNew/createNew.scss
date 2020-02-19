@@ -13,7 +13,9 @@
   margin: 0.5rem;
 
   &-title {
+    align-items: center;
     color: get-color(white, core);
+    display: flex;
     font-family: Helvetica Neue;
     font-style: normal;
     font-weight: bold;
@@ -26,6 +28,7 @@
       display: block;
       overflow: hidden;
       padding-left: 1rem;
+      padding-right: 2rem;
       transition: width 0.2s ease-in-out;
       width: 0;
 

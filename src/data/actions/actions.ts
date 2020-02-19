@@ -19,6 +19,8 @@ export const SetCheckForNotification = makeAction<AppEvents.CHECK_NOTIFICATIONS,
 
 export const SetUserFlow = makeAction<AppEvents.SET_USER, string>(AppEvents.SET_USER);
 
+export const SetMobileView = makeAction<AppEvents.SET_MOBILE_VIEW, boolean>(AppEvents.SET_MOBILE_VIEW);
+
 //Actions below this line are not good and just used for the purpose of the prototype
 export const SetCandidateMessageSent = makeAction<AppEvents.SET_RESUME_MESSAGE_SENT, boolean>(AppEvents.SET_RESUME_MESSAGE_SENT);
 export const SetCreateTemplate = makeAction<AppEvents.SET_CREATE_TEMPLATE, boolean>(AppEvents.SET_CREATE_TEMPLATE);
@@ -44,7 +46,8 @@ const actions = {
   SetUserFlow,
   SetCandidateMessageSent,
   SetCreateTemplate,
-  ResetNotification
+  ResetNotification,
+  SetMobileView
 };
 
 export type IAction = IActionUnion<typeof actions>;

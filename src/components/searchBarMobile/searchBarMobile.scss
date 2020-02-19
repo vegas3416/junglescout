@@ -1,0 +1,32 @@
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
+
+.searchBarMobile {
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  position: relative;
+
+  .search {
+    align-items: center;
+    display: flex;
+
+    &-button {
+      border: unset;
+      padding: unset;
+      padding-right: 0.5rem;
+    }
+    &-input {
+      border: unset;
+      box-sizing: border-box;
+      width: 100%;
+      font-family: Helvetica Neue;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 0.5rem 0.5rem 0.5rem 0;
+    }
+  }
+}

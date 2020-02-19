@@ -12,6 +12,7 @@ export const initialState: IState = {
   user: 'Manager',
   resumeMessageSent: false,
   createTemplate: false,
+  mobileView: false
 
 };
 
@@ -20,6 +21,7 @@ export interface IState {
   createIsOpen: boolean;
   notifications: Array<Notifications>;
   user: string;
+  mobileView: boolean;
 
 
   //This is just set for testing prototype
@@ -69,6 +71,11 @@ export const homeHub = (
       return update(state, {
         createTemplate: { $set: action.payload }
       });
+    case AppEvents.SET_MOBILE_VIEW:
+      return update(state, {
+        mobileView: { $set: action.payload }
+      });
+
     default:
       return state;
   }

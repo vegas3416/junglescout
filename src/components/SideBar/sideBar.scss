@@ -21,17 +21,34 @@
     //height: calc(100vh - 64px);
     transition: width 500ms;
     width: 14rem;
+
+    &.mobile {
+      display: none;
+    }
   }
 
-  .expand-collapse-button {
+  .bottom-icons {
     bottom: 2rem;
-    margin-top: 2rem;
+    display: flex;
+
     position: absolute;
+    right: 0;
 
-    right: 1.5rem;
+    .bottom-widgets {
+      align-items: center;
+      display: flex;
+    }
 
-    &.sideBarOpen {
-      transform: scaleX(-1);
+    .expand-collapse-button {
+      padding-right: 1.5rem;
+      &.sideBarOpen {
+        padding-left: 1.5rem;
+        transform: scaleX(-1);
+
+        &.disabled {
+          display: none;
+        }
+      }
     }
   }
 }

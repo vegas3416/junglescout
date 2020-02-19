@@ -50,7 +50,10 @@ const CreateNew: React.FC<CreateProp> = ({ data, sideBarOpen }) => {
       <img className='icon' src={require(`../../images/${data.logo}`)} />
 
       <div className='createNew-title'>
-        <span className={`inner ${sideBarOpen ? 'sideBarOpen' : ''}`}>{data.title}</span>
+        <span className={`inner ${sideBarOpen ? 'sideBarOpen' : ''}`}>
+          {data.title}
+        </span>
+        <img className='dots' src={require('../../images/threeDots.svg')} />
       </div>
 
       <div className='sideBarMenu'>
@@ -63,7 +66,6 @@ const CreateNew: React.FC<CreateProp> = ({ data, sideBarOpen }) => {
 };
 
 export default CreateNew;
-
 
 // data: Array<any>;
 // parentTitle: string;

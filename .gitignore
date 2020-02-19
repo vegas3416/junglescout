@@ -65,3 +65,11 @@ typings/
 
 # Build files
 dist/
+
+
+node_modules
+bin
+dist
+.DS_Store
+npm-debug.log
+.idea

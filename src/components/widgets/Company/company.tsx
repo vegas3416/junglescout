@@ -16,7 +16,7 @@ const Company: React.FC<CompanyProps> = props => {
     <div className='company'>
       {logo && <img className="company-logo" src={require(`../../../images/${logo}`)} />}
       {name && !logo && <span className='company-name'>{name}</span>}
-      {type === 'featured' && <img className="company-badge" src={require(`../../../images/${type}.png`)} />}
+      {type === 'featured' && <img className="company-badge" src={require(`../../../images/${type}.svg`)} />}
     </div>
   );
 };

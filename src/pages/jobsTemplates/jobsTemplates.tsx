@@ -39,12 +39,12 @@ const JobsTemplates = props => {
         {createTemplate ? (
           <img
             className='jobsTemplates-content-image'
-            src={require('../../images/jobTemplatesNew.png')}
+            src={require('../../images/jobTemplatesNew.svg')}
           />
         ) : (
           <img
             className='jobsTemplates-content-image'
-            src={require('../../images/jobsTemplates.png')}
+            src={require('../../images/jobsTemplates.svg')}
           />
         )}
 
@@ -61,7 +61,7 @@ const JobsTemplates = props => {
           <img
             className='shareIcon-button'
             onClick={() => setShowModal(!showModal)}
-            src={require('../../images/shareIcon.png')}
+            src={require('../../images/shareIcon.svg')}
           />
         </div>
       </div>
@@ -75,7 +75,7 @@ const JobsTemplates = props => {
       >
         <div className='modal-buttons'>
           <div>
-            <img src={require('../../images/shareTemplate.png')} />
+            <img src={require('../../images/shareTemplate.svg')} />
           </div>
           <div className='bottom-buttons'>
             <span

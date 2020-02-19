@@ -28,12 +28,12 @@ const TileNotification = props => {
           {isOpen ? (
             <img
               className='closeIcon'
-              src={require('../../../images/closeIcon.png')}
+              src={require('../../../images/closeIcon.svg')}
             />
           ) : (
             <img
               className='openIcon'
-              src={require('../../../images/notificationSmallIcon.png')}
+              src={require('../../../images/notificationSmallIcon.svg')}
             />
           )}
         </div>

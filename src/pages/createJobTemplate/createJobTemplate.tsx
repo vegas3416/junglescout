@@ -24,7 +24,7 @@ const CreateJobTemplate = props => {
       >
         <img
           className='createJobTemplate-content-image'
-          src={require('../../images/createJobTemplate.png')}
+          src={require('../../images/createJobTemplate.svg')}
         />
         {/* <Button
           className='button'

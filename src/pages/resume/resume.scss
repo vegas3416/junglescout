@@ -4,16 +4,25 @@
 .resumePage {
   padding: 3rem;
 
+  .header {
+    padding-bottom: 1.5rem;
+    &-label {
+      font-family: Helvetica Neue;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 23px;
+      line-height: 28px;
+      &-style {
+        color: get-color(blue, core);
+      }
+    }
+  }
+
   &-bottom {
     padding-top: 1rem;
     position: relative;
     width: 100%;
-
-    .contact-button {
-      position: absolute;
-      top: 3.5rem;
-      right: 2rem;
-    }
+    cursor: pointer;
   }
 
   .icl-Modal-wrapper {

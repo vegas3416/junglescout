@@ -1,26 +1,26 @@
 [
   {
     "type": ["Manager", "Recruiter", "Admin"],
-    "logo": "plusIcon.png",
+    "logo": "plusIcon.svg",
     "title": "Create new...",
     "submenu": [
-      { "logo": "job.png", "title": "Job", "page": "jobs" },
-      { "logo": "campaign.png", "title": "Campaign", "page": "campaings" },
-      { "logo": "template.png", "title": "Template", "page": "/" },
-      { "logo": "hiring.png", "title": "Hiring Event", "page": "/" },
-      { "logo": "branded.png", "title": "Branded Ad", "page": "/" }
+      { "logo": "job.svg", "title": "Job", "page": "/jobs" },
+      { "logo": "campaign.svg", "title": "Campaign", "page": "/campaigns" },
+      { "logo": "template.svg", "title": "Template", "page": "/jobs/jobsTemplates" },
+      { "logo": "hiring.svg", "title": "Hiring Event", "page": "/" },
+      { "logo": "branded.svg", "title": "Branded Ad", "page": "/" }
     ]
   },
   {
     "type": ["Manager", "Recruiter", "Admin"],
     "page": "",
-    "logo": "home.png",
+    "logo": "home.svg",
     "title": "Home"
   },
   {
     "type": ["Manager", "Recruiter", "Admin"],
     "page": "jobs",
-    "logo": "suitcase.png",
+    "logo": "suitcase.svg",
     "title": "Jobs",
     "submenu": [
       { "title": "All Jobs", "page": "jobs" },
@@ -32,7 +32,7 @@
   {
     "type": ["Manager", "Recruiter", "Admin"],
     "page": "viewCandidates",
-    "logo": "people.png",
+    "logo": "people.svg",
     "title": "Candidates",
     "submenu": [
       { "title": "View Candidates", "page": "viewCandidates" },
@@ -45,7 +45,7 @@
   {
     "type": ["Manager", "Admin"],
     "page": "campaigns",
-    "logo": "bullhorn.png",
+    "logo": "bullhorn.svg",
     "title": "Campaigns",
     "submenu": [
       { "title": "All Campaigns", "page": "campaigns" },
@@ -56,7 +56,7 @@
   {
     "type": ["Manager", "Admin"],
     "page": "analytics",
-    "logo": "barIcon.png",
+    "logo": "barIcon.svg",
     "title": "Analytics",
     "submenu": [
       { "title": "*In progress*", "page": "/" },
@@ -67,7 +67,7 @@
   {
     "type": ["Manager", "Admin"],
     "page": "company",
-    "logo": "building.png",
+    "logo": "building.svg",
     "title": "Company",
     "submenu": [
       { "title": "*In progress*", "page": "/" },
@@ -78,7 +78,7 @@
   {
     "type": ["Manager", "Recruiter", "Admin"],
     "page": "resources",
-    "logo": "fileIcon-resources.png",
+    "logo": "fileIcon-resources.svg",
     "title": "Resources",
     "submenu": [
       { "title": "*In progress*", "page": "/" },

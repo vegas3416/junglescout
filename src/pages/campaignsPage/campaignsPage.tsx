@@ -13,16 +13,16 @@ const CampaignsPage = () => {
         <div>
           <img
             className='campaignsPage-filler'
-            src={require('../../images/campaignsTop.png')}
+            src={require('../../images/campaignsTop.svg')}
           />
           <img
             className='campaignsPage-filler2'
-            src={require('../../images/campaignsTop2.png')}
+            src={require('../../images/campaignsTop2.svg')}
           />
           <div className='campaignsPage-filler22'>
             <img
               className='campaignsPage-filler222'
-              src={require('../../images/campaignsButton.png')}
+              src={require('../../images/campaignsButton.svg')}
             />
             <div className='campaignsCallOut'>
               <div className='button1' onClick={() => setShowModal(!showModal)}>
@@ -39,7 +39,7 @@ const CampaignsPage = () => {
 
           <img
             className='campaignsPage-filler3'
-            src={require('../../images/campaignsBottom.png')}
+            src={require('../../images/campaignsBottom.svg')}
           />
         </div>
       )}
@@ -47,7 +47,7 @@ const CampaignsPage = () => {
         <div>
           <img
             className='campaignsPage-created'
-            src={require('../../images/campaignsCreated.png')}
+            src={require('../../images/campaignsCreated.svg')}
           />
         </div>
       )}
@@ -61,7 +61,7 @@ const CampaignsPage = () => {
       >
         <div className='modal-buttons'>
           <div>
-            <img src={require('../../images/reviewPage.png')} />
+            <img src={require('../../images/reviewPage.svg')} />
           </div>
           <div className='bottom-buttons'>
             <span

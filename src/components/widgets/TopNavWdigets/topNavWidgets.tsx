@@ -13,13 +13,13 @@ const TopNavWidgets: React.FC<QuickProps> = props => {
     <div className='topNavWidgets'>
       <ul className='widget-list'>
         <li className='widget-list-item'>
-          <img src={require('../../../images/questionMarkIcon.png')} />
+          <img src={require('../../../images/questionMarkIcon.svg')} />
         </li>
         <li className='widget-list-item'>
-          <img src={require('../../../images/notificationIcon.png')} />
+          <img src={require('../../../images/notificationIcon.svg')} />
         </li>
         <li className='widget-list-item'>
-          <img src={require('../../../images/messages.png')} />
+          <img src={require('../../../images/messages.svg')} />
         </li>
       </ul>
     </div>

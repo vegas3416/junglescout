@@ -62,7 +62,7 @@ const SideBar: React.FC<IProps> = ({ tabs }) => {
       <img
         className={`expand-collapse-button ${sideBarOpen ? 'sideBarOpen' : ''}`}
         onClick={() => updateIsOpen()}
-        src={require('../../images/doubleArrow.png')}
+        src={require('../../images/doubleArrow.svg')}
       />
     </div>
   );

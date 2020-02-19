@@ -25,15 +25,16 @@ const ResumePage = props => {
 
   return (
     <div className='resumePage'>
-      <img src={require('../../images/resumePage.png')} />
+      <header className='header'>
+        <span className='header-label'>Resumes</span>
+      </header>
+      <img src={require('../../images/resumePage.svg')} />
       <div className='resumePage-bottom'>
         <img
           className='resumePage-bottom'
-          src={require('../../images/resumePageBottom.png')}
+          onClick={() => setModal(!modal)}
+          src={require('../../images/resumePageBottom.svg')}
         />
-        <div className='contact-button' onClick={() => setModal(!modal)}>
-          <Button children='Contact' type='primary' size='md' />
-        </div>
       </div>
       <Modal
         closeAriaLabel='close'
@@ -44,7 +45,7 @@ const ResumePage = props => {
       >
         <div className='modal-buttons'>
           <div>
-            <img src={require('../../images/resumeModal.png')} />
+            <img src={require('../../images/resumeModal.svg')} />
           </div>
           <div className='bottom-buttons'>
             <span className='cancel-button' onClick={() => setModal(!modal)}>

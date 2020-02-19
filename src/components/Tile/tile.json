@@ -1,7 +1,7 @@
 [
   {
     "type": ["Manager", "Recruiter", "Admin"],
-    "logo": "suitcase.png",
+    "logo": "suitcase.svg",
     "page": "jobs",
     "title": "Jobs",
     "subtitle": "",
@@ -34,7 +34,7 @@
   },
   {
     "type": ["Manager", "Recruiter", "Admin"],
-    "logo": "people.png",
+    "logo": "people.svg",
     "page": "candidates",
     "title": "Candidates",
     "subtitle": "",
@@ -61,7 +61,7 @@
   },
   {
     "type": ["Manager", "Admin"],
-    "logo": "bullhorn.png",
+    "logo": "bullhorn.svg",
     "page": "campaigns",
     "title": "Campaigns",
     "subtitle": "",
@@ -84,7 +84,7 @@
   },
   {
     "type": ["Manager", "Admin"],
-    "logo": "barIcon.png",
+    "logo": "barIcon.svg",
     "page": "analytics",
     "title": "Analytics",
     "subtitle": "",
@@ -115,7 +115,7 @@
   },
   {
     "type": ["Manager", "Admin"],
-    "logo": "building.png",
+    "logo": "building.svg",
     "page": "company",
     "title": "Company",
     "subtitle": "",
@@ -144,7 +144,7 @@
   },
   {
     "type": ["Manager", "Recruiter", "Admin"],
-    "logo": "fileIcon-resources.png",
+    "logo": "fileIcon-resources.svg",
     "page": "resources",
     "title": "Resources",
     "subtitle": "",

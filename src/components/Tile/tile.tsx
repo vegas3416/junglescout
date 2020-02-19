@@ -77,7 +77,7 @@ const Tile: React.FC<TileProps> = props => {
                     });
                   }}
                 >
-                  {path.title}
+                  <span> {path.title}</span>
                 </li>
               );
             })}

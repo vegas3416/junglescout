@@ -23,10 +23,12 @@ const AnalyticsCallOuts = props => {
     <div className='analyticsCallOuts'>
       <header className='analyticsCallOuts-recommendations'>
         <span className='basicText'>
-          We’ve identified <span className='redText'>{value}</span>. These jobs
-          have had <span className='boldedText'>0</span> new candidates in the
-          last two weeks. We have created a new campaign recommendation to help
-          you better source for these roles.
+          We’ve identified <span className='redText'>{value}</span>.
+          <p>
+            These jobs have had <span className='boldedText'>0</span> new
+            candidates in the last two weeks. We have created a new campaign
+            recommendation to help you better source for these roles.
+          </p>
         </span>
       </header>
 
@@ -43,7 +45,7 @@ const AnalyticsCallOuts = props => {
         >
           No thanks
         </span>
-        <Button>View campaign recommendations</Button>
+        <Button>View campaign</Button>
       </div>
     </div>
   );

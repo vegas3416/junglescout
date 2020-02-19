@@ -33,7 +33,7 @@ interface Notifications {
 
 export interface NavLocation {
   main: string;
-  sub: string;
+  sub?: string;
 }
 
 export const homeHub = (

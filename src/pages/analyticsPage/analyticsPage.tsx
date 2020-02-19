@@ -27,7 +27,7 @@ const AnalyticsPage = () => {
     <div className='analyticsPage'>
       <img
         className='analyticsPage-filler'
-        src={require('../../images/analyticsTop.png')}
+        src={require('../../images/analyticsTop.svg')}
       />
       {buttonShow && (
         <CallOuts shouldShowCallOut={(e: boolean) => shouldShowCallOut(e)} />
@@ -35,7 +35,7 @@ const AnalyticsPage = () => {
 
       <img
         className='analyticsPage-filler2'
-        src={require('../../images/analyticsBottom.png')}
+        src={require('../../images/analyticsBottom.svg')}
       />
     </div>
   );

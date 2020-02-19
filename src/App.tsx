@@ -17,7 +17,7 @@ export const App = () => {
       <div className='topNav'>
         <div className='logo'>
           <Link to='/' aria-label='homePage-icon' role='homePage-icon'>
-            <img src={require('./images/indeedI.png')} />
+            <img src={require('./images/indeedI.svg')} />
           </Link>
         </div>
         <div className='search'>
@@ -36,11 +36,11 @@ export const App = () => {
               <TopNavWidgets />
             </li>
             <li className='topNav-right-list-item'>
-              <Company type='featured' logo='Walgreens.png' />
+              <Company type='featured' logo='Walgreens.svg' />
             </li>
             <li className='topNav-right-list-item'>
               <Profile
-                logo='Avatar.png'
+                logo='Avatar.svg'
                 name='Karim Naguib'
                 title='Recruiter'
               />

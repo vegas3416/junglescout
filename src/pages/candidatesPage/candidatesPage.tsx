@@ -26,7 +26,7 @@ const CandidatesPage = () => {
       </header>
       <div className='candidatesPage-content'>
         <section className='left-section'>
-          <img src={require('../../images/candidatesPageLeftSection.png')} />
+          <img src={require('../../images/candidatesPageLeftSection.svg')} />
         </section>
         <section className='right-section'>
           {!resumeMessageSent && (
@@ -41,12 +41,12 @@ const CandidatesPage = () => {
           {resumeMessageSent ? (
             <img
               className='right-section-bottom'
-              src={require('../../images/candidateMessageSent.png')}
+              src={require('../../images/candidateMessageSent.svg')}
             />
           ) : (
             <img
               className='right-section-bottom'
-              src={require('../../images/candidatesPageRightSection-bottom.png')}
+              src={require('../../images/candidatesPageRightSection-bottom.svg')}
             />
           )}
         </section>

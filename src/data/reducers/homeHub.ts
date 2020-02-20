@@ -8,7 +8,7 @@ import App from '../../App';
 export const initialState: IState = {
   activeItem: { main: '', sub: '' },
   createIsOpen: false,
-  notifications: [{ type: 'Analytics' }],
+  notifications: [{ type: 'Analytics', user: 'Manager' }, { type: 'Jobs', user: 'Recruiter' }],
   user: 'Manager',
   resumeMessageSent: false,
   createTemplate: false,
@@ -31,6 +31,7 @@ export interface IState {
 
 interface Notifications {
   type: string;
+  user: string;
 }
 
 export interface NavLocation {

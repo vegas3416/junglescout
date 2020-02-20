@@ -4,10 +4,14 @@
 .searchBarMobile {
   border: 1px solid grey;
   border-radius: 0.5rem;
+  display: none;
   margin: 0.5rem;
   padding: 0.5rem;
   position: relative;
 
+  &.visible {
+      display: block;
+  }
   .search {
     align-items: center;
     display: flex;

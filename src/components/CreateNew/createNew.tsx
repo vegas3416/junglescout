@@ -11,7 +11,8 @@ import { IAppState } from '../../data/store';
 
 interface CreateProp {
   data: CreateData;
-  sideBarOpen: Boolean;
+  sideBarOpen: boolean;
+  showMobileSideBar: boolean;
 }
 
 interface CreateData {
@@ -19,7 +20,11 @@ interface CreateData {
   title: String;
 }
 
-const CreateNew: React.FC<CreateProp> = ({ data, sideBarOpen }) => {
+const CreateNew: React.FC<CreateProp> = ({
+  data,
+  sideBarOpen,
+  showMobileSideBar
+}) => {
   const dispatch = useDispatch();
 
   const createIsOpen = (state: IAppState) => state.homeHub.createIsOpen;
@@ -50,7 +55,7 @@ const CreateNew: React.FC<CreateProp> = ({ data, sideBarOpen }) => {
       <img className='icon' src={require(`../../images/${data.logo}`)} />
 
       <div className='createNew-title'>
-        <span className={`inner ${sideBarOpen ? 'sideBarOpen' : ''}`}>
+        <span className={`inner ${(sideBarOpen || showMobileSideBar) ? 'sideBarOpen' : ''}`}>
           {data.title}
         </span>
         <img className='dots' src={require('../../images/threeDots.svg')} />

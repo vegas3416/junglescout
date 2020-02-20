@@ -31,6 +31,9 @@ const Tile: React.FC<TileProps> = props => {
   const gNotifications = (state: IAppState) => state.homeHub.notifications;
   const notifications = useSelector(gNotifications);
 
+  const gUser = (state: IAppState) => state.homeHub.user;
+  const user = useSelector(gUser);
+
   const tileHomePage = () => {
     props.history.push(`/${data.page}`);
     dispatch({
@@ -86,7 +89,10 @@ const Tile: React.FC<TileProps> = props => {
       </div>
 
       {notifications.map((item, index) => {
-        if (data.title === item.type) {
+        if (
+          (data.title === 'Analytics' && user === 'Manager') ||
+          (data.title === 'Jobs' && user === 'Recruiter')
+        ) {
           return (
             <TileNotification key={index} onClick={(e: any) => tileStatus(e)} />
           );

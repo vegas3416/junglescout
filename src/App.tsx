@@ -19,12 +19,18 @@ export const App = () => {
   const gMobileView = (state: IAppState) => state.homeHub.mobileView;
   const mobileView = useSelector(gMobileView);
 
+  const gUser = (state: IAppState) => state.homeHub.user;
+  const user = useSelector(gUser);
+
+  const [showMobileSideBar, setShowMobileSideBar] = useState(false);
+
   function getWindowDimensions() {
     if (innerWidth < 1000 && !mobileView) {
       console.log('mobileView', mobileView);
       dispatch({ type: AppEvents.SET_MOBILE_VIEW, payload: true });
     } else if (innerWidth > 1000 && mobileView) {
       dispatch({ type: AppEvents.SET_MOBILE_VIEW, payload: false });
+      setShowMobileSideBar(false);
     }
 
     const { innerWidth: width, innerHeight: height } = window;
@@ -50,6 +56,7 @@ export const App = () => {
         {mobileView && (
           <svg
             className='hamburger-menu'
+            onClick={() => setShowMobileSideBar(!showMobileSideBar)}
             width='24'
             height='24'
             viewBox='0 0 24 24'
@@ -86,20 +93,45 @@ export const App = () => {
           </div>
 
           <div className={`topNav-right-item ${mobileView ? 'remove' : ''}`}>
-            <Company type='featured' logo='Walgreens.svg' />
+            <Company
+              type={`${user === 'Recruiter' ? 'featured' : ''}`}
+              logo={user === 'Manager' ? 'managerLogo.svg' : user === 'Recruiter' ? 'recruiterLogo.svg' : 'adminLogo.svg'}
+            />
           </div>
           <div className='topNav-right-item'>
             <Profile
-              logo='Avatar.svg'
-              name='Karim Naguib'
-              title='Recruiter'
+              logo={
+                user === 'Manager'
+                  ? 'manager.svg'
+                  : user === 'Recruiter'
+                  ? 'recruiter.svg'
+                  : 'admin.svg'
+              }
+              name={
+                user === 'Manager'
+                  ? 'Ann Miles'
+                  : user === 'Recruiter'
+                  ? 'Karim Naguib'
+                  : 'Dianne Black'
+              }
+              title={
+                user === 'Manager'
+                  ? 'Manager'
+                  : user === 'Recruiter'
+                  ? 'Recruiter'
+                  : 'Admin'
+              }
               mobileView={mobileView}
             />
           </div>
         </div>
       </div>
       <div className='details'>
-        <SideBar tabs={sideJson} mobileView={mobileView} />
+        <SideBar
+          tabs={sideJson}
+          mobileView={mobileView}
+          showMobileSideBar={showMobileSideBar}
+        />
         <div className='details_view'>
           <Switch>
             {routes.map(ea => {

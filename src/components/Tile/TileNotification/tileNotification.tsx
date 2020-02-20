@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './tileNotification.scss';
 
 const TileNotification = props => {
-  const { onClick } = props;
+  const { onClick, tweak } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -12,11 +12,22 @@ const TileNotification = props => {
   };
 
   return (
-    <div className={`tileNotification ${isOpen ? 'open' : ''}`}>
+    <div
+      className={`tileNotification ${isOpen ? 'open' : ''} ${
+        tweak ? 'tweak' : ''
+      }`}
+    >
       <div className='notification'>
-        <span className={`inner ${isOpen ? 'open' : ''}`}>
-          You have 2 campaigns that have expired. Learn more
-        </span>
+        {tweak ? (
+          <span className={`inner ${isOpen ? 'open' : ''}`}>
+            No qualified candidates found{' '}
+            <span className='strong'>Try Indeed Resume</span>
+          </span>
+        ) : (
+          <span className={`inner ${isOpen ? 'open' : ''}`}>
+            You have 2 campaigns that have expired. Learn more
+          </span>
+        )}
 
         <div
           className='notification-icon'

@@ -35,7 +35,7 @@
     "logo": "people.svg",
     "title": "Candidates",
     "submenu": [
-      { "title": "View Candidates", "page": "viewCandidates" },
+      { "title": "All Candidates", "page": "viewCandidates" },
       { "title": "Resume Search", "page": "resume" },
       { "title": "Hiring Events", "page": "hiringEvents" },
       { "title": "Seen by Indeed", "page": "seen" },
@@ -59,9 +59,11 @@
     "logo": "barIcon.svg",
     "title": "Analytics",
     "submenu": [
-      { "title": "*In progress*", "page": "/" },
-      { "title": "*In progress*", "page": "/" },
-      { "title": "*In progress*", "page": "/" }
+      { "title": "Overview", "page": "/" },
+      { "title": "Job Performance", "page": "/" },
+      { "title": "Campaign Performance", "page": "/" },
+      { "title": "Reports", "page": "/" },
+      { "title": "Insights", "page": "/" }
     ]
   },
   {
@@ -70,9 +72,10 @@
     "logo": "building.svg",
     "title": "Company",
     "submenu": [
-      { "title": "*In progress*", "page": "/" },
-      { "title": "*In progress*", "page": "/" },
-      { "title": "*In progress*", "page": "/" }
+      { "title": "Company Page", "page": "/" },
+      { "title": "Featured Employer", "page": "/" },
+      { "title": "Locations", "page": "/" },
+      { "title": "Settings", "page": "/" }
     ]
   },
   {
@@ -81,9 +84,11 @@
     "logo": "fileIcon-resources.svg",
     "title": "Resources",
     "submenu": [
-      { "title": "*In progress*", "page": "/" },
-      { "title": "*In progress*", "page": "/" },
-      { "title": "*In progress*", "page": "/" }
+      { "title": "FAQs", "page": "/" },
+      { "title": "How-to Hub", "page": "/" },
+      { "title": "Blog", "page": "/" },
+      { "title": "Case Studies", "page": "/" },
+      { "title": "Contact Us", "page": "/" }
     ]
   },
   {

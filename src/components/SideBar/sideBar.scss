@@ -21,10 +21,16 @@
     //height: calc(100vh - 64px);
     transition: width 500ms;
     width: 14rem;
+  }
 
-    &.mobile {
-      display: none;
-    }
+  &.mobile {
+    display: none;
+  }
+
+  &.openMobile {
+    display: block;
+    transition: width 500ms;
+    width: 14rem;
   }
 
   .bottom-icons {
@@ -33,6 +39,11 @@
 
     position: absolute;
     right: 0;
+
+    &.mobile {
+      left: 0;
+      padding-left: 0.75rem;
+    }
 
     .bottom-widgets {
       align-items: center;

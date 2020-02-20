@@ -65,6 +65,10 @@
     border-radius: 0 0 0.5rem 0.5rem !important;
     min-width: 300px !important;
 
+    &.mobileView {
+      right: 0.5rem;
+    }
+
     //Profile content visual setup
     .content {
       &.user {

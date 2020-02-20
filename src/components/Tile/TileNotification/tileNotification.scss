@@ -17,7 +17,11 @@
 
   &.open {
     //transition: width 500ms;
-    width: 100%;
+    width: 98%;
+
+    &.tweak {
+      width: 250px;
+    }
   }
 
   .notification {
@@ -29,6 +33,10 @@
     .inner {
       overflow: hidden;
 
+      .strong {
+        font-weight: bold;
+      }
+
       &.open {
         background-color: get-color(red, whisper);
         display: inline-block;
@@ -36,6 +44,12 @@
 
         //transition: width 1000ms;
         width: 100%;
+
+        font-family: Helvetica Neue;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
       }
     }
     // }
@@ -47,8 +61,6 @@
       position: relative;
       padding-right: 0.25rem;
       padding-left: 0.25rem;
-
-      
     }
   }
 }

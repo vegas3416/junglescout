@@ -33,7 +33,7 @@ const Profile: React.FC<ProfileProps> = props => {
         </div>
       )}
       {menuState ? (
-        <ul className='profile-dropdown-content'>
+        <ul className={`profile-dropdown-content ${mobileView ? 'mobileView' : ''}`}>
           {profileData.profilemenu.map((menuItem, index) => {
             //This is setup in a way that would read
             if (menuItem.link) {

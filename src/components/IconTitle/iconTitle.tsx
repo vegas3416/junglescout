@@ -19,6 +19,8 @@ interface IconProp extends RouteComponentProps<any> {
   createNewBarOpen?: boolean;
   index: number;
   history: History;
+  showMobileSideBar: boolean;
+  user: string;
 }
 
 interface IconData {
@@ -32,7 +34,9 @@ const IconTitle: React.FC<IconProp> = ({
   sideBarOpen,
   createNewBarOpen,
   index,
-  history
+  history,
+  showMobileSideBar,
+  user
 }) => {
   const dispatch = useDispatch();
   const stateActiveItem = (state: IAppState) => state.homeHub.activeItem;
@@ -57,7 +61,7 @@ const IconTitle: React.FC<IconProp> = ({
       });
     }
 
-    console.log("notifications : ", notifications.length);
+    console.log('notifications : ', notifications.length);
     data.logo
       ? dispatch({
           type: AppEvents.SET_ACTIVE_ITEM,
@@ -85,7 +89,10 @@ const IconTitle: React.FC<IconProp> = ({
       }}
     >
       {notifications.map((item, index) => {
-        if (data.title === item.type) {
+        if (
+          (data.title === 'Analytics' && user === 'Manager') ||
+          (data.title === 'Jobs' && user === 'Recruiter')
+        ) {
           return <span key={index} className='iconTitle-notification'></span>;
         }
       })}
@@ -94,7 +101,11 @@ const IconTitle: React.FC<IconProp> = ({
       )}
 
       <div className='iconTitle-title'>
-        <span className={`inner ${sideBarOpen ? 'sideBarOpen' : ''}`}>
+        <span
+          className={`inner ${
+            sideBarOpen || showMobileSideBar ? 'sideBarOpen' : ''
+          }`}
+        >
           {data.title}
         </span>
       </div>

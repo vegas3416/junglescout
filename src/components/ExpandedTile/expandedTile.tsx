@@ -62,7 +62,7 @@ const ExpandedTile: React.FC<TileProps> = props => {
   const listItem = [1, 2, 3, 4, 5];
 
   return (
-    <div className='expandedTile'>
+    <div className={`expandedTile ${data.title === 'Resources' ? 'tweak' : ''}`}>
       <div className='expandedTile-main' onClick={() => tileHomePage()}>
         <div className='expandedTile-main-content'>
           <header className='header'>
@@ -171,7 +171,7 @@ const ExpandedTile: React.FC<TileProps> = props => {
       {notifications.map((item, index) => {
         if (data.title === item.type) {
           return (
-            <TileNotification key={index} onClick={(e: any) => tileStatus(e)} />
+            <TileNotification key={index} tweak={true} onClick={(e: any) => tileStatus(e)} />
           );
         }
       })}

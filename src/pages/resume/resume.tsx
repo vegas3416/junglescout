@@ -15,7 +15,7 @@ const ResumePage = props => {
     props.history.push('/viewCandidates');
     dispatch({
       type: AppEvents.SET_ACTIVE_ITEM,
-      payload: { main: e, sub: 'View Candidates' }
+      payload: { main: e, sub: 'All Candidates' }
     });
     dispatch({
       type: AppEvents.SET_RESUME_MESSAGE_SENT,

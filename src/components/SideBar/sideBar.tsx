@@ -11,6 +11,7 @@ import TopNavWidgets from '../widgets/TopNavWdigets/topNavWidgets';
 interface IProps extends RouteComponentProps<any> {
   tabs: Array<ArrayProps>;
   mobileView: boolean;
+  showMobileSideBar: boolean;
 }
 
 export interface ArrayProps {
@@ -21,7 +22,7 @@ export interface ArrayProps {
   submenu?: Array<any>;
 }
 
-const SideBar: React.FC<IProps> = ({ tabs, mobileView }) => {
+const SideBar: React.FC<IProps> = ({ tabs, mobileView, showMobileSideBar }) => {
   const createIsOpen = (state: IAppState) => state.homeHub.createIsOpen;
   const createNewBarOpen = useSelector(createIsOpen);
 
@@ -35,47 +36,65 @@ const SideBar: React.FC<IProps> = ({ tabs, mobileView }) => {
   const gUser = (state: IAppState) => state.homeHub.user;
   const user = useSelector(gUser);
 
-  useEffect(() => {
-    if (mobileView) {
-      setSideBarOpen(mobileView);
-    }
-  }, [mobileView]);
+  // useEffect(() => {
+  //   if (mobileView) {
+  //     setSideBarOpen(mobileView);
+  //   }
+  // }, [mobileView]);
 
-  console.log('mobileview: ', mobileView);
+  console.log('mobileview: ', showMobileSideBar);
 
   return (
     <div
-      className={`sidebar ${sideBarOpen ? 'open' : 'closed'} ${
-        mobileView ? 'mobile' : ''
+      className={`sidebar ${
+        mobileView && !showMobileSideBar
+          ? 'mobile'
+          : mobileView && showMobileSideBar
+          ? 'openMobile'
+          : sideBarOpen
+          ? 'open'
+          : ''
       }`}
     >
-      {mobileView && <SearchBarMobile />}
+      {mobileView && <SearchBarMobile showMobileSideBar={showMobileSideBar} />}
       <ul className='sidebar-list'>
         {tabs.map((data, index) => {
           return (
             <li key={index}>
               {index === 0 ? (
-                <CreateNew data={data} sideBarOpen={sideBarOpen} />
+                <CreateNew
+                  data={data}
+                  sideBarOpen={sideBarOpen}
+                  showMobileSideBar={showMobileSideBar}
+                />
               ) : (
-                data.type.includes(user) && (
+                data.type.includes(user) &&
+                (showMobileSideBar &&
+                (data.title === 'Manager' ||
+                  data.title === 'Recruiter' ||
+                  data.title === 'Admin') ? (
+                  null
+                ) : (
                   <IconTitle
                     data={data}
                     sideBarOpen={sideBarOpen}
                     createNewBarOpen={createNewBarOpen}
+                    showMobileSideBar={showMobileSideBar}
+                    user={user}
                     // activeItem={activeItem}
                     //handleActiveItem={(e: string) => toggleActive(e)}
 
                     //This index is used b/c of the json file uses '0' as the CreateNew Icon
                     index={index}
                   />
-                )
+                ))
               )}
             </li>
           );
         })}
       </ul>
 
-      <div className='bottom-icons'>
+      <div className={`bottom-icons ${showMobileSideBar ? 'mobile' : ''}`}>
         {mobileView && <TopNavWidgets mobile={mobileView} />}
 
         {!mobileView && (

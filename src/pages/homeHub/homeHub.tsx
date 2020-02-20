@@ -19,7 +19,7 @@ const HomeHub = () => {
 
   console.log('User: ', user);
   return (
-    <div className='homeHub'>
+    <div className={`homeHub ${user === 'Recruiter' ? 'recruiter' : ''}`}>
       {Tiles.map((tile, index) => {
         {
           return (

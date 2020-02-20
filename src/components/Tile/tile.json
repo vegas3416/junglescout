@@ -150,14 +150,8 @@
     "subtitle": "",
     "widgetData": [
       {
-        "number": "32",
-        "description": "Open jobs"
-      },
-      {
-        "number": "264k",
-        "scale": 1,
-        "scaleValue": "20%",
-        "description": "Clicks(last month)"
+        "number": "",
+        "description": "Access to helpful resources to better experience Indeed."
       }
     ],
     "paths": [

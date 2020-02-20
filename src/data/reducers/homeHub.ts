@@ -6,7 +6,7 @@ import App from '../../App';
 
 
 export const initialState: IState = {
-  activeItem: { main: '', sub: '' },
+  activeItem: { main: 'Home', sub: '' },
   createIsOpen: false,
   notifications: [{ type: 'Analytics', user: 'Manager' }, { type: 'Jobs', user: 'Recruiter' }],
   user: 'Manager',

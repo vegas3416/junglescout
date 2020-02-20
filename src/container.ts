@@ -8,8 +8,8 @@ import { AppEvents } from './data/events';
 
 const mapStateToProps = (state: IAppState) => {
   return {
-    // activeItem: state.homeHub.activeItem,
-    // createIsOpen: state.homeHub.createIsOpen
+    activeItem: state.homeHub.activeItem,
+    createIsOpen: state.homeHub.createIsOpen
   };
 };
 

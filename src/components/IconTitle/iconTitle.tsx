@@ -76,6 +76,8 @@ const IconTitle: React.FC<IconProp> = ({
       : dispatch({ type: AppEvents.SET_USER, payload: data.title });
   };
 
+
+  console.log("activeItem: ", activeItem);
   return (
     <div
       className={`iconTitle ${activeItem.main === data.title ? 'active' : ''} ${

@@ -18,14 +18,14 @@
   }
 
   @media only screen and (min-width: 1500px) {
-    justify-content: center;
+    //justify-content: center;
     margin: 2.5rem auto;
-    width: 1240px;
+    width: 1500px;
   }
 
   &.recruiter {
     @media only screen and (min-width: 1500px) {
-      justify-content: unset;
+      //justify-content: unset;
       margin: 2.5rem auto;
       width: 1240px;
     }
@@ -40,7 +40,7 @@
     }
 
     @media only screen and (max-width: 1454px) {
-      flex: 1;
+      //flex: 1;
     }
 
     @media only screen and (max-width: 1000px) {

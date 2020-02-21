@@ -14,24 +14,26 @@
   box-shadow: 0px 0 10px rgba(0, 0, 0, 0.12);
   border: 1px solid get-color(white, core);
 
+  flex: 1;
+
   &:hover {
     border: 1px solid get-color(blue, core);
     box-sizing: border-box;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
   }
 
-  @media only screen and (min-width: 1500px) {
-    width: 280px;
-  }
+  // @media only screen and (min-width: 1500px) {
+  //   width: 280px;
+  // }
 
-  @media only screen and (max-width: 1499px) {
-    width: 274px;
-  }
+  // @media only screen and (max-width: 1499px) {
+  //   width: 274px;
+  // }
 
-  @media only screen and (max-width: 1000px) {
-    min-width: 250px;
-    width: 100%;
-  }
+  // @media only screen and (max-width: 1000px) {
+  //   min-width: 250px;
+  //   width: 100%;
+  // }
 
   &-main-content {
     margin: 2.5rem;

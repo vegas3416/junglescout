@@ -21,12 +21,13 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 20px;
+    overflow: hidden;
     white-space: nowrap;
     padding: 0.5rem;
 
     .inner {
       display: block;
-      overflow: hidden;
+
       padding-left: 1rem;
       padding-right: 2rem;
       transition: width 0.2s ease-in-out;

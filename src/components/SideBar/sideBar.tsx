@@ -42,6 +42,8 @@ const SideBar: React.FC<IProps> = ({ tabs, mobileView, showMobileSideBar }) => {
   //   }
   // }, [mobileView]);
 
+console.log("MobileViewProfile: ", mobileView);
+
   return (
     <div
       className={`sidebar ${

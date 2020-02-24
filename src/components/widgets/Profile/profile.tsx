@@ -18,6 +18,8 @@ const Profile: React.FC<ProfileProps> = props => {
 
   const profileData = ProfileData;
 
+  console.log('Profile: ', mobileView);
+
   return (
     <div
       className='profile'

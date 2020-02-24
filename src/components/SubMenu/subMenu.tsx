@@ -32,9 +32,7 @@ const SubMenu: React.FC<SMProps> = props => {
           <li
             key={index}
             className={`subMenu-item ${
-              activeItem && activeItem.sub && item.title === activeItem.sub
-                ? 'active'
-                : ''
+              activeItem?.sub && item.title === activeItem?.sub ? 'active' : ''
             }`}
             onClick={e => {
               e.stopPropagation();

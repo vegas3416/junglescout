@@ -7,8 +7,7 @@ import { IAppState } from './data/store';
 
 const mapStateToProps = (state: IAppState) => {
   return {
-    activeItem: state.homeHub.activeItem,
-    createIsOpen: state.homeHub.createIsOpen
+
   };
 };
 

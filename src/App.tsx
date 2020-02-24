@@ -17,19 +17,19 @@ const sideJson = SideJson;
 export const App = () => {
   const dispatch = useDispatch();
   const gMobileView = (state: IAppState) => state.homeHub.mobileView;
-  const mobileView = useSelector(gMobileView);
+  const mobileViews = useSelector(gMobileView);
 
   const gUser = (state: IAppState) => state.homeHub.user;
   const user = useSelector(gUser);
 
   const [showMobileSideBar, setShowMobileSideBar] = useState(false);
 
-  console.log("MobileView in app: ", mobileView);
+  console.log('MobileView in app: ', mobileViews);
 
   function getWindowDimensions() {
-    if (innerWidth < 1000 && !mobileView) {
+    if (innerWidth < 1000 && !mobileViews) {
       dispatch({ type: AppEvents.SET_MOBILE_VIEW, payload: true });
-    } else if (innerWidth > 1000 && mobileView) {
+    } else if (innerWidth > 1000 && mobileViews) {
       dispatch({ type: AppEvents.SET_MOBILE_VIEW, payload: false });
       setShowMobileSideBar(false);
     }
@@ -49,12 +49,12 @@ export const App = () => {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [mobileView]);
+  }, [mobileViews]);
 
   return (
     <div className='container'>
       <div className='topNav'>
-        {mobileView && (
+        {mobileViews && (
           <svg
             className='hamburger-menu'
             onClick={() => setShowMobileSideBar(!showMobileSideBar)}
@@ -70,12 +70,12 @@ export const App = () => {
             />
           </svg>
         )}
-        <div className={`logo ${mobileView ? 'mobile' : ''}`}>
+        <div className={`logo ${mobileViews ? 'mobile' : ''}`}>
           <Link to='/' aria-label='homePage-icon' role='homePage-icon'>
             <img src={require('./images/indeedI.svg')} />
           </Link>
         </div>
-        {!mobileView && (
+        {!mobileViews && (
           <div className='search'>
             <input
               className='search-input'
@@ -89,14 +89,20 @@ export const App = () => {
         )}
 
         <div className='topNav-right'>
-          <div className={`topNav-right-item ${mobileView ? 'remove' : ''}`}>
+          <div className={`topNav-right-item ${mobileViews ? 'remove' : ''}`}>
             <TopNavWidgets />
           </div>
 
-          <div className={`topNav-right-item ${mobileView ? 'remove' : ''}`}>
+          <div className={`topNav-right-item ${mobileViews ? 'remove' : ''}`}>
             <Company
               type={`${user === 'Recruiter' ? 'featured' : ''}`}
-              logo={user === 'Manager' ? 'managerLogo.svg' : user === 'Recruiter' ? 'recruiterLogo.svg' : 'adminLogo.svg'}
+              logo={
+                user === 'Manager'
+                  ? 'managerLogo.svg'
+                  : user === 'Recruiter'
+                  ? 'recruiterLogo.svg'
+                  : 'adminLogo.svg'
+              }
             />
           </div>
           <div className='topNav-right-item'>
@@ -122,7 +128,7 @@ export const App = () => {
                   ? 'Recruiter'
                   : 'Admin'
               }
-              mobileView={mobileView}
+              mobileViewtt={mobileViews}
             />
           </div>
         </div>
@@ -130,7 +136,7 @@ export const App = () => {
       <div className='details'>
         <SideBar
           tabs={sideJson}
-          mobileView={mobileView}
+          mobileView={mobileViews}
           showMobileSideBar={showMobileSideBar}
         />
         <div className='details_view'>

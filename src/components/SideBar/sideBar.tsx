@@ -42,8 +42,6 @@ const SideBar: React.FC<IProps> = ({ tabs, mobileView, showMobileSideBar }) => {
   //   }
   // }, [mobileView]);
 
-  console.log('mobileview: ', showMobileSideBar);
-
   return (
     <div
       className={`sidebar ${
@@ -72,9 +70,7 @@ const SideBar: React.FC<IProps> = ({ tabs, mobileView, showMobileSideBar }) => {
                 (showMobileSideBar &&
                 (data.title === 'Manager' ||
                   data.title === 'Recruiter' ||
-                  data.title === 'Admin') ? (
-                  null
-                ) : (
+                  data.title === 'Admin') ? null : (
                   <IconTitle
                     data={data}
                     sideBarOpen={sideBarOpen}

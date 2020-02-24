@@ -25,7 +25,12 @@ const Profile: React.FC<ProfileProps> = props => {
         setMenuState(!menuState);
       }}
     >
-      {logo && <img className={`${mobileView ? 'mobileAvatar' : ''}`} src={require(`../../../images/${logo}`)} />}
+      {logo && (
+        <img
+          className={`${mobileView && mobileView ? 'mobileAvatar' : ''}`}
+          src={require(`../../../images/${logo}`)}
+        />
+      )}
       {!mobileView && (
         <div className='profile-labels'>
           <span className='name'>{name}</span>
@@ -33,7 +38,11 @@ const Profile: React.FC<ProfileProps> = props => {
         </div>
       )}
       {menuState ? (
-        <ul className={`profile-dropdown-content ${mobileView ? 'mobileView' : ''}`}>
+        <ul
+          className={`profile-dropdown-content ${
+            mobileView && mobileView ? 'mobileView' : ''
+          }`}
+        >
           {profileData.profilemenu.map((menuItem, index) => {
             //This is setup in a way that would read
             if (menuItem.link) {

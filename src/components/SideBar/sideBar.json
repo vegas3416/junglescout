@@ -6,7 +6,11 @@
     "submenu": [
       { "logo": "job.svg", "title": "Job", "page": "/jobs" },
       { "logo": "campaign.svg", "title": "Campaign", "page": "/campaigns" },
-      { "logo": "template.svg", "title": "Template", "page": "/jobs/jobsTemplates" },
+      {
+        "logo": "template.svg",
+        "title": "Template",
+        "page": "/jobs/jobsTemplates"
+      },
       { "logo": "hiring.svg", "title": "Hiring Event", "page": "/" },
       { "logo": "branded.svg", "title": "Branded Ad", "page": "/" }
     ]
@@ -90,26 +94,5 @@
       { "title": "Case Studies", "page": "/" },
       { "title": "Contact Us", "page": "/" }
     ]
-  },
-  {
-    "type": ["Manager", "Recruiter", "Admin"],
-    "page": "",
-    "logo": "",
-    "title": "Manager",
-    "submenu": []
-  },
-  {
-    "type": ["Manager", "Recruiter", "Admin"],
-    "page": "",
-    "logo": "",
-    "title": "Recruiter",
-    "submenu": []
-  },
-  {
-    "type": ["Manager", "Recruiter", "Admin"],
-    "page": "",
-    "logo": "",
-    "title": "Admin",
-    "submenu": []
   }
 ]

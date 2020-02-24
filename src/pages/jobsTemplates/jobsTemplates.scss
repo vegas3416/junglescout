@@ -62,11 +62,14 @@
       &-button {
         cursor: pointer;
         width: 38px;
-        margin-right: 24px;
-        margin-top: 8.1rem;
+        height: 38px;
+        margin-right: 16px;
+        margin-top: 7.9rem;
 
-        &:hover {
-          background-color: get-color(blue, core);
+        .share-fill-rect {
+          &:hover {
+            fill: get-color(blue, pastel);
+          }
         }
       }
     }

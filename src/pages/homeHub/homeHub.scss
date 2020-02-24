@@ -11,14 +11,6 @@
     margin: 2.5rem;
   }
 
-  &.recruiter {
-    // @media only screen and (min-width: 1500px) {
-    //   //justify-content: unset;
-    //   margin: 2.5rem auto;
-    //   width: 1240px;
-    // }
-  }
-
   .basic {
     flex: 1;
     margin: 1.25rem;
@@ -33,7 +25,7 @@
   }
 }
 
-@media only screen and (min-width: 1460px) and (max-width: 1499px) {
+@media only screen and (min-width: 1448px) and (max-width: 1499px) {
   .homeHub {
     .basic {
       flex: 1;

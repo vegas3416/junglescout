@@ -107,7 +107,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.template.html',
-      title: 'Manager View',
+      title: 'Recruiter View',
       favicon: 'src/favicon.ico'
     })
   ]

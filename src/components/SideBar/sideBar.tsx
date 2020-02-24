@@ -10,7 +10,7 @@ import TopNavWidgets from '../widgets/TopNavWdigets/topNavWidgets';
 
 interface IProps extends RouteComponentProps<any> {
   tabs: Array<ArrayProps>;
-  mobileViewAA: boolean;
+  mobileView: boolean;
   showMobileSideBar: boolean;
 }
 
@@ -22,7 +22,7 @@ export interface ArrayProps {
   submenu?: Array<any>;
 }
 
-const SideBar: React.FC<IProps> = ({ tabs, mobileViewAA, showMobileSideBar }) => {
+const SideBar: React.FC<IProps> = ({ tabs, mobileView, showMobileSideBar }) => {
   const createIsOpen = (state: IAppState) => state.homeHub.createIsOpen;
   const createNewBarOpen = useSelector(createIsOpen);
 
@@ -36,22 +36,21 @@ const SideBar: React.FC<IProps> = ({ tabs, mobileViewAA, showMobileSideBar }) =>
   const gUser = (state: IAppState) => state.homeHub.user;
   const user = useSelector(gUser);
 
-
-console.log("MobileViewProfile: ", mobileViewAA);
+  console.log('MobileViewProfile: ', mobileView);
 
   return (
     <div
       className={`sidebar ${
-        mobileViewAA && !showMobileSideBar
+        mobileView && !showMobileSideBar
           ? 'mobile'
-          : mobileViewAA && showMobileSideBar
+          : mobileView && showMobileSideBar
           ? 'openMobile'
           : sideBarOpen
           ? 'open'
           : ''
       }`}
     >
-      {mobileViewAA && <SearchBarMobile showMobileSideBar={showMobileSideBar} />}
+      {mobileView && <SearchBarMobile showMobileSideBar={showMobileSideBar} />}
       <ul className='sidebar-list'>
         {tabs.map((data, index) => {
           return (
@@ -88,9 +87,9 @@ console.log("MobileViewProfile: ", mobileViewAA);
       </ul>
 
       <div className={`bottom-icons ${showMobileSideBar ? 'mobile' : ''}`}>
-        {mobileViewAA && <TopNavWidgets mobile={mobileViewAA} />}
+        {mobileView && <TopNavWidgets mobile={mobileView} />}
 
-        {!mobileViewAA && (
+        {!mobileView && (
           <img
             className={`expand-collapse-button ${
               sideBarOpen ? 'sideBarOpen' : ''

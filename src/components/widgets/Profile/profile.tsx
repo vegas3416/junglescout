@@ -8,17 +8,17 @@ interface ProfileProps {
   logo?: String;
   name: String;
   title?: String;
-  mobileViewtt?: boolean;
+  mobileView: boolean;
 }
 
 const Profile: React.FC<ProfileProps> = props => {
-  const { logo, name, title, mobileViewtt } = props;
+  const { logo, name, title, mobileView } = props;
 
   const [menuState, setMenuState] = useState(false);
 
   const profileData = ProfileData;
 
-  console.log('Profile: ', mobileViewtt);
+  console.log('Profile: ', mobileView);
 
   return (
     <div
@@ -29,11 +29,11 @@ const Profile: React.FC<ProfileProps> = props => {
     >
       {logo && (
         <img
-          className={`${mobileViewtt ? 'mobileAvatar' : ''}`}
+          className={`${mobileView ? 'mobileAvatar' : ''}`}
           src={require(`../../../images/${logo}`)}
         />
       )}
-      {!mobileViewtt && (
+      {!mobileView && (
         <div className='profile-labels'>
           <span className='name'>{name}</span>
           <span className='title'>{title}</span>
@@ -42,7 +42,7 @@ const Profile: React.FC<ProfileProps> = props => {
       {menuState ? (
         <ul
           className={`profile-dropdown-content ${
-            mobileViewtt ? 'mobileView' : ''
+            mobileView ? 'mobileView' : ''
           }`}
         >
           {profileData.profilemenu.map((menuItem, index) => {

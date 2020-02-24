@@ -16,8 +16,9 @@ interface CreateProp {
 }
 
 interface CreateData {
-  logo: String;
-  title: String;
+  logo: string;
+  title: string;
+  type: Array<string>;
 }
 
 const CreateNew: React.FC<CreateProp> = ({

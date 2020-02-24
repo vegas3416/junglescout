@@ -4,15 +4,42 @@
     "logo": "plusIcon.svg",
     "title": "Create new...",
     "submenu": [
-      { "logo": "job.svg", "title": "Job", "page": "/jobs" },
-      { "logo": "campaign.svg", "title": "Campaign", "page": "/campaigns" },
+      {
+        "logo": "job.svg",
+        "title": "Job",
+        "page": "/jobs",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "logo": "campaign.svg",
+        "title": "Campaign",
+        "page": "/campaigns",
+        "type": ["Manager", "Admin"]
+      },
       {
         "logo": "template.svg",
         "title": "Template",
-        "page": "/jobs/jobsTemplates"
+        "page": "/jobs/jobsTemplates",
+        "type": ["Manager", "Recruiter", "Admin"]
       },
-      { "logo": "hiring.svg", "title": "Hiring Event", "page": "/" },
-      { "logo": "branded.svg", "title": "Branded Ad", "page": "/" }
+      {
+        "logo": "hiring.svg",
+        "title": "Hiring Event",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "logo": "branded.svg",
+        "title": "Branded Ad",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "logo": "people.svg",
+        "title": "Add user",
+        "page": "/",
+        "type": ["Manager", "Admin"]
+      }
     ]
   },
   {
@@ -27,10 +54,26 @@
     "logo": "suitcase.svg",
     "title": "Jobs",
     "submenu": [
-      { "title": "All Jobs", "page": "jobs" },
-      { "title": "Open", "page": "/" },
-      { "title": "Paused", "page": "/" },
-      { "title": "Closed", "page": "/" }
+      {
+        "title": "All Jobs",
+        "page": "jobs",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Open",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Paused",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Closed",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      }
     ]
   },
   {
@@ -39,11 +82,31 @@
     "logo": "people.svg",
     "title": "Candidates",
     "submenu": [
-      { "title": "All Candidates", "page": "viewCandidates" },
-      { "title": "Resume Search", "page": "resume" },
-      { "title": "Hiring Events", "page": "hiringEvents" },
-      { "title": "Seen by Indeed", "page": "seen" },
-      { "title": "Indeed Hire", "page": "hire" }
+      {
+        "title": "All Candidates",
+        "page": "viewCandidates",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Resume Search",
+        "page": "resume",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Hiring Events",
+        "page": "hiringEvents",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Seen by Indeed",
+        "page": "seen",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Indeed Hire",
+        "page": "hire",
+        "type": ["Manager", "Recruiter", "Admin"]
+      }
     ]
   },
   {
@@ -52,9 +115,21 @@
     "logo": "bullhorn.svg",
     "title": "Campaigns",
     "submenu": [
-      { "title": "All Campaigns", "page": "campaigns" },
-      { "title": "Sponsored Jobs", "page": "sponsoredJobs" },
-      { "title": "Targeted Ads", "page": "targetedAds" }
+      {
+        "title": "All Campaigns",
+        "page": "campaigns",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Sponsored Jobs",
+        "page": "sponsoredJobs",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Targeted Ads",
+        "page": "targetedAds",
+        "type": ["Manager", "Recruiter", "Admin"]
+      }
     ]
   },
   {
@@ -63,11 +138,31 @@
     "logo": "barIcon.svg",
     "title": "Analytics",
     "submenu": [
-      { "title": "Overview", "page": "/" },
-      { "title": "Job Performance", "page": "/" },
-      { "title": "Campaign Performance", "page": "/" },
-      { "title": "Reports", "page": "/" },
-      { "title": "Insights", "page": "/" }
+      {
+        "title": "Overview",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Job Performance",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Campaign Performance",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Reports",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Insights",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      }
     ]
   },
   {
@@ -76,10 +171,26 @@
     "logo": "building.svg",
     "title": "Company",
     "submenu": [
-      { "title": "Company Page", "page": "/" },
-      { "title": "Featured Employer", "page": "/" },
-      { "title": "Locations", "page": "/" },
-      { "title": "Settings", "page": "/" }
+      {
+        "title": "Company Page",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Featured Employer",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Locations",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Settings",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      }
     ]
   },
   {
@@ -88,11 +199,31 @@
     "logo": "fileIcon-resources.svg",
     "title": "Resources",
     "submenu": [
-      { "title": "FAQs", "page": "/" },
-      { "title": "How-to Hub", "page": "/" },
-      { "title": "Blog", "page": "/" },
-      { "title": "Case Studies", "page": "/" },
-      { "title": "Contact Us", "page": "/" }
+      {
+        "title": "FAQs",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "How-to Hub",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Blog",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Case Studies",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      },
+      {
+        "title": "Contact Us",
+        "page": "/",
+        "type": ["Manager", "Recruiter", "Admin"]
+      }
     ]
   }
 ]

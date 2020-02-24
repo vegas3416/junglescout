@@ -11,9 +11,7 @@ interface ProfileProps {
   mobileView: boolean;
 }
 
-const Profile: React.FC<ProfileProps> = props => {
-  const { logo, name, title, mobileView } = props;
-
+const Profile: React.FC<ProfileProps> = ({ logo, name, title, mobileView }) => {
   const [menuState, setMenuState] = useState(false);
 
   const profileData = ProfileData;

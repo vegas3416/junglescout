@@ -136,7 +136,7 @@ export const App = () => {
       <div className='details'>
         <SideBar
           tabs={sideJson}
-          mobileView={mobileViews}
+          mobileViewAA={mobileViews}
           showMobileSideBar={showMobileSideBar}
         />
         <div className='details_view'>

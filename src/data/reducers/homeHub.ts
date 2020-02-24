@@ -9,7 +9,7 @@ export const initialState: IState = {
   activeItem: { main: 'Home', sub: '' },
   createIsOpen: false,
   notifications: [{ type: 'Analytics', user: 'Manager' }, { type: 'Jobs', user: 'Recruiter' }],
-  user: 'Manager',
+  user: 'Admin',
   resumeMessageSent: false,
   createTemplate: false,
   mobileView: false

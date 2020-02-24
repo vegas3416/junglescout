@@ -27,7 +27,7 @@ const Profile: React.FC<ProfileProps> = props => {
         setMenuState(!menuState);
       }}
     >
-      {logo && mobileView && (
+      {logo && (
         <img
           className={`${mobileView ? 'mobileAvatar' : ''}`}
           src={require(`../../../images/${logo}`)}

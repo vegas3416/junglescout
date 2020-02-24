@@ -25,6 +25,8 @@ export const App = () => {
 
   const [showMobileSideBar, setShowMobileSideBar] = useState(false);
 
+  console.log("MobileView in app: ", mobileView);
+
   function getWindowDimensions() {
     if (innerWidth < 1000 && !mobileView) {
       console.log('mobileView', mobileView);

@@ -1,7 +1,7 @@
 {
-  "name": "picasso-typescript",
+  "name": "HomeHub-Manager-View",
   "version": "1.0.0",
-  "description": "HomeHub prototype",
+  "description": "HomeHub-Manager View",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

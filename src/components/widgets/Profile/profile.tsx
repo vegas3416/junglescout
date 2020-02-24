@@ -27,9 +27,9 @@ const Profile: React.FC<ProfileProps> = props => {
         setMenuState(!menuState);
       }}
     >
-      {logo && (
+      {logo && mobileView && (
         <img
-          className={`${mobileView && mobileView ? 'mobileAvatar' : ''}`}
+          className={`${mobileView ? 'mobileAvatar' : ''}`}
           src={require(`../../../images/${logo}`)}
         />
       )}
@@ -42,7 +42,7 @@ const Profile: React.FC<ProfileProps> = props => {
       {menuState ? (
         <ul
           className={`profile-dropdown-content ${
-            mobileView && mobileView ? 'mobileView' : ''
+            mobileView ? 'mobileView' : ''
           }`}
         >
           {profileData.profilemenu.map((menuItem, index) => {

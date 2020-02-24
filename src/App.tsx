@@ -16,7 +16,7 @@ const sideJson = SideJson;
 
 export const App = () => {
   const dispatch = useDispatch();
-  const gMobileView = (state: IAppState) => state.homeHub.mobileView;
+  const gMobileView = (state: IAppState) => state.homeHub.mobileView55;
   const mobileViews = useSelector(gMobileView);
 
   const gUser = (state: IAppState) => state.homeHub.user;

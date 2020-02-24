@@ -11,7 +11,6 @@ import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets';
 import { useSelector, useDispatch } from 'react-redux';
 import { IAppState } from './data/store';
 import { AppEvents } from './data/events';
-import classNames from "classnames";
 
 const sideJson = SideJson;
 
@@ -29,7 +28,6 @@ export const App = () => {
 
   function getWindowDimensions() {
     if (innerWidth < 1000 && !mobileView) {
-      console.log('mobileView', mobileView);
       dispatch({ type: AppEvents.SET_MOBILE_VIEW, payload: true });
     } else if (innerWidth > 1000 && mobileView) {
       dispatch({ type: AppEvents.SET_MOBILE_VIEW, payload: false });

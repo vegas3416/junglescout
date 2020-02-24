@@ -36,11 +36,6 @@ const SideBar: React.FC<IProps> = ({ tabs, mobileView, showMobileSideBar }) => {
   const gUser = (state: IAppState) => state.homeHub.user;
   const user = useSelector(gUser);
 
-  // useEffect(() => {
-  //   if (mobileView) {
-  //     setSideBarOpen(mobileView);
-  //   }
-  // }, [mobileView]);
 
 console.log("MobileViewProfile: ", mobileView);
 

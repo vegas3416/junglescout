@@ -13,7 +13,7 @@ const persistConfig = {
   storage: session, // do not persist after closing the browser
   stateReconciler: hardSet // note: only hardSet persists
 };
-const middleware = [thunk, promise];
+const middleware = [thunk];
 
 const combinedReducers = combineReducers({ homeHub: homeHub });
 

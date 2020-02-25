@@ -36,10 +36,10 @@
 
   &-item {
     border-radius: 0.25rem;
-    padding: 0.5rem;
+    padding: 0.5rem 3rem 0.5rem 0.5rem;
 
     &:hover {
-      background-color: get-color(black, 500);
+      background-color: get-color(black, 300);
       cursor: pointer;
     }
 

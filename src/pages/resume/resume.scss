@@ -4,25 +4,10 @@
 .resumePage {
   padding: 3rem;
 
-  .header {
-    padding-bottom: 1.5rem;
-    &-label {
-      font-family: Helvetica Neue;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 23px;
-      line-height: 28px;
-      &-style {
-        color: get-color(blue, core);
-      }
-    }
-  }
-
-  &-bottom {
-    padding-top: 1rem;
-    position: relative;
-    width: 100%;
+  &-image {
     cursor: pointer;
+    margin: 1rem;
+    width: 100%;
   }
 
   .icl-Modal-wrapper {

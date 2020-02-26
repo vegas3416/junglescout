@@ -1,7 +1,7 @@
 {
-  "name": "HomeHub-Manager-View",
+  "name": "HomeHub-Recruiter-View",
   "version": "1.0.0",
-  "description": "HomeHub-Manager View",
+  "description": "HomeHub-Recruiter View",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -92,7 +92,7 @@
   },
   "dtpublish": {
     "projectId": {
-      "prod": "5e39716190bf7d9112a81b3b"
+      "prod": "5e54333290bf7d9112a81b63"
     },
     "distPath": "dist"
   }

@@ -54,9 +54,22 @@ const JobsTemplates = props => {
         ) : (
           <img
             className='jobsTemplates-content-image'
-            src={require('../../images/jobTemplatesBottom.svg')}
+            onClick={() => setShowModal(!showModal)}
+            src={require('../../images/jobsTemplates.svg')}
           />
         )}
+
+        <div className='shareIcon'>
+          <Button
+            className='button'
+            children='Create Job Template'
+            buttonType='tertiary'
+            size='md'
+            onClick={() => {
+              props.history.push('/jobs/jobsTemplates/createJobTemplate');
+            }}
+          />
+        </div>
       </div>
 
       <Modal
@@ -95,3 +108,4 @@ const JobsTemplates = props => {
 };
 
 export default JobsTemplates;
+

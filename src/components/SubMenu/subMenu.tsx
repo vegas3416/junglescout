@@ -32,7 +32,6 @@ const SubMenu: React.FC<SMProps> = props => {
   return (
     <ul className={`subMenu ${advancedMenu ? 'advanced' : ''}`}>
       {data.map((item, index) => {
-        
         return item.type.includes(user) ? (
           <li
             key={index}

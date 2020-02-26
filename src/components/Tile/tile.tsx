@@ -90,8 +90,8 @@ const Tile: React.FC<TileProps> = props => {
 
       {notifications.map((item, index) => {
         if (
-          (data.title === 'Analytics' && user === 'Manager') ||
-          (data.title === 'Jobs' && user === 'Recruiter')
+          (data.title === 'Analytics' && user === 'Manager' && item.type === data.title) ||
+          (data.title === 'Jobs' && user === 'Recruiter' && item.type === data.title)
         ) {
           return (
             <TileNotification key={index} onClick={(e: any) => tileStatus(e)} />

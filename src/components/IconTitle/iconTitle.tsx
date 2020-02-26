@@ -90,7 +90,7 @@ const IconTitle: React.FC<IconProp> = ({
     >
       {notifications.map((item, index) => {
         if (
-          (data.title === 'Analytics' && user === 'Manager') ||
+          (data.title === 'Analytics' && user === 'Manager' && item.type === data.title) ||
           (data.title === 'Jobs' && user === 'Recruiter')
         ) {
           return <span key={index} className='iconTitle-notification'></span>;

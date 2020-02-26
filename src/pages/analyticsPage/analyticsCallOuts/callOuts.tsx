@@ -16,7 +16,10 @@ const AnalyticsCallOuts = props => {
 
   const pageGoTo = (e: string) => {
     props.history.push('/campaigns');
-    dispatch({ type: AppEvents.SET_ACTIVE_ITEM, payload: e });
+    dispatch({
+      type: AppEvents.SET_ACTIVE_ITEM,
+      payload: { main: e, sub: '' }
+    });
     dispatch({ type: AppEvents.CHECK_NOTIFICATIONS, payload: Types.ANALYTICS });
   };
   return (

@@ -44,18 +44,20 @@
   &-content {
     position: relative;
     &-image {
-      width: 1505px;
+      cursor: pointer;
+      width: 100%;
     }
 
     .button {
       position: absolute;
       right: 0;
+      height: 50px;
     }
 
     .shareIcon {
       position: absolute;
       top: 0;
-      width: 1505px;
+      width: 100%;
       display: flex;
       justify-content: flex-end;
 
@@ -105,3 +107,4 @@
     }
   }
 }
+

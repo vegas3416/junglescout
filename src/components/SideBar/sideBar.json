@@ -35,7 +35,7 @@
         "type": ["Manager", "Recruiter", "Admin"]
       },
       {
-        "logo": "people.svg",
+        "logo": "addUser.svg",
         "title": "Add user",
         "page": "/",
         "type": ["Manager", "Admin"]

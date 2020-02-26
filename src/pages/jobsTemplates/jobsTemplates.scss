@@ -27,18 +27,10 @@
     }
   }
 
-  .header {
-    padding-bottom: 1.5rem;
-    &-label {
-      font-family: Helvetica Neue;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 23px;
-      line-height: 28px;
-      &-style {
-        color: get-color(blue, core);
-      }
-    }
+  &-createJob {
+    cursor: pointer;
+    width: 100%;
+    padding-bottom: 1rem;
   }
 
   &-content {
@@ -56,7 +48,7 @@
 
     .shareIcon {
       position: absolute;
-      top: 0;
+      top: 5rem;
       width: 100%;
       display: flex;
       justify-content: flex-end;

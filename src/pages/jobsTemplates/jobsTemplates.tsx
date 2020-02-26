@@ -31,42 +31,39 @@ const JobsTemplates = props => {
           </span>
         </div>
       )}
-
-      <header className='header'>
-        <span className='header-label'>Jobs templates</span>
-      </header>
-      <div className='jobsTemplates-content'>
+      <div
+        className='jobsTemplates-createJob'
+        onClick={() => {
+          props.history.push('/jobs/jobsTemplates/createJobTemplate');
+        }}
+      >
+        <img
+          className='jobsTemplates-createJob'
+          src={require('../../images/jobTemplatesHeader.svg')}
+        />
+      </div>
+      <div
+        className='jobsTemplates-shareIcon'
+        onClick={() => setShowModal(!showModal)}
+      >
         {createTemplate ? (
           <img
-            className='jobsTemplates-content-image'
+            className={`jobsTemplates-content-image `}
             src={require('../../images/jobTemplatesNew.svg')}
           />
         ) : (
           <img
             className='jobsTemplates-content-image'
-            onClick={() => setShowModal(!showModal)}
-            src={require('../../images/jobsTemplates.svg')}
+            src={require('../../images/jobTemplatesBottom.svg')}
           />
         )}
-
-        <div className='shareIcon'>
-          <Button
-            className='button'
-            children='Create Job Template'
-            buttonType='tertiary'
-            size='md'
-            onClick={() => {
-              props.history.push('/jobs/jobsTemplates/createJobTemplate');
-            }}
-          />
-        </div>
       </div>
 
       <Modal
         closeAriaLabel='close'
         id='modal'
         isOpen={showModal}
-        onExit={function onExit() {}}
+        onExit={() => setShowModal(!showModal)}
         title=''
       >
         <div className='modal-buttons'>

@@ -1,101 +1,111 @@
-import React, { useState } from 'react';
-import './jobsTemplates.scss';
-import Button from '@indeed/frontend-components-react/components/Button';
-import Modal from '@indeed/frontend-components-react/components/Modal';
-import { IAppState } from '../../data/store';
-import { useSelector } from 'react-redux';
+@import '~Janus/foundations/Color/main';
+@import '~Janus/foundations/Typography/main';
 
-const JobsTemplates = props => {
-  const [showModal, setShowModal] = useState(false);
-  const gCreateTemplate = (state: IAppState) => state.homeHub.createTemplate;
-  const createTemplate = useSelector(gCreateTemplate);
+.jobsTemplates {
+  padding: 3rem;
+  position: relative;
 
-  const [sendIcon, setSendIcon] = useState(false);
+  .sent-view {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 0;
 
-  const showSendIcon = () => {
-    setSendIcon(!sendIcon);
-    resetSendView();
-  };
+    &-content {
+      background-color: get-color(green, core);
+      border-bottom-left-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
+      color: get-color(white, core);
+      font-family: Helvetica Neue;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
 
-  const resetSendView = () => {
-    setTimeout(() => setSendIcon(false), 5000);
-  };
+      padding: 0.75rem 1.25rem;
+    }
+  }
 
-  return (
-    <div className='jobsTemplates'>
-      {sendIcon && (
-        <div className='sent-view'>
-          <span className='sent-view-content'>
-            Success! The Customer Service Representative template has been
-            shared with NE Branch Managers.
-          </span>
-        </div>
-      )}
+  .header {
+    padding-bottom: 1.5rem;
+    &-label {
+      font-family: Helvetica Neue;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 23px;
+      line-height: 28px;
+      &-style {
+        color: get-color(blue, core);
+      }
+    }
+  }
 
-      <header className='header'>
-        <span className='header-label'>Jobs templates</span>
-      </header>
-      <div className='jobsTemplates-content'>
-        {createTemplate ? (
-          <img
-            className='jobsTemplates-content-image'
-            src={require('../../images/jobTemplatesNew.svg')}
-          />
-        ) : (
-          <img
-            className='jobsTemplates-content-image'
-            onClick={() => setShowModal(!showModal)}
-            src={require('../../images/jobsTemplates.svg')}
-          />
-        )}
+  &-content {
+    position: relative;
+    &-image {
+      cursor: pointer;
+      width: 100%;
+    }
 
-        <div className='shareIcon'>
-          <Button
-            className='button'
-            children='Create Job Template'
-            buttonType='tertiary'
-            size='md'
-            onClick={() => {
-              props.history.push('/jobs/jobsTemplates/createJobTemplate');
-            }}
-          />
-        </div>
-      </div>
+    .button {
+      position: absolute;
+      right: 0;
+      height: 50px;
+    }
 
-      <Modal
-        closeAriaLabel='close'
-        id='modal'
-        isOpen={showModal}
-        onExit={function onExit() {}}
-        title=''
-      >
-        <div className='modal-buttons'>
-          <div>
-            <img src={require('../../images/shareTemplate.svg')} />
-          </div>
-          <div className='bottom-buttons'>
-            <span
-              className='cancel-button'
-              onClick={() => setShowModal(!showModal)}
-            >
-              Cancel
-            </span>
-            <Button
-              children='Send'
-              buttonType='primary'
-              id='previewComponent'
-              onClick={() => {
-                setShowModal(!showModal);
-                showSendIcon();
-              }}
-              size='sm'
-            />
-          </div>
-        </div>
-      </Modal>
-    </div>
-  );
-};
+    .shareIcon {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
 
-export default JobsTemplates;
+      &-button {
+        cursor: pointer;
+        width: 38px;
+        height: 38px;
+        margin-right: 16px;
+        margin-top: 7.9rem;
+
+        .share-fill-rect {
+          &:hover {
+            fill: get-color(blue, pastel);
+          }
+        }
+      }
+    }
+  }
+
+  .icl-Modal-wrapper {
+    .icl-Modal {
+      border-radius: 0.5rem;
+
+      .modal-buttons {
+        .bottom-buttons {
+          align-items: center;
+          padding-top: 1rem;
+          display: flex;
+          justify-content: flex-end;
+
+          .cancel-button {
+            cursor: pointer;
+            color: get-color(blue, core);
+            font-family: Helvetica Neue;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 18px;
+            margin-right: 1.25rem;
+          }
+
+          .icl-Button {
+            padding: 0.25rem 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 

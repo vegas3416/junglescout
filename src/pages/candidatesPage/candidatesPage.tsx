@@ -41,7 +41,7 @@ const CandidatesPage = () => {
           {resumeMessageSent ? (
             <img
               className='right-section-bottom'
-              src={require('../../images/candidateMessageSent.svg')}
+              src={require('../../images/candidate.svg')}
             />
           ) : (
             <img

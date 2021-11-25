@@ -6,7 +6,7 @@ import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
 import session from 'redux-persist/es/storage/session';
 import promise from 'redux-promise-middleware';
 import thunk from 'redux-thunk';
-import { homeHub } from './reducers/homeHub';
+import { fillerReducer } from './reducers/fillerReducer';
 
 const persistConfig = {
   key: 'root',
@@ -15,7 +15,7 @@ const persistConfig = {
 };
 const middleware = [thunk, promise];
 
-const combinedReducers = combineReducers({ homeHub: homeHub });
+const combinedReducers = combineReducers({ fillerReducer: fillerReducer });
 
 export type IAppState = ReturnType<typeof combinedReducers>;
 

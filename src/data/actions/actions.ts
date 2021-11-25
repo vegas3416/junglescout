@@ -1,6 +1,5 @@
-import { AppEvents } from '../events';
-import { NavLocation } from '../reducers/homeHub';
 import App from '../../App';
+import { AppEvents } from '../events';
 
 //Generic setup for Actions
 const makeAction = <T extends AppEvents, P>(type: T) => (payload: P) => {
@@ -11,21 +10,7 @@ const makeAction = <T extends AppEvents, P>(type: T) => (payload: P) => {
 };
 
 //All my actions
-export const SetCreateNewIsOpen = makeAction<AppEvents.SET_CREATE_NEW_IS_OPEN, boolean>(AppEvents.SET_CREATE_NEW_IS_OPEN);
-
-export const SetActiveItem = makeAction<AppEvents.SET_ACTIVE_ITEM, NavLocation>(AppEvents.SET_ACTIVE_ITEM);
-
-export const SetCheckForNotification = makeAction<AppEvents.CHECK_NOTIFICATIONS, string>(AppEvents.CHECK_NOTIFICATIONS);
-
-export const SetUserFlow = makeAction<AppEvents.SET_USER, string>(AppEvents.SET_USER);
-
-export const SetMobileView = makeAction<AppEvents.SET_MOBILE_VIEW, boolean>(AppEvents.SET_MOBILE_VIEW);
-
-//Actions below this line are not good and just used for the purpose of the prototype
-export const SetCandidateMessageSent = makeAction<AppEvents.SET_RESUME_MESSAGE_SENT, boolean>(AppEvents.SET_RESUME_MESSAGE_SENT);
-export const SetCreateTemplate = makeAction<AppEvents.SET_CREATE_TEMPLATE, boolean>(AppEvents.SET_CREATE_TEMPLATE);
-export const ResetNotification = makeAction<AppEvents.RESET_NOTIFICATION, object>(AppEvents.RESET_NOTIFICATION);
-
+export const SetFiller = makeAction<AppEvents.SET_FILLER, string>(AppEvents.SET_FILLER);
 //End of Actions
 
 //Helper setup to aid in the reducers file
@@ -40,14 +25,7 @@ type IActionUnion<A extends IStringMap<IAnyFunction>> = ReturnType<A[keyof A]>;
 
 //Any actions you create need to add it to here so reducers know what is up
 const actions = {
-  SetCreateNewIsOpen,
-  SetActiveItem,
-  SetCheckForNotification,
-  SetUserFlow,
-  SetCandidateMessageSent,
-  SetCreateTemplate,
-  ResetNotification,
-  SetMobileView
+  SetFiller
 };
 
 export type IAction = IActionUnion<typeof actions>;

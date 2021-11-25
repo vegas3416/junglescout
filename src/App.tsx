@@ -1,151 +1,145 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
-import routes from './routes';
-
-import './app.scss';
-import SideBar from './components/SideBar/sideBar';
-import SideJson from './components/SideBar/sideBar.json';
-import Profile from './components/widgets/Profile/profile';
-import Company from './components/widgets/Company/company';
-import TopNavWidgets from './components/widgets/TopNavWdigets/topNavWidgets';
-import { useSelector, useDispatch } from 'react-redux';
-import { IAppState } from './data/store';
-import { AppEvents } from './data/events';
-
-const sideJson = SideJson;
+import React, { useEffect, useState } from 'react';
+import {
+  Avatar,
+  Box,
+  Container,
+  Grid,
+  TextField,
+  Badge,
+  InputAdornment,
+  Typography,
+} from '@mui/material';
+import data from './data/data.json';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import SearchIcon from '@mui/icons-material/Search';
+import CardLayout from './components/BoxSetup/CardLayout';
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const gMobileView = (state: IAppState) => state.homeHub.mobileView;
-  const mobileView = useSelector(gMobileView);
+  const [cartCount, setCartCount] = useState(0);
+  const [dialog, setDialog] = useState(false);
 
-  const gUser = (state: IAppState) => state.homeHub.user;
-  const user = useSelector(gUser);
-
-  const [showMobileSideBar, setShowMobileSideBar] = useState(false);
-
-  function getWindowDimensions() {
-    if (innerWidth < 1000 && !mobileView) {
-      dispatch({ type: AppEvents.SET_MOBILE_VIEW, payload: true });
-    } else if (innerWidth > 1000 && mobileView) {
-      dispatch({ type: AppEvents.SET_MOBILE_VIEW, payload: false });
-      setShowMobileSideBar(false);
-    }
-
-    const { innerWidth: width, innerHeight: height } = window;
-
-    return {
-      width,
-      height
-    };
-  }
+  const addToCart = () => {
+    setCartCount(cartCount + 1);
+    setDialog(true);
+  };
 
   useEffect(() => {
-    function handleResize() {
-      getWindowDimensions();
-    }
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [mobileView]);
+    setTimeout(() => {
+      setDialog(false);
+    }, 2000);
+  }, [setCartCount, cartCount]);
 
   return (
-    <div className='container'>
-      <div className='topNav'>
-        {mobileView && (
-          <svg
-            className='hamburger-menu'
-            onClick={() => setShowMobileSideBar(!showMobileSideBar)}
-            width='24'
-            height='24'
-            viewBox='0 0 24 24'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              d='M4 18H20C20.55 18 21 17.55 21 17C21 16.45 20.55 16 20 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H20C20.55 8 21 7.55 21 7C21 6.45 20.55 6 20 6H4C3.45 6 3 6.45 3 7Z'
-              fill='white'
-            />
-          </svg>
-        )}
-        <div className={`logo ${mobileView ? 'mobile' : ''}`}>
-          <Link to='/' aria-label='homePage-icon' role='homePage-icon'>
-            <img src={require('./images/indeedI.svg')} />
-          </Link>
-        </div>
-        {!mobileView && (
-          <div className='search'>
-            <input
-              className='search-input'
-              type='text'
-              placeholder='Find jobs, candidates, events...'
-            />
-            <button className='search-button' type='submit'>
-              <img src={require('./images/24px.svg')} />
-            </button>
-          </div>
-        )}
-
-        <div className='topNav-right'>
-          <div className={`topNav-right-item ${mobileView ? 'remove' : ''}`}>
-            <TopNavWidgets />
-          </div>
-
-          <div className={`topNav-right-item ${mobileView ? 'remove' : ''}`}>
-            <Company
-              type={`${user === 'Recruiter' ? 'featured' : ''}`}
-              logo={
-                user === 'Manager'
-                  ? 'managerLogo.svg'
-                  : user === 'Recruiter'
-                  ? 'recruiterLogo.svg'
-                  : 'adminLogo.svg'
-              }
-            />
-          </div>
-          <div className='topNav-right-item'>
-            <Profile
-              logo={
-                user === 'Manager'
-                  ? 'manager.svg'
-                  : user === 'Recruiter'
-                  ? 'recruiter.svg'
-                  : 'admin.svg'
-              }
-              name={
-                user === 'Manager'
-                  ? 'Ann Miles'
-                  : user === 'Recruiter'
-                  ? 'Karim Naguib'
-                  : 'Dianne Black'
-              }
-              title={
-                user === 'Manager'
-                  ? 'Manager'
-                  : user === 'Recruiter'
-                  ? 'Recruiter'
-                  : 'Admin'
-              }
-              mobileView={mobileView}
-            />
-          </div>
-        </div>
-      </div>
-      <div className='details'>
-        <SideBar
-          tabs={sideJson}
-          mobileView={mobileView}
-          showMobileSideBar={showMobileSideBar}
+    <Box
+      sx={{
+        '.main-content': {
+          marginLeft: 4,
+          marginRight: 4,
+          my: 14,
+        },
+      }}
+    >
+      <Box
+        component='header'
+        sx={{
+          backgroundColor: '#6792f0',
+          boxShadow: '0px 2px 12px grey',
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: 1,
+          position: 'fixed',
+          top: 0,
+          width: '100%',
+          zIndex: 999,
+        }}
+      >
+        <Avatar
+          sx={{ m: '4px', border: '1px solid', borderColor: 'black' }}
+          src={require('./images/logo.png')}
         />
-        <div className='details_view'>
-          <Switch>
-            {routes.map(ea => {
-              return <Route key={ea.path} {...ea} />;
-            })}
-          </Switch>
-        </div>
-      </div>
-    </div>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-evenly',
+
+            '.dialog-popup': {
+              textAlign: 'center',
+              padding: '18px',
+              right: '84px',
+              position: 'absolute',
+              backgroundColor: 'white',
+              borderRadius: '2px',
+              boxShadow: '2px 0px 15px grey',
+              height: '60px',
+              width: '200px',
+              top: '-8px',
+              '&::after': {
+                content: '""',
+                display: 'block',
+                width: 0,
+                height: 0,
+                borderColor: 'white',
+                position: 'absolute',
+                borderBottom: '12px solid transparent',
+                borderLeft: '12px solid white',
+                borderTop: '12px solid transparent',
+                right: '-12px',
+                top: '8px',
+              },
+            },
+          }}
+        >
+          <Box sx={{ paddingRight: 5, position: 'relative' }}>
+            <Badge badgeContent={cartCount} color='secondary'>
+              <ShoppingCartIcon />
+            </Badge>
+            {dialog && (
+              <Box
+                className='dialog-popup'
+                sx={{
+                  '.dialog-text': {
+                    fontSize: '14px',
+                    fontWeight: '500',
+                  },
+                }}
+              >
+                <span className='dialog-text'>Item added successfully.</span>
+              </Box>
+            )}
+          </Box>
+
+          <TextField
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position='start'>
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+            sx={{ backgroundColor: '#ffffff', width: '300px' }}
+            placeholder='Search'
+            id='search field'
+            variant='outlined'
+          />
+        </Box>
+      </Box>
+      <main className='main-content'>
+        <Container sx={{ mt: 2 }} maxWidth='lg'>
+          <Grid
+            container
+            spacing={{ xs: 2, sm: 3, md: 4, lg: 6 }}
+            columns={{ xs: 12, sm: 4, md: 8, lg: 9 }}
+          >
+            {data.map((item, index) => (
+              <Grid item xs={12} sm={3} md={4} lg={3} key={index}>
+                <CardLayout item={item} addToCart={() => addToCart()} />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </main>
+    </Box>
   );
 };
 

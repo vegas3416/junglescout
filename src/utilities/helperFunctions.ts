@@ -1,14 +1,13 @@
-export const pageLocation = link => {
-  console.log('Got in this');
-  switch (link) {
-    case 'Jobs':
-      return '/pagetwo';
-    default:
-      return;
-  }
-};
-
-//In case you forget how-to. This is an example of the 'useSelector' hook
-
-// const isOn = (state: IAppState) => state.homeHub.createIsOpen;
-// const activeItem = useSelector(isOn);
+export interface CardParams {
+  id: string;
+  asin: string;
+  title: string;
+  category: string;
+  brand: string;
+  price?: number;
+  reviews: number;
+  rating?: number;
+  image?: string;
+  link: string;
+  rank: number
+}

@@ -97,7 +97,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.template.html',
-      title: 'Admin View',
+      title: 'Prototype',
     }),
   ],
 };

@@ -6,13 +6,13 @@ import {
   CardHeader,
   CardMedia,
   Divider,
-  Popover,
+  Link,
   Rating,
   Typography,
 } from '@mui/material';
 import { AddShoppingCart, ImageNotSupported } from '@mui/icons-material';
 import React, { useState } from 'react';
-import { CardParams } from '../../utilities/helperFunctions';
+import { CardParams } from '../utilities/helperFunctions';
 
 interface Props {
   item: CardParams;
@@ -36,45 +36,66 @@ const CardLayout: React.FC<Props> = ({ item, addToCart }) => {
     <Card
       sx={{
         borderRadius: '8px',
-        height: '240px',
+        height: '270px',
         position: 'relative',
         width: '350px',
       }}
     >
       <Box
         sx={{
-          backgroundColor: 'lightgrey',
+          backgroundColor: '#d7d5d6',
           display: 'flex',
           justifyContent: 'space-around',
           alignItems: 'center',
         }}
       >
         {item.image ? (
-          <CardMedia
-            sx={{ height: '80px', width: '80px' }}
-            image={`${item.image}`}
-          />
+          <Box
+            sx={{
+              backgroundColor: 'white',
+              borderRadius: '6px',
+              padding: '8px',
+              position: 'relative',
+              top: '1rem',
+            }}
+          >
+            <Link className='item-link' href={item.link}>
+              <CardMedia
+                aria-describedby='item-image'
+                sx={{
+                  borderRadius: '6px',
+                  height: '80px',
+                  width: '80px',
+                }}
+                image={`${item.image}`}
+              />
+            </Link>
+          </Box>
         ) : (
           <ImageNotSupported sx={{ height: '120px', width: '80px' }} />
         )}
         <Box
           sx={{
-            '.item-category': { fontWeight: 500 },
+            '.item-category': { fontWeight: 400 },
           }}
         >
-          <Box sx={{ alignItems: 'center', display: 'flex', pb: 1 }}>
-            <Rating
-              sx={{ paddingRight: 1 }}
-              name='read-only'
-              readOnly
-              value={item.rating}
-            />
-            {item.reviews.toLocaleString()}
+          <Box sx={{ textAlign: 'end' }}>
+            <Box sx={{ alignItems: 'center', display: 'flex', pb: 1 }}>
+              <Rating
+                sx={{ paddingRight: 1 }}
+                name='read-only'
+                readOnly
+                value={item.rating}
+              />
+              {item.reviews.toLocaleString()}
+            </Box>
+            <Link className='item-category' href='#'>
+              {item.category}
+            </Link>
           </Box>
-          <span className='item-category'>{item.category}</span>
         </Box>
       </Box>
-      <CardContent sx={{ display: 'flex', padding: 1 }}>
+      <CardContent sx={{ display: 'flex', padding: 1, mt: '1rem' }}>
         <Box
           sx={{
             padding: '8px',
@@ -130,21 +151,3 @@ const CardLayout: React.FC<Props> = ({ item, addToCart }) => {
 };
 
 export default CardLayout;
-
-{
-}
-
-{
-  /* <Box */
-}
-//   component='footer'
-//   sx={{
-//     bottom: '12px',
-//     display: 'flex',
-//     justifyContent: 'center',
-//     position: 'absolute',
-//     width: '100%',
-//   }}
-// >
-
-// </Box>

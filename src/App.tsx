@@ -8,11 +8,12 @@ import {
   Badge,
   InputAdornment,
   Typography,
+  Link,
 } from '@mui/material';
 import data from './data/data.json';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
-import CardLayout from './components/BoxSetup/CardLayout';
+import CardLayout from './components/CardLayout';
 
 export const App = () => {
   const [cartCount, setCartCount] = useState(0);
@@ -35,17 +36,16 @@ export const App = () => {
         '.main-content': {
           marginLeft: 4,
           marginRight: 4,
-          my: 14,
+          my: 15,
         },
       }}
     >
       <Box
         component='header'
         sx={{
-          backgroundColor: '#6792f0',
-          boxShadow: '0px 2px 12px grey',
-          display: 'flex',
-          justifyContent: 'space-between',
+          backgroundColor: '#ffffff',
+          boxShadow: '0px -2px 5px grey',
+
           padding: 1,
           position: 'fixed',
           top: 0,
@@ -53,77 +53,95 @@ export const App = () => {
           zIndex: 999,
         }}
       >
-        <Avatar
-          sx={{ m: '4px', border: '1px solid', borderColor: 'black' }}
-          src={require('./images/logo.png')}
-        />
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
+        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Link href='#'>
+            <Avatar
+              sx={{ m: '4px', border: '1px solid', borderColor: 'black' }}
+              src={require('./images/logo.png')}
+            />
+          </Link>
 
-            '.dialog-popup': {
-              textAlign: 'center',
-              padding: '18px',
-              right: '84px',
-              position: 'absolute',
-              backgroundColor: 'white',
-              borderRadius: '2px',
-              boxShadow: '2px 0px 15px grey',
-              height: '60px',
-              width: '200px',
-              top: '-8px',
-              '&::after': {
-                content: '""',
-                display: 'block',
-                width: 0,
-                height: 0,
-                borderColor: 'white',
-                position: 'absolute',
-                borderBottom: '12px solid transparent',
-                borderLeft: '12px solid white',
-                borderTop: '12px solid transparent',
-                right: '-12px',
-                top: '8px',
-              },
-            },
-          }}
-        >
-          <Box sx={{ paddingRight: 5, position: 'relative' }}>
-            <Badge badgeContent={cartCount} color='secondary'>
-              <ShoppingCartIcon />
-            </Badge>
-            {dialog && (
-              <Box
-                className='dialog-popup'
-                sx={{
-                  '.dialog-text': {
-                    fontSize: '14px',
-                    fontWeight: '500',
-                  },
-                }}
-              >
-                <span className='dialog-text'>Item added successfully.</span>
-              </Box>
-            )}
-          </Box>
-
-          <TextField
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position='start'>
-                  <SearchIcon />
-                </InputAdornment>
-              ),
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-evenly',
             }}
-            sx={{ backgroundColor: '#ffffff', width: '300px' }}
-            placeholder='Search'
-            id='search field'
-            variant='outlined'
-          />
+          >
+            <Box
+              sx={{
+                paddingRight: 5,
+                position: 'relative',
+                '.dialog-popup': {
+                  textAlign: 'center',
+                  right: '84px',
+                  position: 'absolute',
+                  backgroundColor: '#1976d2',
+                  borderRadius: '2px',
+                  height: '48px',
+                  width: '200px',
+                  top: '-8px',
+                  '&::after': {
+                    content: '""',
+                    display: 'block',
+                    width: 0,
+                    height: 0,
+                    borderColor: '#1976d2',
+                    position: 'absolute',
+                    borderBottom: '12px solid transparent',
+                    borderLeft: '12px solid #1976d2',
+                    borderTop: '12px solid transparent',
+                    right: '-12px',
+                    top: '8px',
+                  },
+                },
+              }}
+            >
+              <Badge badgeContent={cartCount} color='secondary'>
+                <ShoppingCartIcon />
+              </Badge>
+              {dialog && (
+                <Box
+                  className='dialog-popup'
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    '.dialog-text': {
+                      color: 'white',
+                      fontSize: '14px',
+                      fontWeight: '500',
+                    },
+                  }}
+                >
+                  <span className='dialog-text'>Item added successfully.</span>
+                </Box>
+              )}
+            </Box>
+
+            <TextField
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position='start'>
+                    <SearchIcon />
+                  </InputAdornment>
+                ),
+              }}
+              sx={{
+                backgroundColor: '#ffffff',
+                width: '240px',
+                input: {
+                  py: 1,
+                },
+              }}
+              placeholder='Search'
+              id='search field'
+              variant='outlined'
+            />
+          </Box>
         </Box>
       </Box>
+
       <main className='main-content'>
         <Container sx={{ mt: 2 }} maxWidth='lg'>
           <Grid

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Avatar,
   Box,
@@ -9,20 +9,47 @@ import {
   InputAdornment,
   Typography,
   Link,
+  Drawer,
+  Divider,
+  ListItem,
+  List,
+  ListItemText,
+  IconButton,
 } from '@mui/material';
 import data from './data/data.json';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
+import MenuIcon from '@mui/icons-material/Menu';
 import CardLayout from './components/CardLayout';
+import { Home } from '@mui/icons-material';
 
 export const App = () => {
   const [cartCount, setCartCount] = useState(0);
   const [dialog, setDialog] = useState(false);
+  const [drawer, setDrawer] = useState(false);
+  const drawerRef = useRef(null);
 
   const addToCart = () => {
     setCartCount(cartCount + 1);
     setDialog(true);
   };
+
+  const handleDropdown = () => {
+    if (drawerRef) {
+      setDrawer(false);
+    }
+  };
+
+  useEffect(() => {
+    if (drawer) {
+      document.addEventListener('mousedown', handleDropdown);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleDropdown);
+    };
+  }, [drawer]);
+
+  const categoryTypes = [...new Set(data.map((item) => item.category))];
 
   useEffect(() => {
     setTimeout(() => {
@@ -54,13 +81,28 @@ export const App = () => {
         }}
       >
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Link href='#'>
+          <Box sx={{ display: 'flex', alignItems: 'center', paddingLeft: 1 }}>
+            <IconButton
+              size='large'
+              edge='start'
+              color='inherit'
+              aria-label='menu'
+              sx={{}}
+              onClick={() => setDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
             <Avatar
-              sx={{ m: '4px', border: '1px solid', borderColor: 'black' }}
+              sx={{
+                m: '4px',
+                border: '1px solid',
+                borderColor: 'black',
+                cursor: 'pointer',
+                display: { xs: 'none', sm: 'block' },
+              }}
               src={require('./images/logo.png')}
             />
-          </Link>
-
+          </Box>
           <Box
             sx={{
               display: 'flex',
@@ -74,13 +116,13 @@ export const App = () => {
                 position: 'relative',
                 '.dialog-popup': {
                   textAlign: 'center',
-                  right: '84px',
+                  right: '-70px',
                   position: 'absolute',
                   backgroundColor: '#1976d2',
                   borderRadius: '2px',
                   height: '48px',
                   width: '200px',
-                  top: '-8px',
+                  bottom: '-60px',
                   '&::after': {
                     content: '""',
                     display: 'block',
@@ -88,11 +130,11 @@ export const App = () => {
                     height: 0,
                     borderColor: '#1976d2',
                     position: 'absolute',
-                    borderBottom: '12px solid transparent',
-                    borderLeft: '12px solid #1976d2',
-                    borderTop: '12px solid transparent',
-                    right: '-12px',
-                    top: '8px',
+                    borderLeft: '12px solid transparent',
+                    borderBottom: '12px solid #1976d2',
+                    borderRight: '12px solid transparent',
+                    left: '66px',
+                    top: '-10px',
                   },
                 },
               }}
@@ -139,6 +181,54 @@ export const App = () => {
               variant='outlined'
             />
           </Box>
+          <Drawer
+            ref={drawerRef}
+            sx={{
+              '.drawer-items': {
+                px: 2,
+              },
+            }}
+            anchor={'left'}
+            open={drawer}
+          >
+            <Box sx={{ cursor: 'pointer', padding: 1, textAlign: 'center' }}>
+              <Home
+                color='primary'
+                onClick={() => {
+                  alert('This sends you back home and closes drawer');
+                  setDrawer(false);
+                }}
+              />
+            </Box>
+
+            <Divider />
+            <Typography className='drawer-items' variant='h6'>
+              Filter by category
+            </Typography>
+            <Divider />
+            <List className='drawer-items'>
+              {categoryTypes.map((text, index) => {
+                return (
+                  <ListItem key={index} sx={{ padding: 'unset' }}>
+                    <ListItemText
+                      sx={{
+                        cursor: 'pointer',
+                        textDecoration: 'underline',
+                      }}
+                      primary={text}
+                      onClick={() => {
+                        alert(
+                          'This would filter list down by category and close drawer. Probably add a loading state to give user the impression of' +
+                            ' something changing'
+                        );
+                        setDrawer(false);
+                      }}
+                    />
+                  </ListItem>
+                );
+              })}
+            </List>
+          </Drawer>
         </Box>
       </Box>
 
